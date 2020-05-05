@@ -1,0 +1,102 @@
+<div id="code" style="padding-top: 80px;"></div>
+<div class="card mb-3" style="width: 100%">
+    <div class="card-header">
+        <h4><span class="badge badge-info">${tutorial_page_index}</span> example - execute java code</h4>
+        <p style="padding-left:40px">
+            The code action invokes java bean methods.
+        </p>
+    </div>
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">Execute a java method, the result can be shown on the page or stored in the execContext</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:code call="axel.AxelCodeExample.getProjectTitle"/>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Calls the getProjectTitle method that returns the property setting for "project.title"</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content showing the results.</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+<axel:code call="axel.AxelCodeExample.getProjectTitle"/>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">
+            The method getProjectTitle in the java class AxelCodeExample returns the project title that came
+            from a execContext property that was set when the application started.
+        </div>
+    </div>    
+    <div class="card-body">
+        <div class="card-title title">Execute a java method that takes a "name" parameter.</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:code call="axel.AxelCodeExample.hello">
+    <axel:param value="Fred"/>
+</axel:code>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Calls the hello method that takes the name as a parameter and returns "Hello " + name</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content showing the results.</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+<axel:code call="axel.AxelCodeExample.hello">
+    <axel:param value="Fred"/>
+</axel:code>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">
+            The method hello in the java class AxelCodeExample returns a string value "Hello Fred".
+        </div>
+    </div>    
+    <div class="card-body">
+        <div class="card-title title">Execute a java method that gets a sorted list of the first 10 java beans setup in the spring applicationContext.</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:code call="axel.AxelCodeExample.getListOf10Beans" key="beans10"/>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Calls the getListOf10Beans method that returns the sorted names 10 beans stored in the execContext key = "beans10".</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content showing the results.</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+<axel:code call="axel.AxelCodeExample.getListOf10Beans" key="beans10"/>${beans10}
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">
+            The method getListOf10Beans in the java class AxelCodeExample returns a list of the first 10 sorted bean names from the spring applicationContext.
+        </div>
+    </div>    
+</div>

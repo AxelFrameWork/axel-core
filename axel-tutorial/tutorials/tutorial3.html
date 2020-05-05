@@ -1,0 +1,37 @@
+<div id="capture_browser_parameters" style="padding-top: 80px;"></div>
+<div class="card mb-3" style="width: 100%">
+    <div class="card-header">
+        <h4><span class="badge badge-info">${tutorial_page_index}</span> example - capture browser parameters</h4>
+        <p style="padding-left:40px">
+            How to access the parameters from the browser using axel
+        </p>
+    </div>
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">Accessing parameters from a browser request.</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<h5>Hello ${request:title} ${request:surname}</h5>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Shows Hello with two request parameters named "title" and "surname"</div>
+        <div class="card-text instruction">${instruction-counter}. In your browser type <b>localhost/index.html?title=Mr&surname=Flinstone</b></div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+<h5>Hello Mr Flinstone</h5>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Now you can the two paraameters on screen instead of the replacement markers &dollar;{request:title} &dollar;{request:surname}</div>
+    </div>    
+</div>

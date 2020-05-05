@@ -1,0 +1,146 @@
+buildscript {
+    repositories {
+	    mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+plugins {
+  id "de.richsource.gradle.plugins.typescript" version "1.8.0"
+  id "org.springframework.boot" version "2.2.6.RELEASE"
+  id 'maven-publish'
+  id 'maven'
+  id 'java'
+}
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'application'
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework")
+            credentials {
+                username = System.getenv("github_user")
+                password = System.getenv("github_token")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+mainClassName = 'axel.AxelApplication'
+
+archivesBaseName = 'axel-run'
+version = "$axelVersion"
+group = 'org.xmlactions'
+
+compileJava {
+    options.debug = true
+}
+
+jar {
+	from sourceSets.main.allSource
+    manifest {
+        attributes 'Main-Class': 'axel.Application'
+    }
+}
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'axel.Application'
+    }
+    baseName = 'axel-run'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+configurations.all {
+	exclude group:'org.springframework.boot', module:'spring-boot-starter-logging'
+	exclude group:'org.apache.tomcat', module:'servlet-api'
+}
+
+dependencies {
+	
+	compile(
+		project(':axel-common'),
+		project(':axel-action'),
+		project(':axel-email'),
+		project(':axel-mapping'),
+		project(':axel-web'),
+		//project(':axel-db'),
+		//project(':axel-web-db'),
+	)
+	
+	compile (
+		'com.google.code.gson:gson:2.8.6',
+		'org.json:json:20140107',
+	)
+
+	compile 'org.slf4j:slf4j-log4j12:1.7.30'
+	
+
+	compile 'commons-lang:commons-lang:2.6'
+	compile 'commons-beanutils:commons-beanutils:1.8.3'
+	compile 'commons-configuration:commons-configuration:1.9'
+	compile 'commons-io:commons-io:1.4'
+	compile 'rhino:js:1.7R2'
+	compile 'dom4j:dom4j:1.6.1'
+	compile 'bsf:bsf:2.4.0'
+
+	compile (
+		'org.springframework.boot:spring-boot-starter',
+    	'org.springframework.boot:spring-boot-starter-web',
+		'org.springframework.boot:spring-boot-starter-actuator',
+    	'org.springframework.boot:spring-boot-starter-thymeleaf',
+	    'org.springframework.data:spring-data-rest-core',
+	    'org.springframework:spring-context',
+		'org.springframework:spring-context-support',
+	    'org.springframework:spring-core',
+		'org.springframework:spring-web',
+		'org.springframework:spring-webmvc',
+		'org.springframework:spring-jdbc',
+		'org.springframework:spring-orm',
+		'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final',
+		'de.codecentric:spring-boot-admin-starter-client:2.0.4'
+	)
+
+    compile 'commons-fileupload:commons-fileupload:1.3.3'
+	compile 'commons-digester:commons-digester:2.1'
+	compile 'javax.mail:mail:1.4.7'	
+	compile 'jasperreports:jasperreports:3.5.3'
+
+	testCompile 'junit:junit:4.12'
+	testCompile 'mysql:mysql-connector-java:5.1.25'
+	testCompile 'org.apache.derby:derby:10.10.1.1'
+	testCompile 'com.h2database:h2:1.4.183'
+	compile 'org.springframework:spring-test:4.3.25.RELEASE'
+
+}
+
+
+task CopyWarToJar(type: Copy) {
+    from file("$buildDir/build/libs/axel-run.2.0.2.war")
+    into file("$buildDir/build/libs/axel-run.2.0.2.jar")
+}

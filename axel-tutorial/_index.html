@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <axel:insert page="core/includes.html"/>
+    <axel:insert page="style.html"/>
+</head>
+<body>
+    <div class="container-fluid text-center">    
+        <axel:insert page="core/header.html"/>
+        <div style="padding-top: 50px">
+        </div>
+        <axel:insert page="core/title.html"/>
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <axel:insert page="index/left_navs.html"/>
+            </div>
+            <div class="col-sm-6" style="">
+                <axel:insert page="index/intro.html"/>
+                <axel:insert page="index/how_it_works.html"/>
+                <axel:insert page="index/tutorial.html"/>
+            </div>
+            <div class="col-sm-3 sidenav">
+                <axel:insert page="index/terminology.html"/>
+            </div>
+        </div>
+    </div>
+    <axel:insert page="core/footer.html"/>
+</body>
+</html>

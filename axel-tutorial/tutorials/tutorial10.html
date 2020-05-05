@@ -1,0 +1,44 @@
+<div id="put_get_remove" style="padding-top: 80px;"></div>
+<div class="card mb-3" style="width: 100%">
+    <div class="card-header">
+        <h4><span class="badge badge-info">${tutorial_page_index}</span> example - put, get and remove</h4>
+        <p style="padding-left:40px">
+            How to put, get and remove content from execContext.
+        </p>
+    </div>
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">Put, Get and Remove some content from execContext</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:put key="a_key">This is the value stored for a_key</axel:put>
+"<axel:get key="a_key"/>"
+<axel:remove key="a_key"/>
+"<axel:get key="a_key"/>"
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Stores a value for "a_key" into the execContext using axel:put then uses axel:get to retrieve it, then uses axel:remove to remove it.</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content showing the results.</div>
+        <hr/>
+        <axel:range name="axel-index" from="1" to="100"/>
+        <div class="card-text code">
+            <pre>
+                <code>
+<axel:put key="a_key">This is the value stored for a_key</axel:put>
+"<axel:get key="a_key"/>"
+<axel:remove key="a_key"/>
+"<axel:get key="a_key"/>"
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">The first axel:get returns "This is the value stored for a_key", then the a_key is removed and the 2nd axel:get returns "null"</div>
+    </div>    
+</div>
