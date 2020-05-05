@@ -87,7 +87,7 @@ public class EvalActionTest extends TestCase
 		Action action = new Action("", "", ActionConst.DEFAULT_PAGER_NAMESPACE);
 		String newPage = action.processPage(execContext, page);
 		String s = execContext.getString("put-content");
-		assertEquals("content of insert3.html", s);
+		assertEquals("<pager:insert page=\"insert3.xhtml\"/>", s);
 		assertEquals("put-content:content of insert3.html", newPage);
 	}
 
@@ -103,7 +103,7 @@ public class EvalActionTest extends TestCase
 		Action action = new Action("/pages", "", ActionConst.DEFAULT_PAGER_NAMESPACE);
 		String newPage = action.processPage(execContext, page);
 		String s = execContext.getString("put-content");
-		assertEquals("content of insert3.html", s);
+		assertEquals("<pager:insert page=\"insert3.xhtml\"/>", s);
 		assertEquals("put-content:[content of insert3.html]", newPage);
 	}
 

@@ -26,3 +26,4 @@
 **/*.tmp
 
 /.gradle/
+/axel-web-db.log.1
