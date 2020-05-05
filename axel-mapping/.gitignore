@@ -26,3 +26,4 @@
 **/*.tmp
 
 /.gradle/
+/axel-mapping.log.1
