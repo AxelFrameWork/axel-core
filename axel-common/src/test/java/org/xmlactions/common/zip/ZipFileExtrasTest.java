@@ -25,6 +25,8 @@ import junit.framework.TestCase;
  */
 public class ZipFileExtrasTest extends TestCase {
 
+	private boolean testWrite = false;
+
 	private static String newFileName = "/test/files/addfile.txt";
 
 	public ZipFileExtrasTest() {
@@ -37,54 +39,58 @@ public class ZipFileExtrasTest extends TestCase {
 	 * @throws java.io.IOException
 	 */
 	private void createZipFile() throws IOException {
-		ZipFileReader zr = new ZipFileReader(ResourceUtils.getFile(ZipperTest.getZipFile()));
-		ZipFileWriter zw = new ZipFileWriter(ResourceUtils.getFile(ZipFileTest.newZipFileName).getAbsolutePath());
-		ZipFile.copyFiles(zr, zw);
-		zr.close();
-		zw.closeZip();
-
+		if (testWrite) {
+			ZipFileReader zr = new ZipFileReader(ResourceUtils.getFile(ZipperTest.getZipFile()));
+			ZipFileWriter zw = new ZipFileWriter(ResourceUtils.getFile(ZipFileTest.newZipFileName).getAbsolutePath());
+			ZipFile.copyFiles(zr, zw);
+			zr.close();
+			zw.closeZip();
+		}
 	}
 
 	/**
 	 * Test of addFilesToExistingZip method, of class ZipFileExtras.
 	 */
 	public void testAddFilesToExistingZip() throws IOException {
-		createZipFile();
-		ZipFileExtras instance = new ZipFileExtras();
-	    File file = ResourceUtils.getFile(ZipFileTest.fileName);
-	    FileUtils.writeStringToFile(file, "Some data added to the file");
-		String[] files = new String[1];
-		//files[0] = ResourceUtils.getFile(ResourceUtils.getURL(this.newFileName)).getAbsolutePath();
-		files[0] = file.getAbsolutePath();
-		instance.addFilesToExistingZip(ZipFileTest.newZipFileName, files);
-		// TODO validate that file has been added
-		ZipFileReader zfr = new ZipFileReader(ZipFileTest.newZipFileName);
-		assertEquals(6, zfr.getZipEntries().size());
-		zfr.close();
-
+		if (testWrite) {
+			createZipFile();
+			ZipFileExtras instance = new ZipFileExtras();
+		    File file = ResourceUtils.getFile(ZipFileTest.fileName);
+		    FileUtils.writeStringToFile(file, "Some data added to the file");
+			String[] files = new String[1];
+			//files[0] = ResourceUtils.getFile(ResourceUtils.getURL(this.newFileName)).getAbsolutePath();
+			files[0] = file.getAbsolutePath();
+			instance.addFilesToExistingZip(ZipFileTest.newZipFileName, files);
+			// TODO validate that file has been added
+			ZipFileReader zfr = new ZipFileReader(ZipFileTest.newZipFileName);
+			assertEquals(6, zfr.getZipEntries().size());
+			zfr.close();
+		}
 	}
 
 	/**
 	 * Test of deleteFilesFromExistingZip method, of class ZipFileExtras.
 	 */
 	public void testDeleteFilesFromExistingZip() throws Exception {
-		createZipFile();
-	    File file = ResourceUtils.getFile(ZipFileTest.fileName);
-	    FileUtils.writeStringToFile(file, "Some data added to the file");
-		String[] files = new String[1];
-		//files[0] = ResourceUtils.getFile(this.newFileName).getAbsolutePath();
-		files[0] = file.getAbsolutePath();
-		ZipFileExtras instance = new ZipFileExtras();
-
-		instance.addFilesToExistingZip(ZipFileTest.newZipFileName, files);
-		ZipFileReader zfr = new ZipFileReader(ZipFileTest.newZipFileName);
-		assertEquals(6, zfr.getZipEntries().size());
-		zfr.close();
-
-		instance.deleteFilesFromExistingZip(
-				new File(ZipFileTest.newZipFileName), files);
-		zfr = new ZipFileReader(ZipFileTest.newZipFileName);
-		assertEquals(5, zfr.getZipEntries().size());
-		zfr.close();
+		if (testWrite) {
+			createZipFile();
+		    File file = ResourceUtils.getFile(ZipFileTest.fileName);
+		    FileUtils.writeStringToFile(file, "Some data added to the file");
+			String[] files = new String[1];
+			//files[0] = ResourceUtils.getFile(this.newFileName).getAbsolutePath();
+			files[0] = file.getAbsolutePath();
+			ZipFileExtras instance = new ZipFileExtras();
+	
+			instance.addFilesToExistingZip(ZipFileTest.newZipFileName, files);
+			ZipFileReader zfr = new ZipFileReader(ZipFileTest.newZipFileName);
+			assertEquals(6, zfr.getZipEntries().size());
+			zfr.close();
+	
+			instance.deleteFilesFromExistingZip(
+					new File(ZipFileTest.newZipFileName), files);
+			zfr = new ZipFileReader(ZipFileTest.newZipFileName);
+			assertEquals(5, zfr.getZipEntries().size());
+			zfr.close();
+		}
 	}
 }
