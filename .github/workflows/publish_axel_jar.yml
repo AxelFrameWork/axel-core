@@ -4,8 +4,8 @@
 name: Publish Axel Jar
 
 on:
-#  push:
-#    branches: [ master ]
+ push:
+   branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -27,6 +27,6 @@ jobs:
 # try comments
 #      run: ./gradlew :axel-common:clean :axel-common:build
       run: gradle :axel-run:clean :axel-run:build
-      env:
-        github_user: ${{ secrets.username }}
-        github_axel_token: ${{ secrets.axel_token }}
+#      env:
+#        github_user: ${{ secrets.username }}
+#        github_axel_token: ${{ secrets.axel_token }}
