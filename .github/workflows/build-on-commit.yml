@@ -26,5 +26,5 @@ jobs:
     - name: Build with Gradle
 # try comments
 #      run: ./gradlew :axel-common:clean :axel-common:build
-      run: gradle :axel-action:clean :axel-action:build
+      run: gradlew clean build
       
