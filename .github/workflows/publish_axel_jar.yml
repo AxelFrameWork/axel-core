@@ -30,4 +30,3 @@ jobs:
       env:
         github_user: ${{ secrets.username }}
         github_axel_token: ${{ secrets.axel_token }}
-
