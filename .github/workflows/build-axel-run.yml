@@ -1,11 +1,11 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Build on Commit
+name: Build and Publish axel-jar
 
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 
