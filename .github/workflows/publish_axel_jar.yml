@@ -4,15 +4,16 @@
 name: Publish Axel Jar
 
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -23,4 +24,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+# try comments
+#      run: ./gradlew :axel-common:clean :axel-common:build
+      run: gradle :axel-run:clean :axel-run:build
+      env:
+        github_user: ${{ secrets.username }}
+        github_axel_token: ${{ secrets.axel_token }}
+
