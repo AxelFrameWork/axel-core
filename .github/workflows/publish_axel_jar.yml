@@ -26,7 +26,7 @@ jobs:
     - name: Build with Gradle
 # try comments
 #      run: ./gradlew :axel-common:clean :axel-common:build
-      run: gradle :axel-jar:clean :axel-jar:build
+      run: gradle :axel-jar:clean :axel-jar:build :axel-jar:publish
       env:
         github_user: ${{ secrets.username }}
         github_axel_token: ${{ secrets.axel_token }}
