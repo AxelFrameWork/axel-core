@@ -138,6 +138,7 @@ public class ExecContextTestV2 extends TestCase
 		//assertEquals("We have a\n new line", value);
 		
 		value = execContext.getString("lang:newline:config/lang/test:ES");
+		fail("ExecContextV2 fail value:[" + value + "]");
 		assertTrue(value.contains("Tenemos una"));
 		assertTrue(value.contains("nueva"));
 		// assertEquals("Tenemos una\nnueva linea", value);
@@ -150,6 +151,7 @@ public class ExecContextTestV2 extends TestCase
 
 		execContext.put(IExecContext.DEFAULT_LOCALE_FILE, "config/lang/test");
 		value = execContext.getString("lang:newline::EN");
+		fail("ExecContextV2 fail value:" + value);
 		assertTrue(value.contains("We have a"));
 		assertTrue(value.contains("new line"));
 		// assertEquals("We have a\n new line", value);
