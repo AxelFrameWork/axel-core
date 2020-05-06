@@ -8,10 +8,10 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework")
+            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core")
             credentials {
                 username = System.getenv("github_user")
-                password = System.getenv("github__axel_token")
+                password = System.getenv("github_axel_token")
             }
         }
     }
@@ -56,6 +56,7 @@ jar {
 	manifest {
 		attributes("product": "axelframework")
 		attributes("description": "axelframework distribution jar file")
+		attributes("vesion": version)
 	}
 }
 
