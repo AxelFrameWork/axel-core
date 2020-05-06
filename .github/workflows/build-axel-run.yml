@@ -16,6 +16,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
+     env:
+      github_user: ${{ secrets.username }}
+      github_axel_token: ${{ secrets.axel_token }}
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1

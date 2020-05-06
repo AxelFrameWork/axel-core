@@ -1,17 +1,34 @@
+buildscript {
+    repositories {
+	    mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
 plugins {
-    id("maven-publish")
+//  id "de.richsource.gradle.plugins.typescript" version "1.8.0"
+//  id "org.springframework.boot" version "2.2.6.RELEASE"
+  id 'maven-publish'
+//  id 'maven'
+  id 'java'
 }
 apply plugin: 'java'
 apply plugin: 'maven'
-
+//apply plugin: 'war'
+apply plugin: 'eclipse'
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'application'
 publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework")
+            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core")
             credentials {
                 username = System.getenv("github_user")
-                password = System.getenv("github_token")
+                password = System.getenv("github_axel_token")
             }
         }
     }
@@ -21,6 +38,7 @@ publishing {
         }
     }
 }
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
