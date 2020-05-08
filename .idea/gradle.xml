@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/apps/gradle-4.10.2-bin/gradle-4.10.2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/axel-action" />
+            <option value="$PROJECT_DIR$/axel-common" />
+            <option value="$PROJECT_DIR$/axel-db" />
+            <option value="$PROJECT_DIR$/axel-ee" />
+            <option value="$PROJECT_DIR$/axel-email" />
+            <option value="$PROJECT_DIR$/axel-jar" />
+            <option value="$PROJECT_DIR$/axel-mapping" />
+            <option value="$PROJECT_DIR$/axel-run" />
+            <option value="$PROJECT_DIR$/axel-shared-schema" />
+            <option value="$PROJECT_DIR$/axel-test" />
+            <option value="$PROJECT_DIR$/axel-war" />
+            <option value="$PROJECT_DIR$/axel-web" />
+            <option value="$PROJECT_DIR$/axel-web-db" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

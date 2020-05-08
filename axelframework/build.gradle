@@ -46,11 +46,12 @@ compileJava {
     options.debug = true
 }
 
-archivesBaseName = 'axelframework'
-version = "$axelVersion"
-group = 'org.xmlactions'
+// archivesBaseName = 'axelframework'
+version="$axelVersion"
+group='org.xmlactions'
 
 jar {
+
 	from sourceSets.main.allJava
 
 	manifest {
