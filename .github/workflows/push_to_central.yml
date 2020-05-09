@@ -22,8 +22,8 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish to the Maven Central Repository
-        run: gradle publish
+        run: gradle :axelframework:clean :axelframework:build :axelframework:publish
         env:
           MAVEN_USERNAME: ${{ secrets.ssr_username }}
           MAVEN_PASSWORD: ${{ secrets.ssr_password }}
-          GITHUB_TOKEN: ${{ secrets.axel_token }}
+          github_axel_token: ${{ secrets.axel_token }}
