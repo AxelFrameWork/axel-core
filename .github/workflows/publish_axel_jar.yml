@@ -24,7 +24,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: gradle :axel-jar:clean :axel-jar:build :axel-jar:publish
+      run: gradle :axelframework:clean :axelframework:build :axelframework:publish
       env:
         github_user: ${{ secrets.username }}
         github_axel_token: ${{ secrets.axel_token }}
