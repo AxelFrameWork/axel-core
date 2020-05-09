@@ -14,17 +14,15 @@ publishing {
                 password = System.getenv("github_axel_token")
             }
         }
+		maven {
+			name = "OSSRH"
+			url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+			credentials = {
+				username = System.getenv("MAVEN_USERNAME")
+				password = System.getenv("MAVEN_PASSWORD")
+			}
+		}
     }
-//	repositories {
-//    	maven {
-//      		name = "OSSRH"
-//      		url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-//      		credentials = {
-//	        	username = System.getenv("MAVEN_USERNAME")
-//	    	    password = System.getenv("MAVEN_PASSWORD")
-//			}
-//		}
-//	}
     publications {
         gpr(MavenPublication) {
             from(components.java)
@@ -46,7 +44,7 @@ compileJava {
     options.debug = true
 }
 
-// archivesBaseName = 'axelframework'
+archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
 
@@ -83,6 +81,7 @@ sourceSets {
         }
     }
 }
+
 
 dependencies {
 
@@ -125,3 +124,4 @@ dependencies {
 	compile 'org.springframework:spring-test:4.3.25.RELEASE'
 
 }
+
