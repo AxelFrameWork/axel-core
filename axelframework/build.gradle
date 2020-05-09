@@ -6,20 +6,22 @@ apply plugin: 'maven'
 
 publishing {
     repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core")
-            credentials {
-                username = System.getenv("github_user")
-                password = System.getenv("github_axel_token")
-            }
-        }
+//        maven {
+//            name = "GitHubPackages"
+//            // url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/gradle ")
+//			url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
+//            credentials {
+//                username = System.getenv("github_user")
+//                password = System.getenv("github_axel_token")
+//            }
+//        }
 		maven {
 			name = "OSSRH"
 			url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
 			credentials {
 				username = System.getenv("ssr_user")
 				password = System.getenv("ssr_password")
+				// password = System.getenv("ssr_passphrase")
 			}
 		}
     }
