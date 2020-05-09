@@ -4,8 +4,8 @@
 name: Publish Axel Jar To Central
 
 on:
-  #  push:
-  #    branches: [ master ]
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish to the Maven Central Repository
-        run: gradle :axelframework:clean :axelframework:build :axelframework:publish
+        run: gradle :axelframework:clean :axelframework:build # :axelframework:publish
         env:
           MAVEN_USERNAME: ${{ secrets.ssr_username }}
           MAVEN_PASSWORD: ${{ secrets.ssr_password }}
