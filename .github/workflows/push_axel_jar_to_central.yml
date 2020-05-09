@@ -26,7 +26,8 @@ jobs:
         env:
           ssr_user: ${{ secrets.ssr_username }}
           ssr_password: ${{ secrets.ssr_password }}
-          github_axel_token: ${{ secrets.axel_token }}
+          ssr_passphrase: ${{ secrets.ssr_passphrase }}
           github_user: ${{ secrets.username }}
           github_axel_token: ${{ secrets.axel_token }}
+          github_token: ${{ secrets.github_token }}
 
