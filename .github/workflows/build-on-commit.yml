@@ -24,7 +24,5 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-# try comments
-#      run: ./gradlew :axel-common:clean :axel-common:build
-      run: gradle :axel-jar:clean :axel-jar:build
+      run: gradle :axelframework:clean :axelframework:build
       
