@@ -24,7 +24,9 @@ jobs:
       - name: Publish to the Maven Central Repository
         run: gradle :axelframework:clean :axelframework:build :axelframework:publish
         env:
-          MAVEN_USERNAME: ${{ secrets.ssr_username }}
-          MAVEN_PASSWORD: ${{ secrets.ssr_password }}
+          ssr_user: ${{ secrets.ssr_username }}
+          ssr_password: ${{ secrets.ssr_password }}
+          github_axel_token: ${{ secrets.axel_token }}
+          github_user: ${{ secrets.username }}
           github_axel_token: ${{ secrets.axel_token }}
 
