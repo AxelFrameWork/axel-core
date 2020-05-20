@@ -21,8 +21,8 @@ public class ParserCode {
 	 * Basic rules
 	 * <p>
 	 * Code starts with a method call or a variable name
-	 * 	<li>a method call is followed by a (
-	 * 	<li>a variable name is followed by a = operator
+	 * 	- a method call is followed by a (
+	 * 	- a variable name is followed by a = operator
 	 * </p>
 	 * 
 	 * <p>

@@ -72,7 +72,7 @@ public class HtmlRequestMapper
      * @return an array of KeyPairs with the parameters.
      * @throws IOException
      * @throws FileUploadException
-     * @throws java.lang.Exception
+     * @throws java.lang.IOException
      */
     public Map<String, Object> getRequestParamsAsMap(HttpServletRequest request) throws IOException,
             FileUploadException {
@@ -144,7 +144,7 @@ public class HtmlRequestMapper
      * @return an List of HttpParam created from the incoming request.
      * @throws IOException
      * @throws FileUploadException
-     * @throws java.lang.Exception
+     * @throws java.lang.IOException
      */
     public List<HttpParam> getRequestParamsAsVector(HttpServletRequest request) throws IOException,
             FileUploadException {

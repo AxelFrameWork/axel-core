@@ -171,7 +171,7 @@ public abstract class CommonFormFields extends BaseFormAction
 	 * 2. If there is a IExecContext.SELECTED_THEME_NAME set in the confuration we will use this
 	 * 3. If there is a IExecContext.DEFAULT_THEME_NAME set in the confuration we will use this
 	 * 4. If all else fails we use the Theme.DEFAULT_THEME_NAME 
-	 * @param execContext
+	 * @param execContext interface
 	 * @return
 	 */
 	public String getTheme_name(IExecContext execContext)

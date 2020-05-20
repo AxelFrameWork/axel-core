@@ -57,7 +57,6 @@ public class VersionNumberConcurrency {
 	/**
 	 * This static method is used to build a unique identifier for the version number key in the session persistence execContext.
 	 * @param key the table name/alias + . + field name/alias.
-	 * @param pkValue a reference to a PK value for this versionNumber.
 	 * @return "ver_num." + key (+ "." + pkValue)
 	 */
 	public static String buildVersionNumberKey(String key) {

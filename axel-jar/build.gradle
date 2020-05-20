@@ -3,28 +3,17 @@ plugins {
 }
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin: 'signing'
 
 publishing {
     repositories {
-//        maven {
-//            name = "GitHubPackages"
-//            // url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/gradle ")
-//			url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
-//            credentials {
-//                username = System.getenv("github_user")
-//                password = System.getenv("github_axel_token")
-//            }
-//        }
-		maven {
-			name = "OSSRH"
-			url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-			credentials {
-				username = System.getenv("ssr_user")
-				password = System.getenv("ssr_password")
-				// password = System.getenv("ssr_passphrase")
-			}
-		}
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework")
+            credentials {
+                username = System.getenv("github_user")
+                password = System.getenv("github_token")
+            }
+        }
     }
     publications {
         gpr(MavenPublication) {
@@ -32,7 +21,6 @@ publishing {
         }
     }
 }
-
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -48,17 +36,15 @@ compileJava {
 }
 
 archivesBaseName = 'axelframework'
-version="$axelVersion"
-group='org.xmlactions'
+version = "$axelVersion"
+group = 'org.xmlactions'
 
 jar {
-
 	from sourceSets.main.allJava
 
 	manifest {
 		attributes("product": "axelframework")
 		attributes("description": "axelframework distribution jar file")
-		attributes("vesion": version)
 	}
 }
 
@@ -84,7 +70,6 @@ sourceSets {
         }
     }
 }
-
 
 dependencies {
 
@@ -126,66 +111,4 @@ dependencies {
 	testCompile 'com.h2database:h2:1.4.183'
 	compile 'org.springframework:spring-test:4.3.25.RELEASE'
 
-}
-
-//
-// publish to central through sonatype
-//
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	classifier = 'javadoc'
-	from tasks.javadoc.destinationDir
-}
-
-task sourcesJar(type: Jar) {
-	from sourceSets.main.allSource
-	classifier = 'sources'
-}
-artifacts {
-	archives jar
-
-	// archives javadocJar
-	archives sourcesJar
-}
-signing {
-	sign configurations.archives
-}
-
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-				authentication(userName: sonatypeUsername, password: sonatypePassword)
-			}
-
-			pom.project {
-				name 'AxelFrameWork'
-				packaging 'jar'
-				description 'A Java Web Framework for building web sites'
-				url 'http://axelframework.org/'
-
-				scm {
-					url 'scm:git@github.com:mwjmurphy/Axel-Framework'
-					connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework'
-					developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework'
-				}
-
-				licenses {
-					license {
-						name 'The Apache Software License, Version 2.0'
-						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-						distribution 'repo'
-					}
-				}
-
-				developers {
-					developer {
-						id 'mwjmurphy'
-						name 'Mike Murphy'
-					}
-				}
-			}
-		}
-	}
 }

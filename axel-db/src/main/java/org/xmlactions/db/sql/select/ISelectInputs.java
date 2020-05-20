@@ -38,8 +38,6 @@ public interface ISelectInputs {
     
     /**
      * Replace any ?xxx with parameters for the sql call.
-     * @param store the params here.
-     * @return the converted sql
      */
     public String replaceWhereWithParams(String sql, List <SqlField> sqlParams);
     

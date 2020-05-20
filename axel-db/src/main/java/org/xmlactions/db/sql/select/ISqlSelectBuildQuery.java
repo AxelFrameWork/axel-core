@@ -26,7 +26,7 @@ public interface ISqlSelectBuildQuery {
 
     /**
      * If we want to use a manual sql query
-     * @param the sql
+     * @param sql - the sql query
      */
     public void setSql(String sql);
 }

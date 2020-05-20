@@ -16,9 +16,9 @@ public abstract class SqlJoinBase
 	public abstract String buildJoinClause(List<String> tablesAlreadyInList);
 
 	/**
-	 * joinType is the text syntax for the join type.<br/>
-	 * Example1: "left join"<br/>
-	 * Example2: "join"<br/>
+	 * joinType is the text syntax for the join type.<br>
+	 * Example1: "left join"<br>
+	 * Example2: "join"<br>
 	 * 
 	 * @param joinType
 	 * @return
@@ -84,8 +84,8 @@ public abstract class SqlJoinBase
 	}
 
 	/**
-	 * The onValue must contain the correct syntax to match the object types.<br/>
-	 * Example1: tb_name.name='mike'<br/>
+	 * The onValue must contain the correct syntax to match the object types.<br>
+	 * Example1: tb_name.name='mike'<br>
 	 * Example1: tb_name.id=tb_address.name_id
 	 * 
 	 * @param onValue
