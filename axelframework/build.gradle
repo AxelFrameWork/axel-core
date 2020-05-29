@@ -152,9 +152,9 @@ artifacts {
 }
 
 signing {
+	println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
 	if (System.env.signingKey) {
 		println("Using signingKey");
-	    println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
 	    useInMemoryPgpKeys(System.env.signingKeyId, System.env.signingKey, System.env.signingPassword)
 		sign configurations.archives
 	} else {
