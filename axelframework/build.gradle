@@ -153,17 +153,17 @@ artifacts {
 
 signing {
     def signingKey = System.env.signingKey;
-	if (! signingKey) {
-		println("NOT using signingKey");
-		sign configurations.archives
-	} else {
+//	if (signingKey) {
 		println("Using signingKey");
 	    def signingKeyId = System.env.signingKeyId;
 	    def signingPassword = System.env.signingPassword;
 	    println(signingKeyId + ":" + signingKey + ":" + signingPassword);
 	    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
 		sign configurations.archives
-	}
+//	} else {
+//		println("NOT using signingKey");
+//		sign configurations.archives
+//	}
 }
 
 uploadArchives {
