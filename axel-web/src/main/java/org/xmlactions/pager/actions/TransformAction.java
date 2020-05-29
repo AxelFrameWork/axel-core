@@ -20,7 +20,7 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>param<br/><small>- optional</small></td>
+	 	<td>param<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			One or more param elements may be added to the action.  These will be passed to the transformer as a HashMap containing key - value pairs.  see \ref action_param
 		<td>
@@ -38,9 +38,9 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>xslt_file_name<br/><small><i>- required</i></small></td>
+	 	<td>xslt_file_name<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-	 		The name of the transformation file that will perform the transformation.<br/>
+	 		The name of the transformation file that will perform the transformation.<br>
 	 		Multiple transformation files may be combined by appending one after the other using a ; seperator.  Usefull if you need to show the content of an include.  
 		<td>
 	 </tr>
@@ -48,10 +48,10 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-		<td>xml_file_name<br/><small><i>- optional<br/>- use this or the xml_ref attribute</i></small></td>
+		<td>xml_file_name<br><small><i>- optional<br>- use this or the xml_ref attribute</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The name of the xml file to transform.<br/> 
-			Multiple xml files may be combined by appending one after the other using a ; seperator.  <small>Usefull if you need to show the content of an include.</small><br/> 
+			The name of the xml file to transform.<br> 
+			Multiple xml files may be combined by appending one after the other using a ; seperator.  <small>Usefull if you need to show the content of an include.</small><br> 
 			Instead of using an xml file a xml string may be referenced by using the xml_ref attribute.
 		<td>
 	</tr>
@@ -59,9 +59,9 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>xml_ref<br/><small><i>- optional<br/>- use this or the xml_file_name attribute</i></small></td>
+	 	<td>xml_ref<br><small><i>- optional<br>- use this or the xml_file_name attribute</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The key used to get the xml as a String from the execContext.<br/> 
+			The key used to get the xml as a String from the execContext.<br> 
 			Instead of using an xml_ref an xml file name may be used by setting the name of the file in the xml_file_name attribute.
 		<td>
 	</tr>
@@ -79,7 +79,7 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>transformer_factory<br/><small><i>- optional</i></small></td>
+	 	<td>transformer_factory<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 	 		If this is set than this factory will be used to perform the transformation.    
 	        The xalan transformer factory = org.apache.xalan.processor.TransformerFactoryImpl     

@@ -13,13 +13,13 @@ package org.xmlactions.pager.actions;
  \subsection axel_list_of_code_actions List of Core Actions 
 
  \see
-  \ref action_code_action<br/>
-  \ref action_transform<br/>
+  \ref action_code_action<br>
+  \ref action_transform<br>
 
  \subsection axel_list_of_db_actions List of Database Actions 
  
  \see
-  \ref action_listcp<br/>
-  \ref action_list<br/>
+  \ref action_listcp<br>
+  \ref action_list<br>
 
 */

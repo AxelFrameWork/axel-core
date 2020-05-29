@@ -5,16 +5,16 @@ public class XMLXPathParser {
 	/**
 	 * Get the element path.
 	 * <p>
-	 * Example 1<br/>
-	 * 	xml = <root><row index="1" data="This is the data"/></root><br/>
-	 *  xpath = root/row[@data]<br/>
-	 *  path = root/row<br/>
-	 *  attribute = data<br/>
-	 * Example 2<br/>
-	 * 	xml = <root><row index="1" data="This is the data"/></root><br/>
-	 *  xpath = root/row<br/>
-	 *  path = root/row<br/>
-	 *  attribute = null<br/>
+	 * Example 1<br>
+	 * 	xml = &lt;root&gt;&lt;row index="1" data="This is the data"/&gt;&lt;/root&gt;<br>
+	 *  xpath = root/row[@data]<br>
+	 *  path = root/row<br>
+	 *  attribute = data<br>
+	 * Example 2<br>
+	 * 	xml = &lt;root&gt;&lt;row index="1" data="This is the data"/&gt;&lt;/root&gt;<br>
+	 *  xpath = root/row<br>
+	 *  path = root/row<br>
+	 *  attribute = null<br>
 	 * </p>
 	 * @param path
 	 * @return the element path
@@ -44,16 +44,16 @@ public class XMLXPathParser {
 	/**
 	 * Get the attribute name if there is one.
 	 * <p>
-	 * Example 1<br/>
-	 * 	xml = <root><row index="1" data="This is the data"/></root><br/>
-	 *  xpath = root/row[@data]<br/>
-	 *  path = root/row<br/>
-	 *  attribute = data<br/>
-	 * Example 2<br/>
-	 * 	xml = <root><row index="1" data="This is the data"/></root><br/>
-	 *  xpath = root/row<br/>
-	 *  path = root/row<br/>
-	 *  attribute = null<br/>
+	 * Example 1<br>
+	 * 	xml = &lt;root&gt;&lt;row index="1" data="This is the data"/&gt;&lt;/root&gt;<br>
+	 *  xpath = root/row[@data]<br>
+	 *  path = root/row<br>
+	 *  attribute = data<br>
+	 * Example 2<br>
+	 * 	xml = &lt;root&gt;&lt;row index="1" data="This is the data"/&gt;&lt;/root&gt;<br>
+	 *  xpath = root/row<br>
+	 *  path = root/row<br>
+	 *  attribute = null<br>
 	 * </p>
 	 * @param path
 	 * @return the attribute key name

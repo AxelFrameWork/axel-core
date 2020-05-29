@@ -181,7 +181,7 @@ public class Link extends BaseAction implements IDraw, ILink, Cloneable
             if (StringUtils.isNotEmpty(getActionScript())) {
                 String onClick = execContext.replace(getActionScript());
                 if (remove_crlf == true) {
-                    onClick = onClick.replaceAll("\r", "<br/>");
+                    onClick = onClick.replaceAll("\r", "<br>");
                     onClick = onClick.replaceAll("\n", "");
                 }
                 String oc = EscapeUtils.escapeUrl(onClick);

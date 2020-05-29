@@ -29,13 +29,13 @@ import org.xmlactions.web.PagerWebConst;
 /**
  * Builds a html select with options.
  * <p>
- * Requires the following parameters<br/>
- * ClientParamNames.STORAGE_CONFIG_REF<br/>
- * ClientParamNames.TABLE_NAME_MAP_ENTRY<br/>
- * ClientParamNames.FIELD_NAME_MAP_ENTRY<br/>
- * ClientParamNames.THEME_NAME_MAP_ENTRY<br/>
- * ClientParamNames.PARENT_TABLE_AND_PK_NAME<br/>
- * ClientParamNames.LABEL_POSITION_MAP_ENTRY<br/>
+ * Requires the following parameters<br>
+ * ClientParamNames.STORAGE_CONFIG_REF<br>
+ * ClientParamNames.TABLE_NAME_MAP_ENTRY<br>
+ * ClientParamNames.FIELD_NAME_MAP_ENTRY<br>
+ * ClientParamNames.THEME_NAME_MAP_ENTRY<br>
+ * ClientParamNames.PARENT_TABLE_AND_PK_NAME<br>
+ * ClientParamNames.LABEL_POSITION_MAP_ENTRY<br>
  * </p>
  * <p>
  * returns an html select for insertion or update into the browser dom.

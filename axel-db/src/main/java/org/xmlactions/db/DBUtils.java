@@ -94,7 +94,7 @@ public class DBUtils
     /**
      * Build a Date from a String date and a formatter
      * @param date as a string format
-     * @param formatter 
+     * @param dateFormat
      * @return date constructed from the date input
      */
     public static Date buildDate(String date, String dateFormat) {
@@ -118,7 +118,7 @@ public class DBUtils
     /**
      * Build a Date from a String date.  The format is expected to match
      * "yyyy-MM-dd hh:mm:ss.sss" or "yyyy-MM-dd" or "hh:mm:ss.sss" 
-     * @param date as a string format
+     * @param datetime as a string format
      * @return date constructed from the date input
      * @throws SQLException 
      */

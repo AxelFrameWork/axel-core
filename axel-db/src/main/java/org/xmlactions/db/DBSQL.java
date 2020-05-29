@@ -82,7 +82,7 @@ public class DBSQL
      * 
      * @param sql
      *            is the sql update to send to the database
-     * @throw DBSQLException
+     * @throws DBSQLException
      */
     public static int update(Connection connection, String sql) throws DBSQLException
 	{
@@ -291,7 +291,7 @@ public class DBSQL
     /**
      * insert to database
      * 
-     * @param connection
+     * @param dbConnection
      *            an open database connection
      * @param sql
      *            is the sql insert query to send to the database
@@ -477,7 +477,7 @@ public class DBSQL
 	 *            is the open database connection
 	 * @param batch
 	 *            is an array of sql commands usually update and or insert
-	 * @returns an int array of each sql execution result
+	 * @return an int array of each sql execution result
 	 * @throws SQLException
 	 */
 	public int[] batch(Connection dbConnection, String[] batch) throws SQLException
@@ -509,8 +509,8 @@ public class DBSQL
 	/**
 	 * Retrieve a query from the db. The result is the column names followed by each row. All columns are separated by
 	 * the '|' character.
-	 * 
-	 * @param (String) query is the sql query to send to the database
+	 * @param connection the db connection
+	 * @param  sql is the sql query to send to the database
 	 * @throws SQLException
 	 */
 	public String query(Connection connection, String sql) throws SQLException
@@ -581,7 +581,7 @@ public class DBSQL
      * @param sql
      *            is the query.
      * @throws DBSQLException
-     * @returns the response number as a string or null
+     * @return the response number as a string or null
      */
 	public static String queryOne(Connection connection, String sql, List<SqlField> params) throws DBSQLException
 	{
@@ -610,7 +610,7 @@ public class DBSQL
      *            is the resultSet with the executed query.
      * @throws DBSQLException
      * @throws SQLException
-     * @returns the response number as a string or null
+     * @return the response number as a string or null
      */
 	public static String queryOne(ResultSet rs) throws DBSQLException, SQLException
 	{
@@ -717,13 +717,13 @@ public class DBSQL
      * 
      * @param connection
      *            an open database connection
-     * @param query
+     * @param sql
      *            is the database query to execute
      * @param rootName
      *            is an optional root element name used to wrap the resultant
      *            xml rows.
      * @throws DBSQLException
-     * @returns an xml containing the query results.
+     * @return an xml containing the query results.
      */
 	public String queryXMLShort(Connection connection, String sql, String rootName) throws DBSQLException
 	{
@@ -750,13 +750,13 @@ public class DBSQL
      * 
      * @param connection
      *            an open database connection
-     * @param query
+     * @param sql
      *            is the database query to execute
      * @param rootName
      *            is an optional root element name used to wrap the resultant
      *            xml rows.
      * @throws DBSQLException
-     * @returns an xml containing the query results.
+     * @return an xml containing the query results.
      */
 	public String queryXMLShort(Connection connection, String sql, String rootName, List<SqlField> params) throws DBSQLException
 	{
@@ -777,7 +777,7 @@ public class DBSQL
 	}
 
     /**
-     * builds the result set as <row index="x" attribute=value ...> where
+     * builds the result set as &lt;row index="x" attribute=value ...&gt; where
      * attribute name is the name of the table column.
      * 
      * @param rs
@@ -794,14 +794,14 @@ public class DBSQL
 	}
 
     /**
-     * builds the result set as <row index="x" attribute=value ...> where
+     * builds the result set as &lt;row index="x" attribute=value ...&gt; where
      * attribute name is the name of the table column.
      * 
      * @param rs
      *            is the ResultSet we use to retrieve the data a row at a time
      * @param rootName
      *            is the root element name
-     * @param dataFormat
+     * @param dateFormat
      *            is the date format we want for all dates, default is
      *            "dd-MM-yyyy"
      * @throws DBSQLException
@@ -868,7 +868,7 @@ public class DBSQL
 	}
 
 	/**
-	 * builds the result set as <row index="x" attribute=value ...> where attribute name is the name of the table
+	 * builds the result set as &lt;row index="x" attribute=value ...&gt; where attribute name is the name of the table
 	 * column.
 	 * 
 	 * @param rs
@@ -943,8 +943,8 @@ public class DBSQL
 	}
 
 	/**
-	 * builds the result set as <elementName>resultset.value</elementName>
-	 * 
+	 * builds the result set as &lt;elementName&gt;resultset.value&lt;/elementName&gt;
+	 *
 	 * @param rs
 	 *            is the ResultSet we use to retrieve the data a row at a time
 	 * @param elementNames
@@ -1039,9 +1039,9 @@ public class DBSQL
      * @param dateFormat
      *            is the date format we want for all dates, if this is null then
      *            the default is "dd-MM-yyyy"
-     * @throws SQLException
+     * @throws DBSQLException
      * 
-     * @returns an XMLObject containing the rows
+     * @return an XMLObject containing the rows
      * 
      * @throws DBSQLException
      */
@@ -1079,7 +1079,7 @@ public class DBSQL
 	 *            is the date format we want for all dates, if this is null then the defaultDateFormat is used. @see
 	 *            defaultDateFormat
 	 * 
-	 * @returns an XMLObject containing the rows
+	 * @return an XMLObject containing the rows
 	 * 
 	 * @throws SQLException
 	 */

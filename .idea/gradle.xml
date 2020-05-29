@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/axel-db" />
             <option value="$PROJECT_DIR$/axel-ee" />
             <option value="$PROJECT_DIR$/axel-email" />
+            <option value="$PROJECT_DIR$/axel-jar" />
             <option value="$PROJECT_DIR$/axel-mapping" />
             <option value="$PROJECT_DIR$/axel-run" />
             <option value="$PROJECT_DIR$/axel-shared-schema" />

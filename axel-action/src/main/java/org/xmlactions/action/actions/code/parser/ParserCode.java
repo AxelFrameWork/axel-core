@@ -35,12 +35,12 @@ public class ParserCode {
 	 * 
 	 * <p>
 	 * Examples:
-	 *  <li>x = get('av12');
-	 *  <li>x = get(string:'av12');
+	 *  x = get('av12');
+	 *  x = get(string:'av12');
 	 * </p>
-	 *  
+	 *
+	 * @param execContext
 	 * @param code
-	 * @throws Exception 
 	 */
 	public ParserCode(final IExecContext execContext, final String code) {
 		this.execContext = execContext;

@@ -73,7 +73,7 @@ public class ToHtml {
 	
 	private String addIndex(XMLObject element, String filename) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<br/><b>" + filename + " - elements</b><hr/>");
+		sb.append("<br><b>" + filename + " - elements</b><hr/>");
 		sb.append("<ul class=\"nav bs-docs-sidenav\">");
 		for (XMLObject child : element.getChildren()) {
 			// only process type element

@@ -12,7 +12,7 @@ import org.apache.commons.lang.Validate;
  * </p> 
  * <p>
  * 	The replacement pattern is <b>"lang:key:resouce:language:country:variant"</b>
- *  <br/> where:
+ *  <br> where:
  *  <ul>
  *  <li>"lang" - states that we want a locale language replacement.  This is a required field.</li>
  * 	<li>"key" - is the reference to the property key that we want the replacement value for. This is a required field.</li>
@@ -21,11 +21,10 @@ import org.apache.commons.lang.Validate;
  * 	<li>"country" - is the country to use. Example: "US" (United States), "FR" (France), "029" (Caribbean). This is an optional field and if not set the default locale language is used.</li>
  * 	<li>"variant" - is the language variant we want to use. Example: "polyton" (Polytonic Greek), "POSIX". This is an optional field and if not set the default locale language is used.</li>
  *  </ul>
- * </p>
  * <p>
  *  Example:
- *  <br/> ${lang:application.title} - Will use the default language properties file and get the value for <b>application.title</b>
- *  <br/> ${lang:application.title:jms_services} - Will use the language properties file <b>jms_services</b> and get the value for <b>application.title</b>
+ *  <br> ${lang:application.title} - Will use the default language properties file and get the value for <b>application.title</b>
+ *  <br> ${lang:application.title:jms_services} - Will use the language properties file <b>jms_services</b> and get the value for <b>application.title</b>
  * </p>
  * <p>
  * A default language file is setup for the key <b>default_locale_file</b>. Usually this is configured in the web.properties file loaded by the spring configuration. 
@@ -49,9 +48,9 @@ public class LanguageLocale {
 	 * Get a value for key from a language (locale) file.
 	 * <p>
 	 * The replacementPattern format is "lang:key:resouce:language:country:variant"
-	 * <br/>or "lang:key" uses the default resource file and the default locale
-	 * <br/>or "lang:key:resource" uses the resource file and the default locale
-	 * <br/>or "lang:key::language" uses the default resource file and the language locale
+	 * <br>or "lang:key" uses the default resource file and the default locale
+	 * <br>or "lang:key:resource" uses the resource file and the default locale
+	 * <br>or "lang:key::language" uses the default resource file and the language locale
 	 * </p>
 	 * 
 	 * @param replacementPattern - the replacement pattern that was entered within the StrSubstitution

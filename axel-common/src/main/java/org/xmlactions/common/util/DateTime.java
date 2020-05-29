@@ -168,7 +168,7 @@ public class DateTime
       return(getDate(milliseconds, "-", ":"));
    }
    /**
-    * Convert a time in milliseconds to a string.<br/>
+    * Convert a time in milliseconds to a string.<br>
     * @param milliseconds is the time in milliseconds.
     * @param dateSeperator is the seperator char to use between year mon day
     * @param timeSeperator is the seperator char to use between hour min sec
@@ -180,16 +180,16 @@ public class DateTime
                                    "hh" + timeSeperator + "mm" + timeSeperator + "ss"));
    }
    /**
-    * Convert a time in milliseconds to a string.<br/>
-    * The recognised formats are:<br/>
-    * 'dd' = day <br/>
-    * 'mo' = month <br/>
-    * 'MO' = abbreviated month text <br/>
-    * 'yy' = year <br/>
-    * 'YY' = year (2 digit) <br/>
-    * 'hh' = hour <br/>
-    * 'mm' = minute <br/>
-    * 'ss' = sec <br/>
+    * Convert a time in milliseconds to a string.<br>
+    * The recognised formats are:<br>
+    * 'dd' = day <br>
+    * 'mo' = month <br>
+    * 'MO' = abbreviated month text <br>
+    * 'yy' = year <br>
+    * 'YY' = year (2 digit) <br>
+    * 'hh' = hour <br>
+    * 'mm' = minute <br>
+    * 'ss' = sec <br>
     *
     * @param milliseconds is the time in milliseconds.
     * @param format is the format of the date we want returned, i.e. dd-MO-yy hh:mm:ss = day number,
@@ -228,17 +228,17 @@ public class DateTime
       return(sb.toString());
    }
    /**
-    * Convert a time in string format to milliseconds<br/>
-    * The recognised formats are:<br/>
-    * 'dd' = day <br/>
-    * 'mo' = month <br/>
-    * 'MO' = abbreviated month text <br/>
-    * 'yy' = year <br/>
-    * 'YY' = year (2 digit) <br/>
-    * 'hh' = hour <br/>
-    * 'mm' = minute <br/>
-    * 'ss' = sec <br/>
-    * '..' = milli <br/>
+    * Convert a time in string format to milliseconds<br>
+    * The recognised formats are:<br>
+    * 'dd' = day <br>
+    * 'mo' = month <br>
+    * 'MO' = abbreviated month text <br>
+    * 'yy' = year <br>
+    * 'YY' = year (2 digit) <br>
+    * 'hh' = hour <br>
+    * 'mm' = minute <br>
+    * 'ss' = sec <br>
+    * '..' = milli <br>
     *
     * @param milliseconds is the date we want converted
     * @param outFormat is the format of the date we want returned, i.e. dd-MO-yy hh:mm:ss = day number,
@@ -345,17 +345,17 @@ public class DateTime
    }
    
    /**
-    * Convert a time in string format to milliseconds<br/>
-    * The recognised formats are:<br/>
-    * 'dd' = day <br/>
-    * 'mo' = month <br/>
-    * 'MO' = abbreviated month text <br/>
-    * 'yy' = year <br/>
-    * 'YY' = year (2 digit) <br/>
-    * 'hh' = hour <br/>
-    * 'mm' = minute <br/>
-    * 'ss' = sec <br/>
-    * '..' = millisecond <br/>
+    * Convert a time in string format to milliseconds<br>
+    * The recognised formats are:<br>
+    * 'dd' = day <br>
+    * 'mo' = month <br>
+    * 'MO' = abbreviated month text <br>
+    * 'yy' = year <br>
+    * 'YY' = year (2 digit) <br>
+    * 'hh' = hour <br>
+    * 'mm' = minute <br>
+    * 'ss' = sec <br>
+    * '..' = millisecond <br>
     *
     * @param date is the date we want converted to milliseconds
     * @param inFormat is the format of the date we want returned, i.e. dd-MO-yy hh:mm:ss = day number,
@@ -453,16 +453,16 @@ public class DateTime
       return(cal.getTimeInMillis());
    }
    /**
-    * Convert a time in string format to milliseconds<br/>
-    * The recognised formats are:<br/>
-    * 'dd' = day <br/>
-    * 'mo' = month <br/>
-    * 'MO' = abbreviated month text <br/>
-    * 'yy' = year 4 digit<br/>
-    * 'YY' = year (2 digit) <br/>
-    * 'hh' = hour <br/>
-    * 'mm' = minute <br/>
-    * 'ss' = sec <br/>
+    * Convert a time in string format to milliseconds<br>
+    * The recognised formats are:<br>
+    * 'dd' = day <br>
+    * 'mo' = month <br>
+    * 'MO' = abbreviated month text <br>
+    * 'yy' = year 4 digit<br>
+    * 'YY' = year (2 digit) <br>
+    * 'hh' = hour <br>
+    * 'mm' = minute <br>
+    * 'ss' = sec <br>
     *
     * @param date is the date we want converted to milliseconds
     * @param inFormat is the format of the date we want returned, i.e. dd-MO-yy hh:mm:ss = day number,
@@ -808,16 +808,16 @@ public class DateTime
     */
    
    /**
-    * Format the output for date time using SimpleDateFormat<br/>
-    * Customized Date and Time Formats Pattern  Output  <br/>
-    *  dd.MM.yy  09.04.98  <br/>
-    *  yyyy.MM.dd G 'at' hh:mm:ss z  1998.04.09 AD at 06:15:55 PDT  <br/>
-    *  EEE, MMM d, ''yy  Thu, Apr 9, '98  <br/>
-    *  h:mm a  6:15 PM  <br/>
-    *  H:mm  18:15  <br/>
-    *  H:mm:ss:SSS  18:15:55:624  <br/>
-    *  K:mm a,z  6:15 PM,PDT  <br/>
-    *  yyyy.MMMMM.dd GGG hh:mm aaa  1998.April.09 AD 06:15 PM  <br/>
+    * Format the output for date time using SimpleDateFormat<br>
+    * Customized Date and Time Formats Pattern  Output  <br>
+    *  dd.MM.yy  09.04.98  <br>
+    *  yyyy.MM.dd G 'at' hh:mm:ss z  1998.04.09 AD at 06:15:55 PDT  <br>
+    *  EEE, MMM d, ''yy  Thu, Apr 9, '98  <br>
+    *  h:mm a  6:15 PM  <br>
+    *  H:mm  18:15  <br>
+    *  H:mm:ss:SSS  18:15:55:624  <br>
+    *  K:mm a,z  6:15 PM,PDT  <br>
+    *  yyyy.MMMMM.dd GGG hh:mm aaa  1998.April.09 AD 06:15 PM  <br>
     * 
     * @param datetime
     * @param pattern

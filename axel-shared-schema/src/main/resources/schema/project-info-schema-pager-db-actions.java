@@ -1298,7 +1298,7 @@
 	                     the label.
 	                     </p>
 	                     <p>
-	                     Example:<br/>
+	                     Example:<br>
 	                     &lt;root&gt;
 	                      &lt;any_name index="1" value="1" label="fred" /&gt;
 	                      &lt;any_name index="2" value="12" label="barney"/&gt;

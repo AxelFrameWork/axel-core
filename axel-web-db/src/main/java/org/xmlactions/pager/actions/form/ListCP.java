@@ -27,7 +27,7 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref search<br/><small>- optional</small></td>
+	 	<td>\ref search<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Specifies a search form used to filter the data returned by the list.  
 		</td>
@@ -37,7 +37,7 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref list<br/><small>- required</small></td>
+	 	<td>\ref list<br><small>- required</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Retrieves information from a database and presents it on screen.
 		</td>
@@ -47,7 +47,7 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref popup<br/><small>- optional</small></td>
+	 	<td>\ref popup<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
            Specifies one or more popup windows that is populated from a server page uri.
 		</td>
@@ -67,7 +67,7 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_id<br/><small><i>- required</i></small></td>
+	 	<td>\ref schema_pager_attributes_id<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			A unique id for this list control panel.  If the id is not unique and more than one list control panel is used on a page then there may be conflicts between both list control panels using the same id. 
 		</td>
@@ -77,9 +77,9 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>href<br/><small><i>- required</i></small></td>
+	 	<td>href<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The href that gets called when any of the control panel links are clicked.<br/>
+			The href that gets called when any of the control panel links are clicked.<br>
 
 			Additional details are added to the link such as the limit range, or page number.
 		</td>
@@ -89,9 +89,9 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>ajax_load<br/><small><i>- optional</i></small></td>
+	 	<td>ajax_load<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			We can use this to have the control panel load and repopulate the display using ajax in place of doing a complete page reload.<br/>
+			We can use this to have the control panel load and repopulate the display using ajax in place of doing a complete page reload.<br>
 
 			If using this feature you should build the listcp element in its own file and import this into the page where it will be displayed.  Then set the href
             link to point to the listcp file so it will only bring back the information from the listcp and not the whole page.
@@ -102,11 +102,11 @@ Action:<strong>listcp</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_theme_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_theme_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The name of a theme that we want to apply to this control panel.<br/>
+			The name of a theme that we want to apply to this control panel.<br>
 			
-			This is an optional attribute.  If not set then the theme will be that set by the property 'default_theme_name'.<br/>
+			This is an optional attribute.  If not set then the theme will be that set by the property 'default_theme_name'.<br>
 			i.e. default_theme_name=blue 
 		</td>
 	</tr>
@@ -115,9 +115,9 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>method<br/><small><i>- optional</i></small></td>
+	 	<td>method<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			If used, apply this method value to the form method.<br/>
+			If used, apply this method value to the form method.<br>
 			Options are post or get.
 		</td>
 	</tr>
@@ -126,9 +126,9 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_display_as<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_display_as<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			Displays a link as a 'link' or as a 'button'.<br/>
+			Displays a link as a 'link' or as a 'button'.<br>
 			
 			The selected theme for a link = INPUT_LINK and for a button = INPUT_BUTTON.
 		</td>
@@ -138,7 +138,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_title<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_title<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Title displayed for this form. If this is empty	no title will be displayed.
 		</td>
@@ -148,7 +148,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_visible<br/><small><i>- optional<br/>true | false</i></small></td>
+	 	<td>\ref schema_pager_attributes_visible<br><small><i>- optional<br>true | false</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If set true (default) than the list is shown on screen. If set false then the list is hidden until the user selects the show button/link. 
 		</td>
@@ -158,7 +158,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_width<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_width<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			The display width of the form, when shown in a table. The width can also be an equation or a percentage - note the	xsd:string
 		</td>
@@ -168,7 +168,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_storage_config_ref<br/><small><i>- optional<br/></i></small></td>
+	 	<td>\ref schema_pager_attributes_storage_config_ref<br><small><i>- optional<br></i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If set true (default) than the list is shown on screen. If set false then the list is hidden until the user selects the show button/link. 
 		</td>
@@ -178,7 +178,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_table_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_table_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If set true (default) than the list is shown on screen. If set false then the list is hidden until the user selects the show button/link. 
 		</td>
@@ -188,7 +188,7 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td><strike>control_panel_position</strike><br/><small><i>- optional</i></small></td>
+	 	<td><strike>control_panel_position</strike><br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			 <strike>Set the position of the control panel.</strike> Now deprecated and not supported. 
 		</td>
@@ -198,9 +198,9 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>script_before<br/><small><i>- optional</i></small></td>
+	 	<td>script_before<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			This script will be called before the list is processed.<br/> 
+			This script will be called before the list is processed.<br> 
 			This is a javascript and can be a script call such as "alert('Hello World!!!')" or "var x = 1; x=x+1" 
 		</td>
 	 </tr>
@@ -209,9 +209,9 @@ Action:<strong>listcp</strong>
 	</tr>
 
 	<tr>
-	 	<td>script_after<br/><small><i>- optional</i></small></td>
+	 	<td>script_after<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			This script will be called after the list is processed.<br/>
+			This script will be called after the list is processed.<br>
 			This is a javascript and can be a script call such as "alert('Hello World!!!')" or "var x = 1; x=x+1;"
 		</td>
 	 </tr>
@@ -250,8 +250,8 @@ Action:<strong>listcp</strong>
 
 
  \see
-  \ref action_list<br/>
-  \ref axel_actions_list<br/>
+  \ref action_list<br>
+  \ref axel_actions_list<br>
   \ref org_xmlactons_action_actions
  
 

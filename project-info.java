@@ -34,7 +34,7 @@ To work with one or more databases you should read the documentation on setting 
 How to configure AXEL to run in a Web Server such as Tomcat see \ref org_xmlactons_web_server_configuration
 
 \subsection main_actions AXEL Actions
-How to build AXEL Actions see \ref axel_actions<br/>
+How to build AXEL Actions see \ref axel_actions<br>
 List of AXEL Actions see \ref axel_actions_list
  
 \subsection schema AXEL Schemas

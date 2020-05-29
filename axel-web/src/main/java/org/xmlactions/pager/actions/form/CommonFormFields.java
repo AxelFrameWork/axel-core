@@ -244,8 +244,8 @@ public abstract class CommonFormFields extends BaseFormAction
 	/**
 	 * Selects how to display the label and field.
 	 * <p>
-	 * left = label displayed to left of field.<br/>
-	 * above = label displayed above field.<br/>
+	 * left = label displayed to left of field.<br>
+	 * above = label displayed above field.<br>
 	 * </p>
 	 */
 	private String label_position;

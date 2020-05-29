@@ -36,7 +36,7 @@ public class DBQuery
 	 * @since 6-JUN-05 Retrieve a query from the db. The result is the column
 	 *        names followed by each row. All columns are separated by the '|'
 	 *        character.
-	 * @param (String) query is the sql query to send to the database
+	 * @param query is the sql query to send to the database
 	 */
 	public String query(String query) throws Exception
 	{
