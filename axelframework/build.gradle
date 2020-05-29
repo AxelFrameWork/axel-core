@@ -59,7 +59,8 @@ println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env
 println("signingKeyId:" + System.getenv("signingKeyId"));
 println("SIGNINGKEYID:" + System.getenv("SIGNINGKEYID"));
 println("SONATYPEUSERNAME:" + System.getenv("SONATYPEUSERNAME") + ":" + System.getenv("sonatypeUsername") + ":" + System.getenv("SoNatypeUsername"));
-println("_secret_E:" + System.getenv("_secret_") + ":" + System.getenv("_SECRET_") + ":" + System.getenv("_SeCrEt_"));
+println("_secret_:" + System.getenv("_secret_") + ":" + System.getenv("_SECRET_") + ":" + System.getenv("_SeCrEt_"));
+println("_secret_:" + ${{ secrets._secret_ }} + ":" + ${{ secrets._SECret_ }}+ ":" + ":" + ${{secrets._SECret_}}+ ":"  + ":" + ${{ secrets.SIGNINGKEYID }})
 archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
