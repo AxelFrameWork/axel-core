@@ -52,15 +52,13 @@ compileJava {
     options.debug = true
 }
 
-def signingKeyId=System.env.signingKeyId
-def signingKey=System.env.signingKey
-def signingPassword=System.env.signingPassword
+def signingKeyId=System.env.signing_keyid
+def signingKey=System.env.signing_key
+def signingPassword=System.env.signing_password
 println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
 println("signingKeyId:" + System.getenv("signingKeyId"));
 println("SIGNINGKEYID:" + System.getenv("SIGNINGKEYID"));
 println("SONATYPEUSERNAME:" + System.getenv("SONATYPEUSERNAME") + ":" + System.getenv("sonatypeUsername") + ":" + System.getenv("SoNatypeUsername"));
-println("_secret_:" + System.getenv("_secret_") + ":" + System.getenv("_SECRET_") + ":" + System.getenv("_SeCrEt_"));
-println("_secret_:" + ${{ secrets._secret_ }} + ":" + ${{ secrets._SECret_ }}+ ":" + ":" + ${{secrets._SECret_}}+ ":"  + ":" + ${{ secrets.SIGNINGKEYID }})
 archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
