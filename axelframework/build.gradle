@@ -7,6 +7,12 @@ apply plugin: 'signing'
 
 publishing {
     repositories {
+
+		//<scm>
+		//		<connection>scm:git:git@github.com:mwjmurphy/Axel-Framework</connection>
+		//		<developerConnection>scm:git:git@github.com:mwjmurphy/Axel-Framework</developerConnection>
+	  	//		<url>git@github.com:mwjmurphy/Axel-Framework</url>
+		//</scm>
 //        maven {
 //            name = "GitHubPackages"
 //            // url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/gradle ")
@@ -17,7 +23,7 @@ publishing {
 //            }
 //        }
 		maven {
-			name = "OSSRH"
+			name = "ossrh"
 			url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
 			credentials {
 				username = System.getenv("ssr_user")
@@ -142,8 +148,7 @@ task sourcesJar(type: Jar) {
 }
 artifacts {
 	archives jar
-
-	// archives javadocJar
+	archives javadocJar
 	archives sourcesJar
 }
 signing {
@@ -163,12 +168,13 @@ uploadArchives {
 				name 'AxelFrameWork'
 				packaging 'jar'
 				description 'A Java Web Framework for building web sites'
-				url 'http://axelframework.org/'
+				//url 'http://axelframework.com/'
+				url 'https://github.com/mwjmurphy/Axel-Framework'
 
 				scm {
 					url 'scm:git@github.com:mwjmurphy/Axel-Framework'
-					connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework'
-					developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework'
+					connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
 				}
 
 				licenses {
@@ -183,9 +189,14 @@ uploadArchives {
 					developer {
 						id 'mwjmurphy'
 						name 'Mike Murphy'
+						email 'mwjmurphy@gmail.com'
 					}
 				}
 			}
 		}
 	}
 }
+//nexusStaging {
+//	username = sonatypeUsername
+//	password = sonatypePassword
+//}

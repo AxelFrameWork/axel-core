@@ -67,7 +67,7 @@
  <table border="0">
 	<tr>
 		<td colspan="3">
-			The Root element containing one or more repositories such as Database.<br/>			
+			The Root element containing one or more repositories such as Database.<br>			
 			Future versions may contain xml resources, file properties and resources...
 		<td>
 	</tr>
@@ -93,7 +93,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			The storage name
@@ -174,7 +174,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			The database name
@@ -233,10 +233,10 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			identifier for this db_specific element.<br/>
+			identifier for this db_specific element.<br>
 			
 			This identifier is set in the configuration and is used to determine which db_specific elements should be used,.  
  		</td>
@@ -259,7 +259,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			identifier for this primary key creation
@@ -270,7 +270,7 @@
 			sql
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			sql used to create primary key
@@ -293,7 +293,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			identifier for this sql
@@ -304,12 +304,12 @@
 			sql
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			The hand made sql. Note that str replacements using the ${...} may be included in the sql.<br/>
+			The hand made sql. Note that str replacements using the ${...} may be included in the sql.<br>
 
-			This attribute is only optional if the sql is set in the content of the sql element instead.<br/>
+			This attribute is only optional if the sql is set in the content of the sql element instead.<br>
 			
 			If no sql is set an exception will be thrown when you try to access it.
  		</td>
@@ -331,7 +331,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			identifier for this function
@@ -342,11 +342,11 @@
 			sql
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			The function sql. Note that str replacements using the ${...} may be included in the sql<br/>
-			and<br/>
+			The function sql. Note that str replacements using the ${...} may be included in the sql<br>
+			and<br>
 			${p1} is used to insert the field name.
  		</td>
  	</tr>
@@ -381,7 +381,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			The table name - must match the database table name
@@ -392,16 +392,16 @@
 			alias
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			This is used instead of the table name when building the query field outputs.<br/>
+			This is used instead of the table name when building the query field outputs.<br>
 
-			When the system is building an SQL query the table name is placed before the field name to create a unique identifier. eg. "table.fieldname".<br/>
+			When the system is building an SQL query the table name is placed before the field name to create a unique identifier. eg. "table.fieldname".<br>
 
-			This is also used when building the identifier for the "as". eg."select table.fieldname <b>as</b> table_fieldname from"...<br/>
+			This is also used when building the identifier for the "as". eg."select table.fieldname <b>as</b> table_fieldname from"...<br>
 
-			If this is set then the alias value will replace the table name for the output. eg. "select table.fieldname <b>as</b> alias_fieldname from"...<br/>
+			If this is set then the alias value will replace the table name for the output. eg. "select table.fieldname <b>as</b> alias_fieldname from"...<br>
 
 			If this is set to an empty string than the table name will not be used for the output. eg. "select table.fieldname <b>as</b> fieldname from"...
  		</td>
@@ -600,7 +600,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
@@ -611,7 +611,7 @@
 			alias
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
@@ -625,7 +625,7 @@
 			presentation_name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			Name used when displaying this field.
@@ -636,12 +636,12 @@
 			function_ref
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
@@ -651,7 +651,7 @@
 			pk_ref
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			Reference to a primary key creator.
@@ -662,7 +662,7 @@
 			regex
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
@@ -702,7 +702,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
@@ -713,7 +713,7 @@
 			alias
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
@@ -727,7 +727,7 @@
 			presentation_name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			Name used when displaying this field.
@@ -738,7 +738,7 @@
 			tooltip
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
@@ -749,7 +749,7 @@
 			foreign_table
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The name of the table that this key references
@@ -760,14 +760,14 @@
 			foreign_table_alias
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			The foreign_table_alias is used TO set the alias table name in the "from" list.<br/>
+			The foreign_table_alias is used TO set the alias table name in the "from" list.<br>
 			
-			Example "select t.id from table as t"<br/>
+			Example "select t.id from table as t"<br>
 
-			In the above example the table is renamed to t and its fields may be referenced using t.fieldname.<br/>
+			In the above example the table is renamed to t and its fields may be referenced using t.fieldname.<br>
 
 			The foreign_table_alias is <b>required</b> if you need to retrieve multiple sets of data from a table using different where clauses.
  		</td>
@@ -777,7 +777,7 @@
 			foreign_key
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The field in the referenced table that this key references.
@@ -788,7 +788,7 @@
 			editable
 		</td>
 		<td class="att_type">
-			xsd:boolean<br/>optional
+			xsd:boolean<br>optional
 		</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
@@ -799,7 +799,7 @@
 			mandatory
 		</td>
 		<td class="att_type">
-			xsd:boolean<br/>optional
+			xsd:boolean<br>optional
 		</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
@@ -810,14 +810,14 @@
 			where
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			A where is used to select the data returned from a select.<br/>
+			A where is used to select the data returned from a select.<br>
 			
-			In this location the where can fine tune the result of the query, applying it specifically to the foreign table.<br/>
+			In this location the where can fine tune the result of the query, applying it specifically to the foreign table.<br>
 
-			Do not provide the 'where' syntax for the where clause. Instead only provide the conditions of the where clause.<br/>
+			Do not provide the 'where' syntax for the where clause. Instead only provide the conditions of the where clause.<br>
 
 			Example:<br />
 			&nbsp;&nbsp;&nbsp; tb1.id=tb2.id<br />
@@ -832,12 +832,12 @@
 			function_ref
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
@@ -847,7 +847,7 @@
 			regex
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
@@ -870,7 +870,7 @@
 			name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
@@ -881,7 +881,7 @@
 			alias
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
@@ -895,7 +895,7 @@
 			presentation_name
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			Name used when displaying this field.
@@ -906,7 +906,7 @@
 			presentation_width
 		</td>
 		<td class="att_type">
-			xsd:string<br/>required
+			xsd:string<br>required
 		</td>
 		<td class="att_desc">
 			The display width of the field.
@@ -917,7 +917,7 @@
 			length
 		</td>
 		<td class="att_type">
-			xsd:integer<br/>required
+			xsd:integer<br>required
 		</td>
 		<td class="att_desc">
 			The storage size of the field in the database
@@ -928,7 +928,7 @@
 			tooltip
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
@@ -939,7 +939,7 @@
 			editable
 		</td>
 		<td class="att_type">
-			xsd:boolean<br/>optional
+			xsd:boolean<br>optional
 		</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
@@ -950,7 +950,7 @@
 			mandatory
 		</td>
 		<td class="att_type">
-			xsd:boolean<br/>optional
+			xsd:boolean<br>optional
 		</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
@@ -961,7 +961,7 @@
 			unique
 		</td>
 		<td class="att_type">
-			xsd:boolean<br/>optional
+			xsd:boolean<br>optional
 		</td>
 		<td class="att_desc">
 			Set true to mark this field as unique.
@@ -972,12 +972,12 @@
 			function_ref
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
@@ -987,7 +987,7 @@
 			regex
 		</td>
 		<td class="att_type">
-			xsd:string<br/>optional
+			xsd:string<br>optional
 		</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
@@ -1007,14 +1007,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1024,81 +1024,81 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_height</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display height of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">length</td>
-		<td class="att_type">xsd:integer<br/>required</td>
+		<td class="att_type">xsd:integer<br>required</td>
 		<td class="att_desc">
 			The storage size of the field in the database
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">want_html_edit</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			If this is set true then a html edit page is displayed when editing this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">unique</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as unique.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1117,14 +1117,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1134,60 +1134,60 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">length</td>
-		<td class="att_type">xsd:integer<br/>required</td>
+		<td class="att_type">xsd:integer<br>required</td>
 		<td class="att_desc">
 			The storage size of the field in the database
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1207,14 +1207,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1224,60 +1224,60 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">length</td>
-		<td class="att_type">xsd:integer<br/>required</td>
+		<td class="att_type">xsd:integer<br>required</td>
 		<td class="att_desc">
 			The storage size of the field in the database
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1296,14 +1296,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1313,74 +1313,74 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">length</td>
-		<td class="att_type">xsd:integer<br/>required</td>
+		<td class="att_type">xsd:integer<br>required</td>
 		<td class="att_desc">
 			The storage size of the field in the database
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">max_width</td>
-		<td class="att_type">xsd:integer<br/>optional</td>
+		<td class="att_type">xsd:integer<br>optional</td>
 		<td class="att_desc">
 			The max allowed width of the image
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">max_height</td>
-		<td class="att_type">xsd:integer<br/>optional</td>
+		<td class="att_type">xsd:integer<br>optional</td>
 		<td class="att_desc">
 			The max allowed height of the image.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1399,14 +1399,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1416,53 +1416,53 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1481,14 +1481,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1498,73 +1498,73 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">pattern</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			Sets the acceptable binary pattern for false/true, no/yes, N/Y, 0/1.<br/>
+			Sets the acceptable binary pattern for false/true, no/yes, N/Y, 0/1.<br>
 
-			Note the false value must be first followed by the seperator / followed by the true value.<br/>
+			Note the false value must be first followed by the seperator / followed by the true value.<br>
 
 			The first entry in the pattern is always considered the false value and the second entry in
-			the pattern is always considered the true value.<br/>
+			the pattern is always considered the true value.<br>
 
-			The seperator between the false and true value is the / character.<br/>
+			The seperator between the false and true value is the / character.<br>
 			
-			Any leading or trailing whitespace is removed.<br/>
+			Any leading or trailing whitespace is removed.<br>
 			
-			Example:<br/>
+			Example:<br>
 				<ul>
 					<li>Y/N</li>
                  	<li>true/false</li>
 					<li>1/0</li>
 					<li>X/Y</li>
 				</ul>
-				<br/>
+				<br>
 				This is an optional attribute and if not used the default pattern is true/false
 		</td>
  	</tr>
@@ -1575,8 +1575,8 @@
 	<tr>
 		<td colspan="3">
 			A definition for a timestamp field.  This is displayed as a single line. The value of timestamp differs between databases.
-            <br/>mysql format: YYYY-MM-DD HH:MM:SS
-            <br/>mssql format: unique number (possibly system time)
+            <br>mysql format: YYYY-MM-DD HH:MM:SS
+            <br>mssql format: unique number (possibly system time)
 		<td>
 	</tr>
 	<tr>
@@ -1584,14 +1584,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1601,53 +1601,53 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1666,14 +1666,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1683,53 +1683,53 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1748,14 +1748,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1765,53 +1765,53 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1830,14 +1830,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1847,53 +1847,53 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">presentation_width</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The display width of the field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">function_ref</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
-			If we want to call a function in the sql.<br/>
+			If we want to call a function in the sql.<br>
 			
-			The function StrSubstution to replace ${p1} with the table.fieldname.<br/>
+			The function StrSubstution to replace ${p1} with the table.fieldname.<br>
 			
 			Example to_char(${p1}, 'DD/MM/RRRR HH24:MI.SS')
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
@@ -1906,7 +1906,7 @@
 	<tr>
 		<td colspan="3">
 			Multi Option Selection used by a radio button display with single or multi select option.
-            <br/>            
+            <br>            
             Use for entries such as "Y,N" or "Y,N,U" or "Yes,No,Maybe,Perhaps" or "true,false" or "Fast Car;Slow Car;"
 		<td>
 	</tr>
@@ -1915,14 +1915,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of the field, must match the table field name.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">alias</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			An alias is used in place of the name when you need to shorten the name and / or
 			to simplify the reference to the name. As an example if you have a primary key
@@ -1932,42 +1932,42 @@
  	</tr>
 	<tr>
 		<td class="att_name">presentation_name</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			Name used when displaying this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">tooltip</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A tooltip. Usually shown on mouse hover.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">editable</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to allow editing of this field.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">mandatory</td>
-		<td class="att_type">xsd:boolean<br/>optional</td>
+		<td class="att_type">xsd:boolean<br>optional</td>
 		<td class="att_desc">
 			Set true to mark this field as mandatory when editing.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">regex</td>
-		<td class="att_type">xsd:string<br/>optional</td>
+		<td class="att_type">xsd:string<br>optional</td>
 		<td class="att_desc">
 			A Java Regular Expression used to validate data before storing into a database.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">select</td>
-		<td class="att_type">\ref schema_storage_select_options<br/>optional<br/>default:single</td>
+		<td class="att_type">\ref schema_storage_select_options<br>optional<br>default:single</td>
 		<td class="att_desc">
 			Can select a single or multiple select set of radio buttons or check boxes.
  		</td>
@@ -1989,14 +1989,14 @@
 	</tr>
 	<tr>
 		<td class="att_name">table_a</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of one of the foreign tables that are referenced from this table.
  		</td>
  	</tr>
 	<tr>
 		<td class="att_name">table_b</td>
-		<td class="att_type">xsd:string<br/>required</td>
+		<td class="att_type">xsd:string<br>required</td>
 		<td class="att_desc">
 			The name of one of the foreign tables that are referenced from this table
  		</td>
@@ -3196,7 +3196,7 @@
                      Any leading or trailing whitespace is removed.
                   </p> 
                   <p>
-                     Example:<br/>
+                     Example:<br>
                      <ul>
                         <li>Y/N</li>
                         <li>true/false</li>
@@ -3532,9 +3532,9 @@
             <xsd:annotation>
                <xsd:documentation>
                   If we want to call a function in the sql.
-                  <br/>
+                  <br>
                   The function StrSubstution to replace ${p1} with the table.fieldname.
-                  <br/>
+                  <br>
                   example to_char(${p1}, 'HH24:MI.SS')
                </xsd:documentation>
             </xsd:annotation>
@@ -3555,7 +3555,7 @@
          <xsd:documentation><![CDATA[
             Multi Option Selection used by a radio button display with single
             or multi select option.
-            <br/>            
+            <br>            
             Use for entries such as "Y,N" or "Y,N,U" or "Yes,No,Maybe,Perhaps" or "true,false"
             or "Fast Car;Slow Car;"
             ]]></xsd:documentation>

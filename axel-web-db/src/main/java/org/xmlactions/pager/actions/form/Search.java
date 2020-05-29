@@ -26,7 +26,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_db_actions_field_list<br/><small>- optional</small></td>
+	 	<td>\ref schema_pager_db_actions_field_list<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Specifies a list of data source fields.  
 		</td>
@@ -36,7 +36,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_actions_link<br/><small>- optional</small></td>
+	 	<td>\ref schema_pager_actions_link<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Specifies a href link.
 		</td>
@@ -46,7 +46,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_actions_button<br/><small>- optional</small></td>
+	 	<td>\ref schema_pager_actions_button<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
            Specifies an input button.
 		</td>
@@ -56,7 +56,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_actions_popup<br/><small>- optional</small></td>
+	 	<td>\ref schema_pager_actions_popup<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
            Specifies one or more popup windows that is populated from a server page uri.
 		</td>
@@ -76,7 +76,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_id<br/><small><i>- required</i></small></td>
+	 	<td>\ref schema_pager_attributes_id<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			A unique id for this searcg.  If the id is not unique and more than one searcg is used on a page then there may be conflicts between both searches using the same id. 
 		</td>
@@ -86,7 +86,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_title<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_title<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If this is used then the title will appear when the search form is displayed.  If it's not set then no title will be shown.
 		</td>
@@ -96,7 +96,7 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_visible<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_visible<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If set to "false" then the form when be displayed when the Search option is selected.
 		</td>
@@ -106,9 +106,9 @@ Action:<strong>search</strong>
 	</tr>
 	
 	<tr>
-	 	<td>\ref schema_pager_attributes_table_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_table_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			Is optional and may be provided by a parent action.<br/>
+			Is optional and may be provided by a parent action.<br>
 			If it's not set here or in a parent then an error will be displayed.  
 		</td>
 	 </tr>
@@ -117,11 +117,11 @@ Action:<strong>search</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_theme_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_theme_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The name of a theme that we want to apply to this control panel.<br/>
+			The name of a theme that we want to apply to this control panel.<br>
 			
-			This is an optional attribute.  If not set then the theme will be that set by the property 'default_theme_name'.<br/>
+			This is an optional attribute.  If not set then the theme will be that set by the property 'default_theme_name'.<br>
 			i.e. default_theme_name=blue 
 		</td>
 	</tr>
@@ -130,7 +130,7 @@ Action:<strong>search</strong>
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_label_position<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_label_position<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Selects how to display the label and field.
 		</td>
@@ -171,8 +171,8 @@ Action:<strong>search</strong>
 
 
  \see
-  \ref action_list<br/>
-  \ref axel_actions_list<br/>
+  \ref action_list<br>
+  \ref axel_actions_list<br>
   \ref org_xmlactons_action_actions
  
 
@@ -544,7 +544,6 @@ public class Search extends DrawFormFields implements FormDrawing, IStorageFormA
 	 * get request value for parentTableAndPkName if they have already been set
 	 * in the incoming request.
 	 * 
-	 * @param parentTableAndPkName
 	 * @return value for parentTableAndPkName if found
 	 * 
 	 *         private String getParentWhereClauseValue(IExecContext

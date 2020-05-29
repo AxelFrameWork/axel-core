@@ -73,7 +73,6 @@ import org.xmlactions.web.http.HttpSessionInfo;
  *  	<li>execContext.put(PagerWebConst.EXEC_CONTEXT, execContext);</li>
  * 	</ul>
  *  See PagerWebConst and org.xmlactions.action.ActionConst and org.xmlactions.action.config.IExecContext.
- * </p>
  * <p>
  *  The IExecContext is available from the code by calling org.xmlactions.web.RequestExecContext.get().
  * </p>

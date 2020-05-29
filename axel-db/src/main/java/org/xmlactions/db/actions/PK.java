@@ -60,7 +60,9 @@ public class PK extends CommonStorageField
     }
 
     /**
-     * @returb sql that creates a PK value
+     * @param database
+     * @param dbSpecificName
+     * @return sql that creates a PK value
      */
     public String getPkCreateSql(Database database, String dbSpecificName) {
         if (StringUtils.isEmpty(getPk_ref())) {

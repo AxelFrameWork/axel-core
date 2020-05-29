@@ -12,7 +12,7 @@ public class XMLBuilder
    
    /**
     * Create an instance of XMLBuilder
-    * @param wantHeader if set true includes <code>&lt;?xml version=&quot;1.0&quot;?></code>
+    * @param wantHeader if set true includes <code>&lt;?xml version=&quot;1.0&quot;?&gt;</code>
     */
    public XMLBuilder(boolean wantHeader)
    {

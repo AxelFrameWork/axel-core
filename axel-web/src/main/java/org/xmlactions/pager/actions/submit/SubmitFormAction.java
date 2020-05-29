@@ -10,11 +10,6 @@ import org.xmlactions.pager.actions.form.templates.HtmlForm;
 import org.xmlactions.pager.actions.form.templates.HtmlInput;
 
 /**
- * @param call
- *            - This is the code that will get called from the submit
- * @param title
- *            - if present then this will be the title
- * 
  * @author mike.murphy
  * 
  */

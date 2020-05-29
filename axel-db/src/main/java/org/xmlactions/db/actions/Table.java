@@ -160,7 +160,6 @@ public class Table extends Fields
     /**
      * Builds a table and field name by combining the tableName.fieldName
      * 
-     * @param tableName
      * @param fieldName
      * @return tableName.fieldName
      */
@@ -214,7 +213,7 @@ public class Table extends Fields
 	 * Build a query to return all rows for this table including any foreign tables
 	 * 
 	 * @param databaseName
-	 * @param tableFieldSeparator
+	 * @param commonStorageFields
 	 * @param leftJoin
 	 * @param whereClause
 	 * @param orderBy
@@ -431,7 +430,7 @@ public class Table extends Fields
 	 * Gets a list of storage fields that match the field names. If the fieldNames is empty we return the complete list
 	 * of storage fields
 	 * 
-	 * @param fieldNames
+	 * @param sqlFields
 	 *            the list of field names
 	 * @return the list of storage fields, used to build a query
 	 */
@@ -543,7 +542,7 @@ public class Table extends Fields
      * Builds a table and field name into the output for an sql, considering
      * that the table may have an alias.
      * 
-     * @param tableFieldName
+     * @param field
      *            - this can be either the table.fieldname or the fieldname
      * @return the table.alias or table.name + "." + fieldname
      */

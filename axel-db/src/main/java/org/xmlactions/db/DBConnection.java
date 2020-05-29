@@ -61,7 +61,7 @@ public class DBConnection {
 	 * Creates a DB Connection
 	 * 
 	 * @return Connection A DB Connection Object
-	 * @throws Exception
+	 * @throws SQLException
 	 */
 	public Connection createConnection() throws SQLException,
 			ClassNotFoundException, NamingException {

@@ -49,7 +49,7 @@ public class FormUtils
 	/**
 	 * Builds an array of field names from the fields list
 	 * 
-	 * @param tableName
+	 * @param table
 	 *            that the fields belong to
 	 * @param fields
 	 *            the list of fields
@@ -63,8 +63,8 @@ public class FormUtils
 	/**
 	 * Builds an array of field names from the fields list
 	 * 
-	 * @param tableName
-	 *            that the fields belong to
+	 * @param table
+	 *            containing the fields to search through
 	 * @param fields
 	 *            the list of fields
 	 * @return
@@ -175,8 +175,8 @@ public class FormUtils
 
 	/**
 	 * Finds the (drawing)field from the table that matches the attr.getKey()
-	 * 
-	 * @param table
+	 * @param database as defined in storage.xml
+	 * @param tableName
 	 *            the table containing the fields
 	 * @param fieldName
 	 *            the name of the field we want from the table.
@@ -202,8 +202,8 @@ public class FormUtils
 	/**
 	 * Finds the (drawing)field from the table that matches the attr.getKey()
 	 * 
-	 * @param table
-	 *            the table containing the fields
+	 * @param fields
+	 *            the fields to search through
 	 * @param key
 	 *            the key to the field we want
 	 * @return the field or null if not found

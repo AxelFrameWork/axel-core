@@ -403,7 +403,7 @@ public class XMLObject implements Serializable {
 	 *            is the xml path to the node i.e. 'root/node1/node2'
 	 * @param key
 	 *            is the attribute value we want from the node.
-	 * @returns the value if node found or null if not found.
+	 * @return the value if node found or null if not found.
 	 */
 	public String getAttribute(String path, String key) throws Exception {
 		XMLObject xo = this.findXMLObjectByPath(path);
@@ -423,7 +423,7 @@ public class XMLObject implements Serializable {
 	 *            is the node2 index as child of node1.
 	 * @param key
 	 *            is the attribute value we want from the node.
-	 * @returns the value if node found or null if not found.
+	 * @return the value if node found or null if not found.
 	 */
 	public String getAttribute(String path, int index, String key)
 			throws Exception {
@@ -444,7 +444,7 @@ public class XMLObject implements Serializable {
 	 *            is the xml path to the node i.e. 'root/node1/node2'
 	 * @param index
 	 *            is the node2 index as child of node1.
-	 * @returns the node and children found or null if not found.
+	 * @return the node and children found or null if not found.
 	 */
 	public XMLObject getNode(String path, int index) throws Exception {
 		return (this.findXMLObjectByPath(path, index));
@@ -455,7 +455,7 @@ public class XMLObject implements Serializable {
 	 * 
 	 * @param path
 	 *            is the xml path to the node i.e. 'root/node1/node2'
-	 * @returns the value if node found or null if not found.
+	 * @return the value if node found or null if not found.
 	 */
 	public String getContent(String path) {
 		XMLObject xo = this.findXMLObjectByPath(path);
@@ -469,11 +469,9 @@ public class XMLObject implements Serializable {
 	 * 
 	 * @param path
 	 *            is the xml path to the node i.e. 'root/node1/node2'
-	 * @param key
-	 *            is the attribute value we want from the node.
 	 * @param index
 	 *            is the node2 index as child of node1.
-	 * @returns the value if node found or null if not found.
+	 * @return the value if node found or null if not found.
 	 */
 	public String getContent(String path, int index) {
 		XMLObject xo = this.findXMLObjectByPath(path, index);
@@ -590,7 +588,7 @@ public class XMLObject implements Serializable {
 	 * Map an XML String to a XMLObject
 	 * 
 	 * @deprecated Please now use mapXMLCharToXMLObject()
-	 * @see mapXMLCharToXMLObject()
+	 * @see "mapXMLCharToXMLObject()"
 	 */
 	public XMLObject mapXMLToXMLObject(String xml) throws Exception {
 		XMLObject obj = null;

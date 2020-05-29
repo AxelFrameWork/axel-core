@@ -25,7 +25,7 @@ public class AxelCodeExample {
 		StringBuilder sb = new StringBuilder();
 		int count = 0;
 		for (String beanName : beanNames) {
-			sb.append(beanName + "<br/>");
+			sb.append(beanName + "<br>");
 			count++;
 			if (count > 10) {
 				break;

@@ -36,7 +36,7 @@ import org.slf4j.Logger; import org.slf4j.LoggerFactory;
  * password, if the login was successful and variables related to
  * a statefull session</p>
  *
- * @see org.xmlactions.sdk.utils.http.HttpProfileSessionManager
+ * @see "org.xmlactions.sdk.utils.http.HttpProfileSessionManager"
  *
  * @author Michael Murphy
  * @since  22 July 2002
@@ -50,7 +50,7 @@ public class HttpSessionManager extends HashMap implements HttpSessionBindingLis
 	
    /**
     * @since 12 July 2001
-    * <p/>This gets called when we setAttribute(this) to the session.
+    * <p>This gets called when we setAttribute(this) to the session.</p>
     */
    public void valueBound(HttpSessionBindingEvent event)
    {
@@ -61,8 +61,8 @@ public class HttpSessionManager extends HashMap implements HttpSessionBindingLis
 
    /**
     * @since 12 July 2001
-    * <p/>This gets called when the session unbinds this object.  Usually
-    * when the session is closed or another setAttribute call is made.
+    * <p>This gets called when the session unbinds this object.  Usually
+    * when the session is closed or another setAttribute call is made.</p>
     */
    public void valueUnbound(HttpSessionBindingEvent event)
    {

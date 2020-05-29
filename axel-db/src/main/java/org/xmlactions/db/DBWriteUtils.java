@@ -24,8 +24,6 @@ public class DBWriteUtils
 	 * 
 	 * @param tableName
 	 *            is the name of the table that we want to update.
-	 * @param keyPairs
-	 *            is the values we want to update in the table
 	 * @param whereClause
 	 *            will select the row (maybe rows) to be updated.
 	 */
@@ -44,7 +42,7 @@ public class DBWriteUtils
 	 * 
 	 * @param tableName
 	 *            is the name of the table that we want to update.
-	 * @param keyPairs
+	 * @param params
 	 *            is the values we want to update in the table
 	 * @param whereClause
 	 *            will select the row (maybe rows) to be updated.
@@ -88,16 +86,14 @@ public class DBWriteUtils
 
     /**
      * @deprecated replaced with buildAddTableRow(Database database, Table
-     *             table, Map<String, String> params) Insert a table row in the
+     *             table, Map&lt;String, String&gt; params) Insert a table row in the
      *             database
      * 
-     * @param databaseName
+     * @param databaseName the database to sue as defined in storage.xml
      * @param tableName
      *            is the name of the table that we want to update.
-     * @param keyPairs
+     * @param params
      *            is the values we want to update in the table
-     * @param whereClause
-     *            will select the row (maybe rows) to be updated.
      */
 	public static String buildAddTableRow(String databaseName, String tableName, Map<String, String> params)
 	{
@@ -128,13 +124,12 @@ public class DBWriteUtils
 
     /**
      * 
-     * @param database
+     * @param database the database to used as defined is storage.xml
+	 *
      * @param table
      *            is the table that we want to update.
-     * @param keyPairs
+     * @param params
      *            is the values we want to update in the table
-     * @param whereClause
-     *            will select the row (maybe rows) to be updated.
      */
     public static String buildAddTableRow(Database database, Table table, Map<String, String> params) {
 
@@ -167,7 +162,7 @@ public class DBWriteUtils
 	 * 
 	 * @param tableName
 	 *            is the name of the table that we want to query.
-	 * @param keyPairs
+	 * @param params
 	 *            is the values we want to query in the table
 	 * @param pk
 	 *            is the field (most likely primary key) we want returned for the query.

@@ -122,7 +122,7 @@ public class XMLParser extends XMLReader
    }
    
    /**
-    * This assumes that the next text will be either the element name (preceded by <)
+    * This assumes that the next text will be either the element name (preceded by &lt;)
     * or the next attribute name.
     */
    protected String getNameOfAttribute()
@@ -194,7 +194,7 @@ public class XMLParser extends XMLReader
    }
    
    /**
-    * This assumes that the next text will be either the element name (preceded by <)
+    * This assumes that the next text will be either the element name (preceded by &lt;)
     * or the next attribute name.
     */
    protected String getNameOfNextAttribute()

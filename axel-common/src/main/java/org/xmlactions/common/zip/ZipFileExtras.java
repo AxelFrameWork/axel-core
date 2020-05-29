@@ -43,7 +43,6 @@ public class ZipFileExtras
     * Add files to an existing zip file.
     * @param sourceZipFileName is the existing zip file name
     * @param files is an array of files that we want to add to the existing zip file
-    * @param talker is the CallBack.
     * @throws IOException
     */
    public void addFilesToExistingZip(String sourceZipFileName, String[] files) throws IOException

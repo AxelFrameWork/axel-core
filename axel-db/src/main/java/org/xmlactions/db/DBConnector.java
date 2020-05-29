@@ -82,7 +82,7 @@ public class DBConnector {
 	 * Creates a DB Connection
 	 * 
 	 * @return Connection A DB Connection Object
-	 * @throws Exception
+	 * @throws SQLException  ClassNotFoundException NamingException
 	 */
 	public Connection getConnection(IExecContext execContext) throws SQLException, ClassNotFoundException, NamingException
 	{

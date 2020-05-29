@@ -9,8 +9,7 @@ import org.xmlactions.action.config.IExecContext;
  * Manages a stack of web pages as they are being processed by HttpPager..
  * <p>
  * This is used by the pager:insert_into action.
- * @See org.xmlactions.pager.actions.InsertIntoAction
- * @See org.xmlactions.web.conceal.HttpPager
+ * see "org.xmlactions.pager.actions.InsertIntoAction and org.xmlactions.web.conceal.HttpPager"
  * </p> 
  * @author mike.murphy
  *

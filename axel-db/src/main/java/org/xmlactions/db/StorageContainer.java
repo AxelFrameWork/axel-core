@@ -62,7 +62,7 @@ public class StorageContainer
 	 * Loads the definition and creates the Storage classes.
 	 * </p>
 	 * 
-	 * @param definitionResourceName
+	 * @param definitionResource
 	 *            the Definition Resource Name. The resource must be in the
 	 *            classpath.
 	 * 
@@ -226,7 +226,7 @@ public class StorageContainer
 	 * Loads the definition and creates the Storage classes.
 	 * </p>
 	 * 
-	 * @param definitionResourceName
+	 * @param definitionResource
 	 *            the Definition Resource Name. The resource must be in the
 	 *            classpath.
 	 * 

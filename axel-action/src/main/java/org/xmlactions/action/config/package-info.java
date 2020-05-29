@@ -12,7 +12,7 @@ package org.xmlactions.action.config;
  * </p>
  * <p>
  *  The Execution Context is defined in the spring configuration file.  It has a fixed id of <b>pager.execContext</b>. The id cannot be changed as it is
- *  used to retrieve the Execution Context from the spring configuration.<br/>
+ *  used to retrieve the Execution Context from the spring configuration.<br>
  * </p>
  * <p>
  *  This is an example of the spring configuration taken from the axel-web project file <b>test-spring-pager-web-startup.xml</b>
@@ -62,7 +62,7 @@ package org.xmlactions.action.config;
  * </p> 
  * <p>
  * 	The replacement pattern is <b>"lang:key:resouce:language:country:variant"</b>
- *  <br/> where:
+ *  <br> where:
  *  <ul>
  *  <li>"lang" - states that we want a locale language replacement.  This is a required field.</li>
  * 	<li>"key" - is the reference to the property key that we want the replacement value for. This is a required field.</li>
@@ -74,18 +74,18 @@ package org.xmlactions.action.config;
  * </p>
  * <p>
  *  Example:
- *  <br/> ${lang:application.title} - Will use the default language properties file and get the value for <b>application.title</b>
- *  <br/> ${lang:application.title:jms_services} - Will use the language properties file <b>jms_services</b> and get the value for <b>application.title</b>
+ *  <br> ${lang:application.title} - Will use the default language properties file and get the value for <b>application.title</b>
+ *  <br> ${lang:application.title:jms_services} - Will use the language properties file <b>jms_services</b> and get the value for <b>application.title</b>
  * </p>
  * <p>
- *  <b>Default Language</b><br/>
+ *  <b>Default Language</b><br>
  *  The default language can be set using a property with the key <b>default_locale_file</b>.  Usually this is configured in the web.properties file loaded by
- *  the spring configuration at startup<br/>
- *  An example of this setting might look like<br/>
+ *  the spring configuration at startup<br>
+ *  An example of this setting might look like<br>
  *   <pre>
  *   default_locale_file=config/lang/default_lang
  *   </pre>
- *   Where <b>config/lang/default_lang</b> is a properties file named <b>default_lang.properties</b><br/>
+ *   Where <b>config/lang/default_lang</b> is a properties file named <b>default_lang.properties</b><br>
  *   Do not include the extension ".properties" when setting this in the properties file.
  * </p>
  * 

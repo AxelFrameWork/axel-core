@@ -146,7 +146,7 @@ public abstract class ExecContext implements IExecContext, Serializable {
 	}
 
 	/**
-	 * @deprecated - replaced with constructor ExecContext(List<Object> actionMaps, List<Object> localMaps, List<Object> themes)
+	 * @deprecated - replaced with constructor ExecContext(List&lt;Object&gt; actionMaps, List&lt;Object&gt; localMaps, List&lt;Object&gt; themes)
 	 * @param actionMaps
 	 * @param localMaps
 	 */
@@ -214,27 +214,26 @@ public abstract class ExecContext implements IExecContext, Serializable {
 	/**
 	 * get a value for key.
 	 * <p>
-	 * if key has : as in xxx:key then find the value in a map assigned to the xxx in maps.<br/>
+	 * if key has : as in xxx:key then find the value in a map assigned to the xxx in maps.<br>
 	 * e.g. <code>get("session:id")</code> returns the value of <code>maps.get("session").get("id");</code>
 	 * </p>
 	 * <p>
 	 * if the key has "lang:key:resouces:language:country:variant"
-	 * <br/>or "lang:key" uses the default resource file and the default locale
-	 * <br/>or "lang:key:resource" uses the resource file and the default locale
-	 * <br/>or "lang:key::language" uses the default resource file and the language locale
-	 * <br/>...
+	 * <br>or "lang:key" uses the default resource file and the default locale
+	 * <br>or "lang:key:resource" uses the resource file and the default locale
+	 * <br>or "lang:key::language" uses the default resource file and the language locale
+	 * <br>...
 	 * </p>
 	 * <p>
 	 * if the key has "replace:value:regex:replacement" perform a String.replaceAll
 	 * <p>
 	 * The replacementPattern format is "replace:value:regex:replacement"
-	 * <br/>"replace" replacement instruction
-	 * <br/>"value" the string to perform the replacement on
-	 * <br/>"regex" the expression for the replacement
-	 * <br/>"replacement" the replacement value
+	 * <br>"replace" replacement instruction
+	 * <br>"value" the string to perform the replacement on
+	 * <br>"regex" the expression for the replacement
+	 * <br>"replacement" the replacement value
 	 * </p>
-	 * </p>
-	 * 
+	 *
 	 * @return the value for key or null if not found.
 	 * 
 	 */

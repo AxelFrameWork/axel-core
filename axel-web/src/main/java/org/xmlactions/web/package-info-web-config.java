@@ -71,8 +71,8 @@ package org.xmlactions.web;
  		</tr>
  		<tr>
  			<td width="120px">servlet-mapping</td>
- 			<td style="padding-left:10px; border-left:1px solid #a4bcea;">These are the page types that will be serviced as HttpRequests.  The page type refers to the file extension such as <b>.axel</b> etc.<br/><br/>
- 				The type of files that are processed in this configuration are<br/>
+ 			<td style="padding-left:10px; border-left:1px solid #a4bcea;">These are the page types that will be serviced as HttpRequests.  The page type refers to the file extension such as <b>.axel</b> etc.<br><br>
+ 				The type of files that are processed in this configuration are<br>
  				<ul>
  					<li>.axel - web page extensions similar to html pages.</li>
  					<li>.soap - soap requests, these are processed the same as axel pages but the response type is "text/xml;charset=UTF-8"</li>
@@ -134,8 +134,8 @@ package org.xmlactions.web;
  		</tr>
  		<tr>
  			<td width="120px">filter-mapping</td>
- 			<td style="padding-left:10px; border-left:1px solid #a4bcea;">These are the page types that will be serviced as filter HttpRequests.  The page type refers to the file extension such as <b>.jsp</b> etc.<br/><br/>
- 				The type of files that are processed in this configuration are<br/>
+ 			<td style="padding-left:10px; border-left:1px solid #a4bcea;">These are the page types that will be serviced as filter HttpRequests.  The page type refers to the file extension such as <b>.jsp</b> etc.<br><br>
+ 				The type of files that are processed in this configuration are<br>
  				<ul>
  					<li>.jsp - Java Server Pages</li>
  				</ul>

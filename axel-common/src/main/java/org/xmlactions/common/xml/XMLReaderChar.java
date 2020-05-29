@@ -156,7 +156,7 @@ public class XMLReaderChar {
 
 	/**
 	 * Read a char skipping any <code><!-- comments --></code> or any
-	 * <code><![CDATA[...]]></code>
+	 * <code>&lt;![CDATA[...]]&gt;</code>
 	 * 
 	 * @return char read or null
 	 */
@@ -321,9 +321,9 @@ public class XMLReaderChar {
 	}
 
 	/**
-	 * Find '<'
-	 * @todo allow cdata section <![CDATA[...]]>
-	 * @return index where '<' found or -1 if not found
+	 * Find '&lt;'
+	 * todo allow cdata section &lt;![CDATA[...]]&gt;
+	 * @return index where '&lt;' found or -1 if not found
 	 */
 	public int findStartElement() {
 		if (find('<') != -1) {
@@ -333,9 +333,9 @@ public class XMLReaderChar {
 	}
 
 	/**
-	 * Find '</' or '/>
+	 * Find '&lt;/' or '/&gt;
 	 * 
-	 * @return -1 for not found | 1 for found '</' | 2 for found '/>'
+	 * @return -1 for not found | 1 for found '&lt;/' | 2 for found '/&gt;'
 	 */
 	// static int i = -1;
 	public int findEndElement(boolean both) {
@@ -410,7 +410,7 @@ public class XMLReaderChar {
 
 	/**
 	 * skip over valid xml name characters for now these will be anything but
-	 * whitespace | & < > / ;
+	 * whitespace | &amp; &lt; &gt; / ;
 	 */
 	public void skipXMLName() {
 
@@ -431,7 +431,7 @@ public class XMLReaderChar {
 
 	/**
 	 * skip over non xml name characters for now these will be anything but
-	 * whitespace | & < > / ;
+	 * whitespace | &amp; &lt; &gt; / ;
 	 */
 	public void skipNonXMLName() {
 
@@ -715,7 +715,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element end from the current position in the xml, return
-	 * it's ending position index including the >
+	 * it's ending position index including the &gt;
 	 * 
 	 * @return -1 if not found
 	 */
@@ -767,7 +767,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element end from the current position in the xml, return
-	 * it's ending position index including the >
+	 * it's ending position index including the &gt;
 	 * 
 	 * @return -1 if not found
 	 */
@@ -819,7 +819,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 */
 	public XMLReaderChar getNode(String nodeName) {
 		char[] name = nodeName.toCharArray();
@@ -846,7 +846,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 */
 	public XMLReaderChar getNextNodeWithNS(String nameSpace) {
 		char[] name = nameSpace.toCharArray();
@@ -877,7 +877,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 */
 	public XMLParserChar getNextNodeWithNS(char nameSpaces[][]) {
 		int startPos = getNSStart(nameSpaces);
@@ -931,7 +931,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 * 
 	 * @return element or -1 of not found
 	 */
@@ -955,7 +955,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 * 
 	 * @return element or -1 of not found
 	 */
@@ -968,7 +968,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 * 
 	 * @return element or -1 of not found
 	 */
@@ -994,7 +994,7 @@ public class XMLReaderChar {
 
 	/**
 	 * find a matching element from the current position in the xml, return it's
-	 * body from element start including < to element end.
+	 * body from element start including &lt; to element end.
 	 * 
 	 * @return element or -1 of not found
 	 */

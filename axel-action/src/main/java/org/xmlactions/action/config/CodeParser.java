@@ -7,8 +7,8 @@ public class CodeParser {
 
 	/**
 	 * ${code:org.xmlactions.action.config.TestCodeParser.buildName('fred','Flinstone')}
+	 * @param execContext
 	 * @param code
-	 * @throws Exception 
 	 */
 	public Object parseCode(IExecContext execContext, String code) {
 		CodeAction codeAction = new CodeAction();

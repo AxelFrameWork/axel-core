@@ -32,15 +32,8 @@ public class ActionMarkers {
 	 * @param actionMapName
 	 * @return a list of all the replacement section names that is used to build
 	 *         the replacement objects.
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 * @throws ClassNotFoundException
-	 * @throws BadXMLException
-	 * @throws an
-	 *             exception if something goes wrong and we want to notify the
-	 *             caller.
+	 * @throws ClassNotFoundException InstantiationException IllegalAccessException InvocationTargetException NoSuchMethodException BadXMLException
+	 * 			if something goes wrong and we want to notify the caller.
 	 */
 	public List<ReplacementMarker> getReplacementList(String page, char [][]nameSpaces, IExecContext context, String actionMapName)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,
@@ -87,13 +80,9 @@ public class ActionMarkers {
 	 *            replace with other data.
 	 * @return a list of all the replacement section names that is used to build
 	 *         the replacement objects.
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 * @throws ClassNotFoundException
-	 * @throws an
-	 *             exception if something goes wrong and we want to notify the
+	 * @throws ClassNotFoundException InstantiationException IllegalAccessException InvocationTargetException
+	 * 			NoSuchMethodException
+	 *             if something goes wrong and we want to notify the
 	 *             caller.
 	 */
 	public List<ReplacementMarker> getReplacementList(String page, IExecContext context, String actionMapName)

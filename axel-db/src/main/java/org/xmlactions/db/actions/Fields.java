@@ -24,7 +24,7 @@ import org.xmlactions.db.actions.TimeStamp;
  * The field list container.
  * <p>
  * Provides a list of all fields in a table. Used by the XML loader to populate
- * the different field types into a single list<StorageField>
+ * the different field types into a single list&lt;StorageField&gt;
  * </p>
  * 
  * @author mike

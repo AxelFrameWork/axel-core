@@ -19,7 +19,6 @@ import org.apache.commons.lang.StringUtils;
 
 
 /**
- * @copyright rio software and technologies 2007/2010
  * @author Mike Murphy
  *
  */

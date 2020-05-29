@@ -28,7 +28,7 @@ public class ActionUtils
 	/**
 	 * Evaluates a JavaScript expression.
 	 * 
-	 * @param context
+	 * @param execContext
 	 * @param exp
 	 * @return true of expression evaluates to true or false if expression
 	 *         evaluates to false or has an expression exception

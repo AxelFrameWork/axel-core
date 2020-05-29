@@ -20,7 +20,7 @@ import com.google.gson.JsonPrimitive;
 
 /**
  * @author mike
- * @see package-info.java for documentation 
+ * @see "package-info.java for documentation"
  */
 public class GsonUtils {
 	
@@ -28,7 +28,7 @@ public class GsonUtils {
 
 	/**
 	 * 
-	 * @param jsonElement - This is the JsonElement we want to map
+	 * @param je - This is the JsonElement we want to map
 	 * @param path - This is the target path
 	 * @param index - an index we want from the path.
 	 * @param newRowCount - we use this to pass back the new index - check does it match the index passed in???

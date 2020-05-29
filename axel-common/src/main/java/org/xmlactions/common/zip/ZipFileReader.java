@@ -71,11 +71,11 @@ public class ZipFileReader extends java.util.zip.ZipFile {
 	 *            is the full zip source file name including path
 	 * @param target
 	 *            is the fill path and file name for the save.
-	 * @throws Exception
+	 * @throws IOException
 	 *             if something goes wrong.
 	 */
 	public void extractFile(String source, String target)
-			throws FileNotFoundException, IOException {
+			throws IOException {
 		ZipEntry ze = this.getEntry(source);
 		if (ze == null) {
 			throw new IOException("unable to find '" + source
@@ -89,11 +89,11 @@ public class ZipFileReader extends java.util.zip.ZipFile {
 	 *            - ZipEntry we want to extract
 	 * @param target
 	 *            is the fill path and file name for the save.
-	 * @throws Exception
+	 * @throws IOException
 	 *             if something goes wrong.
 	 */
 	public void extractFile(ZipEntry ze, String target)
-			throws FileNotFoundException, IOException {
+			throws IOException {
 		File f = new File(target);
 		if (ze.isDirectory() == true) {
 			f.mkdirs();

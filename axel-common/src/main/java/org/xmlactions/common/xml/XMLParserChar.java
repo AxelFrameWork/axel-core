@@ -101,7 +101,7 @@ public class XMLParserChar extends XMLReaderChar {
 
 	/**
 	 * This assumes that the next text will be either the element name (preceded
-	 * by <) or the next attribute name.
+	 * by &lt;) or the next attribute name.
 	 */
 	protected String getNameOfAttribute() {
 		int markPos = this.getCurPos();
@@ -167,7 +167,7 @@ public class XMLParserChar extends XMLReaderChar {
 
 	/**
 	 * This assumes that the next text will be either the element name (preceded
-	 * by <) or the next attribute name.
+	 * by &lt;) or the next attribute name.
 	 */
 	protected String getNameOfNextAttribute() {
 		// int markPos = this.getCurPos();
