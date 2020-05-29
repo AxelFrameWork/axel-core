@@ -57,7 +57,7 @@ def signingKey=System.env.signingKey
 def signingPassword=System.env.signingPassword
 println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
 println("signingKeyId:" + System.getenv("signingKeyId"));
-
+println("SIGNINGKEYID:" + System.getenv("SIGNINGKEYID"));
 archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
