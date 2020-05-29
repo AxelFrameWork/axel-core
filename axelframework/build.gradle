@@ -154,8 +154,10 @@ artifacts {
 signing {
     def signingKey = System.env.signingKey;
 	if (! signingKey) {
+		println("NOT using signingKey");
 		sign configurations.archives
 	} else {
+		println("Using signingKey");
 	    def signingKeyId = System.env.signingKeyId;
 	    def signingPassword = System.env.signingPassword;
 	    println(signingKeyId + ":" + signingKey + ":" + signingPassword);
