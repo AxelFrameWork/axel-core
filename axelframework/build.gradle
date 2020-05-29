@@ -161,7 +161,7 @@ uploadArchives {
 			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
 			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-				authentication(userName: sonatypeUsername, password: sonatypePassword)
+				authentication(userName: System.env.sonatypeUsername, password: System.env.sonatypePassword)
 			}
 
 			pom.project {
@@ -196,7 +196,3 @@ uploadArchives {
 		}
 	}
 }
-//nexusStaging {
-//	username = sonatypeUsername
-//	password = sonatypePassword
-//}
