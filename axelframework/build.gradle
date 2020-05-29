@@ -15,7 +15,7 @@ publishing {
 		//</scm>
 //        maven {
 //            name = "GitHubPackages"
-//            // url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/gradle ")
+//            // url = uri("https://maven.pkg.github.com/AxelFrameWork/")
 //			url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
 //            credentials {
 //                username = System.getenv("github_user")
@@ -28,7 +28,6 @@ publishing {
 			credentials {
 				username = System.getenv("ssr_user")
 				password = System.getenv("ssr_password")
-				// password = System.getenv("ssr_passphrase")
 			}
 		}
     }
@@ -151,8 +150,18 @@ artifacts {
 	archives javadocJar
 	archives sourcesJar
 }
+
 signing {
-	sign configurations.archives
+    def signingKey = System.env.signingKey;
+	if (! signingKey) {
+		sign configurations.archives
+	} else {
+	    def signingKeyId = System.env.signingKeyId;
+	    def signingPassword = System.env.signingPassword;
+	    println(signingKeyId + ":" + signingKey + ":" + signingPassword);
+	    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+		sign configurations.archives
+	}
 }
 
 uploadArchives {
