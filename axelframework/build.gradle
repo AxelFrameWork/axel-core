@@ -55,6 +55,8 @@ compileJava {
 def signingKeyId=System.env.signingKeyId
 def signingKey=System.env.signingKey
 def signingPassword=System.env.signingPassword
+println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
+println("signingKeyId:" + System.getenv("signingKeyId"));
 
 archivesBaseName = 'axelframework'
 version="$axelVersion"
