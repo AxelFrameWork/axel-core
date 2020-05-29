@@ -52,9 +52,14 @@ compileJava {
     options.debug = true
 }
 
+def signingKeyId=System.env.signingKeyId
+def signingKey=System.env.signingKey
+def signingPassword=System.env.signingPassword
+
 archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
+
 
 jar {
 
@@ -153,9 +158,10 @@ artifacts {
 
 signing {
 	println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
-	if (System.env.signingKey) {
+	println(signingKeyId + ":" + signingKey + ":" + signingPassword);
+	if (signingKey) {
 		println("Using signingKey");
-	    useInMemoryPgpKeys(System.env.signingKeyId, System.env.signingKey, System.env.signingPassword)
+	    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
 		sign configurations.archives
 	} else {
 		println("NOT using signingKey");
