@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish to the Maven Central Repository
-        run: gradle :axelframework:clean :axelframework:build :axelframework:publish
+        run: gradle :axelframework:clean :axelframework:build :axelframework:uploadArchives
         env:
           ssr_user: ${{ secrets.ssr_username }}
           ssr_password: ${{ secrets.ssr_password }}
@@ -30,4 +30,6 @@ jobs:
           github_user: ${{ secrets.username }}
           github_axel_token: ${{ secrets.axel_token }}
           github_token: ${{ secrets.github_token }}
-
+          signingKey: ${{ secrets.signingkey }} 
+          signingKeyid: ${{ secrets.signingkeyid }} 
+          signingPassword: ${{ secrets.signingpassword }} 
