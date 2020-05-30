@@ -32,9 +32,9 @@ jobs:
         github_user: ${{ secrets.username }}
         github_axel_token: ${{ secrets.axel_token }}
         github_token: ${{ secrets.github_token }}
-        signing_key: ${{ secrets.signingkey }} 
-        signing_keyid: ${{ secrets.signingkeyid }} 
-        signing_password: ${{ secrets.signingpassword }} 
+        signingKey: ${{ secrets.signingkey }} 
+        signingKeyid: ${{ secrets.signingkeyid }} 
+        signingPassword: ${{ secrets.signingpassword }} 
       
       
       
