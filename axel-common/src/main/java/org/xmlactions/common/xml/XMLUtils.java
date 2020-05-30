@@ -21,7 +21,7 @@ public class XMLUtils {
 	 * Finds all instances of xmlns:xxx and xmlns=xxx.
 	 * </p>
 	 * <p>
-	 * All namespaces found are stored in a List<String>.
+	 * All namespaces found are stored in a List&lt;String&gt;.
 	 * </p>
 	 * <p>
 	 * The List of found namespaces are stored in the returned

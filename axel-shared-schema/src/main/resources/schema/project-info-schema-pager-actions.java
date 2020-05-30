@@ -58,7 +58,7 @@
 	         <xsd:attribute name="value" type="xsd:string" use="optional">
 	            <xsd:annotation>
 	               <xsd:documentation><![CDATA[
-	                  This is either<br/>
+	                  This is either<br>
 	                  <ul/>
 	                     <li/> The key used to retrieve the value from the execContext
 	                     <li/> The value for the parameter.
@@ -99,7 +99,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	               <p>
 	                  The name of the file to insert.
-	                  <br/>
+	                  <br>
 	                  The name of the file may also include the path location
 	                  relative to the web root.
 	               </p>
@@ -109,7 +109,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	               <p>           
 	                  Additional path, prepended to the page.
-	                  <br/>
+	                  <br>
 	                  May you this as the path location relative to the web root.
 	               </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -141,7 +141,7 @@
 	               <p>
 	                  The name of the page file that the current page will be
 	                  inserted into.
-	                  <br/>
+	                  <br>
 	                  The name of the file may also include the path location
 	                  relative to the web root.
 	               </p>
@@ -151,7 +151,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	               <p>           
 	                  Additional path, prepended to the page.
-	                  <br/>
+	                  <br>
 	                  May you this as the path location relative to the web root.
 	               </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -478,7 +478,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	                  <p>           
 	                  Relative path to storage location where file is stored.
-	                  <br/>
+	                  <br>
 	                  Use . if you want the file stored on the root.
 	                  </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -639,7 +639,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	                  <p>           
 	                  Relative path to storage location where file is stored.
-	                  <br/>
+	                  <br>
 	                  Use . if you want the file stored on the root.
 	                  </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -662,7 +662,7 @@
 	            <xsd:annotation>
 	               <xsd:documentation><![CDATA[
 			            The name of the xml file to display in the file viewer.
-	                    <br/>
+	                    <br>
 	                    To get the content from a stored value in the execContext
 	                    use the ref attribute instead.
 			            ]]></xsd:documentation>
@@ -672,7 +672,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	                  <p>           
 	                  Relative path to storage location where file is stored.
-	                  <br/>
+	                  <br>
 	                  Use . if you want the file stored on the root.
 	                  </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -822,7 +822,7 @@
 	            <xsd:annotation>
 	               <xsd:documentation><![CDATA[
 	                  The name of the xml style file highlight.
-	                  <br/>
+	                  <br>
 	                  To get the content from a stored value in the execContext
 	                  use the ref attribute instead.
 	                ]]></xsd:documentation>
@@ -832,7 +832,7 @@
 	            <xsd:annotation><xsd:documentation><![CDATA[
 	               <p>           
 	               Relative path to storage location where file is stored.
-	               <br/>
+	               <br>
 	               Use . if you want the file stored on the root.
 	               </p>
 	            ]]></xsd:documentation></xsd:annotation>
@@ -875,7 +875,7 @@
 	   <xsd:element name="debug">
 	      <xsd:annotation><xsd:documentation>
 	         Display debug information on the presentation page.
-	         <br/>
+	         <br>
 	         The debug works similar to log4j in that there are selectable
 	         display levels such as debug, error...
 	      </xsd:documentation></xsd:annotation>
@@ -934,7 +934,7 @@
 	   <xsd:element name="popup">
 	      <xsd:annotation>
 	         <xsd:documentation><![CDATA[
-	            Builds a popup window that is populated from a server page uri.<br/>
+	            Builds a popup window that is populated from a server page uri.<br>
 	            example &lt;popup id="xxx" uri="page.uhtml"/&gt;
 	         ]]></xsd:documentation>
 	         <xsd:documentation><![CDATA[
@@ -965,7 +965,7 @@
 	               <xsd:documentation>
 	                  Select if the popup should be displayed by the popup or if it should be drawn
 	                  in a dom element that already exists in the page.
-	                  <br/>
+	                  <br>
 	                  Note that the position, x and y attributes only apply if this set to "self"
 	               </xsd:documentation>
 	            </xsd:annotation>
@@ -1013,7 +1013,7 @@
 	               <xsd:documentation>
 	                  If this is set then it is used as the value for the html
 	                  style position value; i.e. position:absolute;
-	                  <br/>
+	                  <br>
 	                  This compliments the x and y attribues and will have no
 	                  purpose unless the x or y value are set.
 	               </xsd:documentation>
@@ -1074,7 +1074,7 @@
 	   <xsd:element name="menu">
 	      <xsd:annotation>
 	         <xsd:documentation><![CDATA[
-	            Builds a popup window that is populated from a server page uri.<br/>
+	            Builds a popup window that is populated from a server page uri.<br>
 	            example &lt;popup id="xxx" uri="page.uhtml"/&gt;
 	         ]]></xsd:documentation>
 	      </xsd:annotation>
@@ -1111,7 +1111,7 @@
 	                  This is the key used to retrieve the xml from the execContext.
 	                  This is the xml that will be mapped to an Object using the
 	                  map_file_name mapping file.
-	                  <br/>
+	                  <br>
 	                  <i>or may use xml_file_name instead</i>
 	               </xsd:documentation>
 	            </xsd:annotation>
@@ -1121,7 +1121,7 @@
 	               <xsd:documentation>
 	                  This is the file containing the xml that will be mapped to 
 	                  an Object using the map_file_name mapping file.
-	                  <br/>
+	                  <br>
 	                  <i>or may use xml_key instead</i>
 	               </xsd:documentation>
 	            </xsd:annotation>
@@ -1194,9 +1194,9 @@
 	               <xsd:documentation>
 	                  Full path, class and method name of the code to call/execute.
 	                  <p>
-	                  A response from the code call should contain one of<br/>
-	                  OK: for ok to process to page<br/>
-	                  EX: for an exception. This will stop proceeding to the page entry<br/>
+	                  A response from the code call should contain one of<br>
+	                  OK: for ok to process to page<br>
+	                  EX: for an exception. This will stop proceeding to the page entry<br>
 	                  ER: for an error. May enter additional information for highlighting the error fields.
 	                  </p>
 	               </xsd:documentation>

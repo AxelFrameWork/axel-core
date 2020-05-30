@@ -25,7 +25,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>field_list<br/><small>- required</small></td>
+	 	<td>field_list<br><small>- required</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Specifies a list of data source fields.  
 		</td>
@@ -34,7 +34,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>link<br/><small>- optional</small></td>
+	 	<td>link<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Specifies one or more href links.
 		</td>
@@ -43,7 +43,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>pager:popup<br/><small>- optional</small></td>
+	 	<td>pager:popup<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
             Specifies one or more popup windows that is populated from a server page uri.
 		</td>
@@ -52,7 +52,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>form<br/><small>- optional</small></td>
+	 	<td>form<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If this is set then the content of this form (which is html) is used to build the presentation of the data for this action.
         	This "form" element takes precedence over the "presentation_form" attribute. 
@@ -71,7 +71,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>\ref schema_pager_attributes_id<br/><small><i>- required</i></small></td>
+	 	<td>\ref schema_pager_attributes_id<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			A unique id for this list.  If the id is not unique and more than one list is used on a page then there may be conflicts between both lists using the same id. 
 		</td>
@@ -80,7 +80,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>\ref schema_pager_attributes_visible<br/><small><i>- optional<br/>true | false</i></small></td>
+	 	<td>\ref schema_pager_attributes_visible<br><small><i>- optional<br>true | false</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			If set true (default) than the list is shown on screen. If set false then the list is hidden until the user selects the show button/link. 
 		</td>
@@ -89,7 +89,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>\ref schema_pager_attributes_storage_config_ref<br/><small><i>- optional<br/></i></small></td>
+	 	<td>\ref schema_pager_attributes_storage_config_ref<br><small><i>- optional<br></i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 	 		This is the bean reference to the StorageConfig to use for this action.
 		</td>
@@ -98,7 +98,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>\ref schema_pager_attributes_table_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_table_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			This is the name of the table in the database.
 		</td>
@@ -107,7 +107,7 @@ package org.xmlactions.pager.actions.form;
  		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>\ref schema_pager_attributes_sql<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_sql<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			This is an sql statement or a reference to a stored sql statement. 
 		</td>
@@ -117,17 +117,17 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 	
 	<tr>
-	 	<td>join<br/><small><i>- optional</i></small></td>
+	 	<td>join<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			This join will be added to the select statement. It can be left join, right join, center join.<br/>
+			This join will be added to the select statement. It can be left join, right join, center join.<br>
 			
-			A left join can be used to retrieve data that is not in a table.<br/>
-			Example:<br/>
-			&nbsp;&nbsp;&nbsp;SELECT table1.*<br/>
-            &nbsp;&nbsp;&nbsp;FROM table1<br/>
-            &nbsp;&nbsp;&nbsp;LEFT JOIN table2<br/>
-            &nbsp;&nbsp;&nbsp;ON table1.id = table2.id<br/>
-            &nbsp;&nbsp;&nbsp;WHERE table2.id IS NULL;<br/>
+			A left join can be used to retrieve data that is not in a table.<br>
+			Example:<br>
+			&nbsp;&nbsp;&nbsp;SELECT table1.*<br>
+            &nbsp;&nbsp;&nbsp;FROM table1<br>
+            &nbsp;&nbsp;&nbsp;LEFT JOIN table2<br>
+            &nbsp;&nbsp;&nbsp;ON table1.id = table2.id<br>
+            &nbsp;&nbsp;&nbsp;WHERE table2.id IS NULL;<br>
 		</td>
 	 </tr>
 	<tr>
@@ -135,15 +135,15 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 	
 	<tr>
-	 	<td>where<br/><small><i>- optional</i></small></td>
+	 	<td>where<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			A where is used to select the data returned from a select.<br/>
+			A where is used to select the data returned from a select.<br>
 
-			Do not provide the 'where' syntax for the where clause. Instead only provide the conditions of the where clause.<br/>
+			Do not provide the 'where' syntax for the where clause. Instead only provide the conditions of the where clause.<br>
 
-            Example:<br/>
-			&nbsp;&nbsp;&nbsp;tb1.id=tb2.id<br/>
-            &nbsp;&nbsp;&nbsp;or<br/>
+            Example:<br>
+			&nbsp;&nbsp;&nbsp;tb1.id=tb2.id<br>
+            &nbsp;&nbsp;&nbsp;or<br>
             &nbsp;&nbsp;&nbsp;tb1.name like 'fred' 
 		</td>
 	 </tr>
@@ -152,15 +152,15 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>order_by<br/><small><i>- optional</i></small></td>
+	 	<td>order_by<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			An order_by is used to order the data returned from a select.<br/>
+			An order_by is used to order the data returned from a select.<br>
 
-			Do not provide the 'order by' syntax for the order by clause. Instead only provide the conditions of the order by clause.<br/>
+			Do not provide the 'order by' syntax for the order by clause. Instead only provide the conditions of the order by clause.<br>
 
-			Example:<br/>
-			&nbsp;&nbsp;&nbsp;TB_FIELD DESC<br/>
-            &nbsp;&nbsp;&nbsp;or<br/>
+			Example:<br>
+			&nbsp;&nbsp;&nbsp;TB_FIELD DESC<br>
+            &nbsp;&nbsp;&nbsp;or<br>
 			&nbsp;&nbsp;&nbsp;TB_FIELD, TB_DATE DESC 
 		</td>
 	 </tr>
@@ -169,15 +169,15 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>group_by<br/><small><i>- optional</i></small></td>
+	 	<td>group_by<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			A  group_by is used to group the data returned from a select.<br/>
+			A  group_by is used to group the data returned from a select.<br>
 
-			Do not provide the 'group by' syntax for the group by clause. Instead only provide the field names.<br/>
+			Do not provide the 'group by' syntax for the group by clause. Instead only provide the field names.<br>
 
-			Example:<br/>
-			&nbsp;&nbsp;&nbsp;TB_FIELD<br/>
-			&nbsp;&nbsp;&nbsp;or<br/>
+			Example:<br>
+			&nbsp;&nbsp;&nbsp;TB_FIELD<br>
+			&nbsp;&nbsp;&nbsp;or<br>
 			&nbsp;&nbsp;&nbsp;TB_FIELD, TB_DATE 
 		</td>
 	 </tr>
@@ -186,11 +186,11 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_theme_name<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_theme_name<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			Is optional if the theme is provided by a parent action.<br/> 
+			Is optional if the theme is provided by a parent action.<br> 
 
-			Or set in a configuration file using the key 'default_theme_name'.<br/>
+			Or set in a configuration file using the key 'default_theme_name'.<br>
 			i.e. default_theme_name=blue 
 		</td>
 	 </tr>
@@ -199,7 +199,7 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_width<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_width<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			The display width of the form, when shown in a table. The width can also be an equation or a percentage - note the	xsd:string
 		</td>
@@ -209,7 +209,7 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_title<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_title<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			Title displayed for this form. If this is empty	no title will be displayed.
 		</td>
@@ -219,9 +219,9 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>header_align<br/><small><i>- optional</i></small></td>
+	 	<td>header_align<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The header alignment setting, this will be applied to all headers in the table list.<br/>
+			The header alignment setting, this will be applied to all headers in the table list.<br>
 			Options are center, left, right.
 		</td>
 	 </tr>
@@ -230,7 +230,7 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>rows<br/><small><i>- optional</i></small></td>
+	 	<td>rows<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			The number of table rows to display on screen.
 		</td>
@@ -240,7 +240,7 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>page<br/><small><i>- optional</i></small></td>
+	 	<td>page<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			The page number to retrieve from the table. The page is a value of rows * page and references the first row to return form the query.
 		</td>
@@ -250,7 +250,7 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>row_height<br/><small><i>- optional</i></small></td>
+	 	<td>row_height<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
                   The height of each row in the list presentation.
 		</td>
@@ -260,9 +260,9 @@ package org.xmlactions.pager.actions.form;
 	</tr>
 
 	<tr>
-	 	<td>\ref schema_pager_attributes_presentation_form<br/><small><i>- optional</i></small></td>
+	 	<td>\ref schema_pager_attributes_presentation_form<br><small><i>- optional</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
-			The file name of a presentation form to draw into.<br/>
+			The file name of a presentation form to draw into.<br>
 		</td>
 	 </tr>
 	<tr>
@@ -286,8 +286,8 @@ package org.xmlactions.pager.actions.form;
  \endcode
 
  \see
-  \ref action_listcp<br/>
-  \ref axel_actions_list<br/>
+  \ref action_listcp<br>
+  \ref axel_actions_list<br>
   \ref org_xmlactons_action_actions
  
 */

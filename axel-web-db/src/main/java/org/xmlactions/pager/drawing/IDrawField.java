@@ -53,7 +53,6 @@ public interface IDrawField
 	 * </p>
 	 * 
 	 * @param value
-	 * @param label_position
 	 * @param theme
 	 * @return the display TR[]
 	 */

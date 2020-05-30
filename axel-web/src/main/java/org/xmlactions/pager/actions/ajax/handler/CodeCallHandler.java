@@ -12,10 +12,6 @@ import org.xmlactions.web.PagerWebConst;
 
 /**
  * Process an Ajax Code Call
- * 
- * @param call
- *            - This is the code that will get called from the submit
- * 
  */
 public class CodeCallHandler extends BaseAction
 {

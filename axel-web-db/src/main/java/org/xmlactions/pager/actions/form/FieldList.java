@@ -176,7 +176,7 @@ public class FieldList extends BaseFormAction
 	/**
 	 * Add a field_hide to the list
 	 * 
-	 * @param field_hide
+	 * @param fieldHide
 	 */
 	public void setField_hide(BaseAction fieldHide)
 	{

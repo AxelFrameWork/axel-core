@@ -20,15 +20,15 @@ public class FK extends Fields
 	private String foreign_table_alias;
 
 	/**
-	 * A where is used to select the data returned from a select. <br/>
+	 * A where is used to select the data returned from a select. <br>
 	 * Do not provide the 'where' syntax for the where clause. Instead only
-	 * provide the conditions of the where clause. <br/>
-	 * example:<br/>
-	 * tb1.id=tb2.id<br/>
-	 * or<br/>
-	 * tb1.name like 'fred'<br/>
-	 * or<br/>
-	 * tb1.id=tb2.id and tb1.name like 'fred'<br/>
+	 * provide the conditions of the where clause. <br>
+	 * example:<br>
+	 * tb1.id=tb2.id<br>
+	 * or<br>
+	 * tb1.name like 'fred'<br>
+	 * or<br>
+	 * tb1.id=tb2.id and tb1.name like 'fred'<br>
 	 */
 	private String where;
 

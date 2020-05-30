@@ -12,11 +12,11 @@ public class HtmlToText {
     /**
      * The MatchPattern array is a list of regexp patterns we want to replace
      * with a replacement string in an html source.
-     * what some of the patterns mean:<br/>
-     * "\\s*" - swallows zero or more whitespace characters<br/>
-     * "(?i)" - case insensitive<br/>
-     * "\n"   - new line<br/>
-     * ".*"   - all characters except linefeed, return,...<br/>
+     * what some of the patterns mean:<br>
+     * "\\s*" - swallows zero or more whitespace characters<br>
+     * "(?i)" - case insensitive<br>
+     * "\n"   - new line<br>
+     * ".*"   - all characters except linefeed, return,...<br>
      */
     private MatchPattern [] patterns ={
         new MatchPattern("<\\s*(?i)BR\\s*>", "\n"),

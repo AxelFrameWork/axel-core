@@ -209,7 +209,8 @@ public class Zipper
     * expand a compressed data byte array to it's original form.
     *
     * @param compressedData is the compressedData to expand
-    * @throws Exception
+    *
+    * @throws DataFormatException IOException
     */
    public byte [] expand(byte [] compressedData) throws DataFormatException, IOException
    {

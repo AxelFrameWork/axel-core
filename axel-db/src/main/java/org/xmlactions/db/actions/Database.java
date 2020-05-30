@@ -497,7 +497,7 @@ public class Database extends BaseAction
 	 *            is the where clause if not null.
 	 * @param orderBy
 	 *            the sort order or null if no sort required
-	 * @param rowcount
+	 * @param rowCount
 	 *            the number of rows we want returned, -1 for all rows
 	 * @param offset
 	 *            the starting row, -1 to ignore
@@ -523,7 +523,7 @@ public class Database extends BaseAction
 	 *            is the where clause if not null.
 	 * @param orderBy
 	 *            the sort order or null if no sort required
-	 * @param rowcount
+	 * @param rowCount
 	 *            the number of rows we want returned, -1 for all rows
 	 * @param offset
 	 *            the starting row, -1 to ignore
@@ -625,8 +625,7 @@ public class Database extends BaseAction
 	 * 
 	 * TODO add unit test
 	 * 
-	 * @param tableName
-	 * @param fieldName
+	 * @param tableAndFieldName
 	 * @return
 	 * @throws IllegalArgumentException
 	 */

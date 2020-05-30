@@ -159,7 +159,7 @@ package org.xmlactions.action.actions;
   Once you get this working you can expand the action capabilities by adding attributes and parameters.
   
   \see
-   org.xmlactions.pager.actions.CodeAction for an Action that uses both attributes and parameters.<br/>
+   org.xmlactions.pager.actions.CodeAction for an Action that uses both attributes and parameters.<br>
    \ref axel_actions_list for a list of AXEL Actions
     
  

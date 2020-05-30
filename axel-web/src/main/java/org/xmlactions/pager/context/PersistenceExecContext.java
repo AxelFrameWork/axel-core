@@ -37,8 +37,6 @@ public class PersistenceExecContext extends ExecContext
 	/**
 	 * Load all persistence values from httpSession to execContext
 	 * 
-	 * @param execContext
-	 * @param session
 	 */
 	@SuppressWarnings("unchecked")
 	public void loadFromPersistence()

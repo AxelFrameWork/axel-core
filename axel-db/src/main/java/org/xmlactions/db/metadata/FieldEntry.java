@@ -14,8 +14,8 @@ public abstract class FieldEntry {
 	
 	/**
 	 * 
-	 * @param caseDirective - can be used to force a label to upper or lower case. @see {@link MetaDataToXml#caseDirective(String, String)}  
-	 * @return and xml representation of the metadata compliant with the storage schema. @see {@link http://xmlactions.org/schema/storage.xsd} 
+	 * @param caseDirective - can be used to force a label to upper or lower case
+	 * @return and xml representation of the metadata compliant with the storage schema.
 	 */
 	public abstract XMLObject buildFieldEntryAsXml(String caseDirective);
 	
@@ -68,7 +68,7 @@ public abstract class FieldEntry {
 
 	/**
 	 * @param xo - add common attributes to the XMLObject
-	 * @param caseDirective	- can be null or {@link #FORCE_UPPER_CASE} or {@link #FORCE_LOWER_CASE} 
+	 * @param caseDirective	- can be null or MetaDataToXml.FORCE_UPPER_CASE or MetaDataToXml.FORCE_LOWER_CASE
 	 */
 	public void addCommonAttributes(XMLObject xo, String caseDirective) {
 		xo.addAttribute("name", MetaDataToXml.caseDirective(caseDirective, getFieldName()));
@@ -77,7 +77,6 @@ public abstract class FieldEntry {
 
 	/**
 	 * @param xo - add common attributes to the XMLObject
-	 * @param caseDirective	- can be null or {@link #FORCE_UPPER_CASE} or {@link #FORCE_LOWER_CASE} 
 	 */
 	public void addLengthAttribute(XMLObject xo) {
 		if (getFieldSize() > 0) {

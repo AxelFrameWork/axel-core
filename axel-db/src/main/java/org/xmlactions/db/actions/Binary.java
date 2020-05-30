@@ -30,7 +30,7 @@ public class Binary extends CommonStorageField
      *   	Any leading or trailing whitespace is removed.
      *   </p> 
      *   <p>
-     *   	Example:<br/>
+     *   	Example:<br>
      *      <ul>
      *      	<li>Y/N</li>
      *          <li>true/false</li>

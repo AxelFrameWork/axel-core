@@ -143,7 +143,7 @@ package org.xmlactions.web;
  			<td colspan="3" height="20px"></td>
  		</tr>
  		<tr>
- 			<td style="padding-left:10px;border-left:1px solid #a4bcea;">blackTheme<br/>iceTheme</td>
+ 			<td style="padding-left:10px;border-left:1px solid #a4bcea;">blackTheme<br>iceTheme</td>
  			<td style="padding-left:10px;border-left:1px solid #a4bcea;">These are themes setup from a properties file.  They get set in the pager.execContext described above.
  				<hr/>
 				<table border="0">

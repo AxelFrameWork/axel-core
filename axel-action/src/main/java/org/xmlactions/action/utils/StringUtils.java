@@ -17,10 +17,10 @@ public class StringUtils {
 	 * Perform a String.replaceAll
 	 * <p>
 	 * The replacementPattern format is "replace:value:regex:replacement"
-	 * <br/>"replace" replacement instruction
-	 * <br/>"value" the string to perform the replacement on
-	 * <br/>"regex" the expression for the replacement
-	 * <br/>"replacement" the replacement value
+	 * <br>"replace" replacement instruction
+	 * <br>"value" the string to perform the replacement on
+	 * <br>"regex" the expression for the replacement
+	 * <br>"replacement" the replacement value
 	 * </p>
 	 * 
 	 * @return the value after the replacement.

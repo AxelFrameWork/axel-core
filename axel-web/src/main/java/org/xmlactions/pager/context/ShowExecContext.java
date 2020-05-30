@@ -18,7 +18,7 @@ import org.xmlactions.web.PagerWebConst;
  */
 public class ShowExecContext {
 
-	private static final String lf = "<br/>\n";
+	private static final String lf = "<br>\n";
 	public static String show(IExecContext execContext) {
 		StringBuilder sb = new StringBuilder();
 		for (String key : execContext.keySet()) {

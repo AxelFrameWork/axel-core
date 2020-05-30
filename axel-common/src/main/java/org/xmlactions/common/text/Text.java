@@ -12,8 +12,8 @@ import java.text.DecimalFormat;
 public class Text
 {
    /**
-    * Convert a number to a String with a mininum of 2 digits. i.e.
-    * <code>1 = '01' & 10 = '10' & 100 = '100'</code>
+    * Convert a number to a String with a minimum of 2 digits. i.e.
+    * <code>1 = '01' &amp; 10 = '10' &amp; 100 = '100'</code>
     * @param number
     * @return 2 digit string.
     */
@@ -263,7 +263,7 @@ public class Text
    /**
      Checks if the value is true.  If the value is "true" or "1" or != "0" it's true.
     * Any other value including null is considered false.
-    * @value is the string to check for a true of false.
+    * @param value is the string to check for a true of false.
     * @return true if value is 'true' or != 0
     */
    public static boolean isTrue(String value)
@@ -286,7 +286,7 @@ public class Text
    /**
     * Checks if the value is false.  If the value is "false" or == "0" it's false.
     * Any other value including null is considered not false.
-    * @value is the string to check for a true of false.
+    * @param value is the string to check for a true of false.
     * @return true if value is 'false' or == 0
     */
    public static boolean isFalse(String value)
@@ -309,7 +309,7 @@ public class Text
    
    /**
     * will try and determine if value is true of false.
-    * @return true if value = 'true' or > 0 and false if value = 'false' or 0
+    * @return true if value = 'true' or &gt; 0 and false if value = 'false' or 0
     */
    public static boolean getBoolValue(String value)
    {

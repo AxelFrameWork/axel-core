@@ -59,7 +59,7 @@ public class PopulateClassFromXml
 
     /**
      * 
-     * @param map
+     * @param xmlToBean
      *            - mappings of xml entity names to classes and bean properties
      *            to class type handlers.
      * @param xo

@@ -63,7 +63,7 @@ public class ResourceUtils
 	/**
 	 * This will load a file assuming it's an XML file, then look for an ISO
 	 * declaration and if found will convert the string using that ISO value.
-	 * i.e. <?xml version="1.0" encoding="ISO-8859-1"?> will find ISO-9959-1 and
+	 * i.e. &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; will find ISO-9959-1 and
 	 * convert the binary data to a String using this iso.
 	 * 
 	 * @throws IOException
@@ -408,7 +408,7 @@ public class ResourceUtils
 	 *            is the FileInputStream to copy from.
 	 * @param fos
 	 *            is the FileOutputStream to copy to.
-	 * @throws exception
+	 * @throws Exception
 	 *             if something goes wrong.
 	 */
 	public static void copyFileStreams(FileInputStream fis, FileOutputStream fos) throws Exception
@@ -623,8 +623,8 @@ public class ResourceUtils
      *            used
      * @param path
      *            is the folder path where the file will be created
-     * @returns the new file
-     * @throws exception
+     * @return the new file
+     * @throws Exception
      *             if something goes wrong.
      */
 	public static File createTempFile(String prefix, String suffix, String path) throws Exception

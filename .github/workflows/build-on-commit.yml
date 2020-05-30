@@ -25,4 +25,16 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: gradle :axelframework:clean :axelframework:build
+      env:
+        ssr_user: ${{ secrets.ssr_username }}
+        ssr_password: ${{ secrets.ssr_password }}
+        ssr_passphrase: ${{ secrets.ssr_passphrase }}
+        github_user: ${{ secrets.username }}
+        github_axel_token: ${{ secrets.axel_token }}
+        github_token: ${{ secrets.github_token }}
+        signingKey: ${{ secrets.signingkey }} 
+        signingKeyid: ${{ secrets.signingkeyid }} 
+        signingPassword: ${{ secrets.signingpassword }} 
+      
+      
       

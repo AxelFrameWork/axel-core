@@ -8,7 +8,7 @@ import java.net.URL;
 import org.apache.commons.io.IOUtils;
 
 /**
- * These method are more focused on accessing resource files requiring a CLass<?> parameter.
+ * These method are more focused on accessing resource files requiring a CLass&lt;?&gt; parameter.
  * @author mike
  *
  */

@@ -19,15 +19,15 @@ import org.xmlactions.pager.drawing.IDrawParams;
 
 /**
  * This class is used to present a field for view, add, edit using a code call to retrieve
- * or store the field data.<br/>
- * example:<br/>
- * <pre><br/>
- * 	&lt;field_list&gt;<br/>
- *     &lt;field_code&gt;<br/>
- *        &lt;code ...&gt;<br/>
- *        &lt;/code&gt;<br/>
- *     &lt;/field_code&gt;<br/>
- * </pre><br/>
+ * or store the field data.<br>
+ * example:<br>
+ * <pre><br>
+ * 	&lt;field_list&gt;<br>
+ *     &lt;field_code&gt;<br>
+ *        &lt;code ...&gt;<br>
+ *        &lt;/code&gt;<br>
+ *     &lt;/field_code&gt;<br>
+ * </pre><br>
  * 
  * 
  * @author mike

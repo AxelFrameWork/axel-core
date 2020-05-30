@@ -17,13 +17,13 @@ package org.xmlactions.common.xml;
 public interface XML2ClassCharInterface {
 	/**
 	 * @param nodeName
-	 *            is the name of the node ie. <element> then nodeName =
+	 *            is the name of the node ie. &lt;element&gt; then nodeName =
 	 *            'element'.
 	 * @param parser
-	 *            contains the node itelf
+	 *            contains the node itself
 	 * @param depth
 	 *            if set true means that the parser has moved in a node. i.e.
-	 *            <root><root1> -> when parser reaches root1 then depth = true;
+	 *            &lt;root&gt;&lt;root1&lt; -&gt; when parser reaches root1 then depth = true;
 	 */
 	public void parseNode(String nodeName, XMLParserChar parser, boolean depth);
 

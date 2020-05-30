@@ -26,9 +26,9 @@ public class DrawHTMLHelper
 	 * more than once on the same page.
 	 * </p>
 	 * 
-	 * @param child
+	 * @param key
 	 * @param uniqueId
-	 * @return
+	 * @return unique key
 	 */
 	public static String removeUniqueId(String key, String uniqueId)
 	{
@@ -237,7 +237,6 @@ public class DrawHTMLHelper
 	 * @param baseAction
 	 * @param theme
 	 * @param align
-	 * @return
 	 */
 	public static void addLinksAndButtonsToExecContext(IExecContext execContext, BaseFormAction baseAction, Theme theme,
 			String align)
@@ -254,7 +253,6 @@ public class DrawHTMLHelper
 	 * @param theme
 	 * @param align
 	 * @param formSubmit
-	 * @return
 	 */
 	public static void addLinksAndButtonsToExecContext(IExecContext execContext, BaseFormAction baseAction, Theme theme,
 			String align, HtmlInput formSubmit)

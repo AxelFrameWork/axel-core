@@ -25,9 +25,8 @@ public class DrawDBHTMLHelper
 	 * Builds an identifier name for the parent and child so it matches the
 	 * table and field.
 	 * 
-	 * @param parent
 	 * @param child
-	 * @return
+	 * @return identifier "table + field" for parent and child
 	 */
 	public static String buildName(CommonStorageField child)
 	{
@@ -68,9 +67,9 @@ public class DrawDBHTMLHelper
 	 * more than once on the same page.
 	 * </p>
 	 * 
-	 * @param child
+	 * @param key
 	 * @param uniqueId
-	 * @return
+	 * @return unique key
 	 */
 	public static String removeUniqueId(String key, String uniqueId)
 	{
@@ -279,7 +278,6 @@ public class DrawDBHTMLHelper
 	 * @param baseAction
 	 * @param theme
 	 * @param align
-	 * @return
 	 */
 	public static void addLinksAndButtonsToExecContext(IExecContext execContext, BaseFormAction baseAction, Theme theme,
 			String align)
@@ -296,7 +294,6 @@ public class DrawDBHTMLHelper
 	 * @param theme
 	 * @param align
 	 * @param formSubmit
-	 * @return
 	 */
 	public static void addLinksAndButtonsToExecContext(IExecContext execContext, BaseFormAction baseAction, Theme theme,
 			String align, HtmlInput formSubmit)

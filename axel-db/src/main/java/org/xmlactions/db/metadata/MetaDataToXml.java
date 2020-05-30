@@ -4,7 +4,6 @@ import org.slf4j.Logger; import org.slf4j.LoggerFactory;
 import org.xmlactions.common.xml.XMLObject;
 
 /**
- * Convert the metadata to xml, compliant with the storage schema {@link http://xmlactions.org/schema/storage.xsd}
  * @author mike.murphy
  *
  */

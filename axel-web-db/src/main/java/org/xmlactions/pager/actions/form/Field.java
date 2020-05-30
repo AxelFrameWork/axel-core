@@ -18,7 +18,7 @@ import org.xmlactions.pager.drawing.IDrawParams;
 /**
  * Display information for a field (retrieved from data)
  * <p>
- * A Field compliments the drawing elements by inserting a field inside the drawing element. As an example:<br/>
+ * A Field compliments the drawing elements by inserting a field inside the drawing element. As an example:<br>
  * <code>
  *  &lt;pager:list storage_ref="pager.storage" table_name="tb_project" theme_name="riostl" data_source_ref="pager.dataSource"&gt;
  *    &lt;pager:<b>field</b> name="id" link="search.xml"/&gt;

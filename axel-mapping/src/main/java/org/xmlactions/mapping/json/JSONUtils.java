@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author mike
- * @see package-info.java for documentation 
+ * @see "package-info.java for documentation"
  */
 public class JSONUtils {
 

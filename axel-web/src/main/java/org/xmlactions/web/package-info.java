@@ -12,8 +12,8 @@ package org.xmlactions.web;
  AXEL is designed to work in a Web Server.  To do this it services specific file types such as <i>.axel or .bin</i>.  To implement AXEL
  in a Web Server you need to configure the <i>web.xml</i> and also setup <i>static data</i> such as themes, language files, database connectors etc.
  
- See<br/>
- \ref axel_web_server_xml_configuration to configure the <i>web.xml</i><br/>
+ See<br>
+ \ref axel_web_server_xml_configuration to configure the <i>web.xml</i><br>
  \ref axel_web_server_spring_configuration to configure the <i>static data</i>.
  </p>
  

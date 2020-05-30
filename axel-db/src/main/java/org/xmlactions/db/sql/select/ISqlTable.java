@@ -61,7 +61,6 @@ public interface ISqlTable {
     /**
      * For inserts we must be able to manage child tables.  These would have a PK
      * that it's parent requires before saving the parent.
-     * @param child
      */
     public List<ISqlTable> getChildren();
     

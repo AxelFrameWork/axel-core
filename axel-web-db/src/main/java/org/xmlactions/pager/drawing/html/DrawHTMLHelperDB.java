@@ -25,7 +25,6 @@ public class DrawHTMLHelperDB extends DrawHTMLHelper
 	 * Builds an identifier name for the parent and child so it matches the
 	 * table and field.
 	 * 
-	 * @param parent
 	 * @param child
 	 * @return
 	 */

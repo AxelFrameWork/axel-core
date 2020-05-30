@@ -59,10 +59,10 @@ public enum HtmlEnum
 	accept_charset("accept_charset"),
 	
 	/**
-	 * Specifies how form-data should be encoded before sending it to a server<br/>
-	 * application/x-www-form-urlencoded<br/>
-	 * multipart/form-data<br/>
-	 * text/plain<br/>
+	 * Specifies how form-data should be encoded before sending it to a server<br>
+	 * application/x-www-form-urlencoded<br>
+	 * multipart/form-data<br>
+	 * text/plain<br>
 	 */
 	enctype("enctype"),
 	
@@ -83,15 +83,16 @@ public enum HtmlEnum
 	
 
 	/**
-	 * @deprecated. Specifies where to open the action URL
+	 *  Specifies where to open the action URL
 	 *              <p>
-	 *              _blank <br/>
-	 *              _self <br/>
-	 *              _parent <br/>
-	 *              _top <br/>
-	 *              framename <br/>
+	 *              _blank <br>
+	 *              _self <br>
+	 *              _parent <br>
+	 *              _top <br>
+	 *              framename <br>
 	 *              </p>
 	 */
+	@Deprecated
 	target("target"),
 
 	/**
@@ -106,11 +107,11 @@ public enum HtmlEnum
 	 * right, left, center, justify,char
 	 * </p>
 	 * <p>
-	 * left</br>
-	 * right</br>
-	 * top</br>
-	 * middle</br>
-	 * bottom</br>
+	 * left<br>
+	 * right<br>
+	 * top<br>
+	 * middle<br>
+	 * bottom<br>
 	 * </p>
 	 */
 	align("align"),
@@ -206,8 +207,9 @@ public enum HtmlEnum
 	/**
 	 * Specifies the background color for a table
 	 * bgcolor rgb(x,x,x) or #xxxxxx colorname
-	 * @deprecated. Use styles instead.
+	 * Use styles instead.
 	 */
+	@Deprecated
 	bgcolor("bgcolor"),
 	
 	/**
@@ -240,12 +242,12 @@ public enum HtmlEnum
 	frame("frame"),
 	
 	/**
-	 * Specifies which parts of the inside borders that should be visible <br/>
-	 * none <br/>
-	 * groups <br/>
-	 * rows <br/>
-	 * cols <br/>
-	 * all <br/>
+	 * Specifies which parts of the inside borders that should be visible <br>
+	 * none <br>
+	 * groups <br>
+	 * rows <br>
+	 * cols <br>
+	 * all <br>
 	 */
 	rules("rules"),
 
@@ -263,19 +265,19 @@ public enum HtmlEnum
 
 	/**
 	 * Vertical aligns the content in a table row
-	 * top<br/>
-	 * middle<br/>
-	 * bottom<br/>
-	 * baseline<br/>
+	 * top<br>
+	 * middle<br>
+	 * bottom<br>
+	 * baseline<br>
 	 */
 	valign("valign"),
 	
 	/**
 	 * Defines a way to associate header cells and data cells in a table
-	 * col<br/>
-	 * colgroup<br/>
-	 * row<br/>
-	 * rowgroup<br/>
+	 * col<br>
+	 * colgroup<br>
+	 * row<br>
+	 * rowgroup<br>
 	 */	
 	scope("scope"),
 

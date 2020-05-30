@@ -178,9 +178,9 @@ public abstract class BaseFormAction extends BaseAction
 	 * @param id
 	 * @param value
 	 * @param size
-	 *            < 1 wont include size in the html
+	 *            &lt; 1 wont include size in the html
 	 * @param maxLength
-	 *            < 1 wont include maxLength in the html
+	 *            &lt; 1 wont include maxLength in the html
 	 * @param inputType
 	 *            - text, password, ...
 	 * @param disabled

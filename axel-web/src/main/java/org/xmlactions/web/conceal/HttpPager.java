@@ -60,7 +60,7 @@ import org.xmlactions.web.http.HttpSessionInfo;
  *  	<li>execContext.addNamedMap(IExecContext.PERSISTENCE_MAP, execContext.getPersistenceMap());</li>
  *  	<li>execContext.addNamedMap(PagerWebConst.REQUEST, params);</li>
  *  	<li>execContext.put(PagerWebConst.REQUEST_LIST, paramList);</li>
- *  	<li>execContext.put(PagerWebConst.PAGE_NAME, (pageName.length() > 1 ? pageName.substring(1) : pageName));</li>
+ *  	<li>execContext.put(PagerWebConst.PAGE_NAME, (pageName.length() &gt; 1 ? pageName.substring(1) : pageName));</li>
  *  	<li>execContext.put(PagerWebConst.PAGE_URI, request.getRequestURI());</li>
  *  	<li>execContext.put(PagerWebConst.PAGE_URL, request.getRequestURL()	.toString());</li>
  *  	<li>execContext.put(PagerWebConst.PAGE_SERVER_NAME, request.getServerName());</li>
@@ -73,7 +73,6 @@ import org.xmlactions.web.http.HttpSessionInfo;
  *  	<li>execContext.put(PagerWebConst.EXEC_CONTEXT, execContext);</li>
  * 	</ul>
  *  See PagerWebConst and org.xmlactions.action.ActionConst and org.xmlactions.action.config.IExecContext.
- * </p>
  * <p>
  *  The IExecContext is available from the code by calling org.xmlactions.web.RequestExecContext.get().
  * </p>

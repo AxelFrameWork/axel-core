@@ -20,7 +20,7 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>param<br/><small>- optional</small></td>
+	 	<td>param<br><small>- optional</small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			One or more param elements may be added to the action.  These will be added in order to the method invocation. See \ref action_param
 		<td>
@@ -38,7 +38,7 @@ package org.xmlactions.pager.actions;
   		<td colspan="2" height="6px"/>
 	</tr>
 	<tr>
-	 	<td>call<br/><small><i>- required</i></small></td>
+	 	<td>call<br><small><i>- required</i></small></td>
 		<td style="padding-left:10px;border-left:1px solid #a4bcea;">
 			The full package, class and method name. As an example "org.xmlactions.utils.Class.methodName"
 		<td>
@@ -57,7 +57,7 @@ package org.xmlactions.pager.actions;
  \code
  <axel:code call="org.xmlactions.utils.Class.method"/>
  \endcode
- becomes <br/>
+ becomes <br>
  "Hello World!!!"
  
  

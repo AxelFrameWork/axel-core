@@ -89,10 +89,9 @@ public class PropertyContainer
 	 * </p>
 	 * TODO add handlers for additional property files.
 	 * 
-	 * @param fileName
+	 * @param fileNames
 	 *            the file name of the configuration file in url format
 	 * @return
-	 * @throws ConfigurationException
 	 * @throws ConfigurationException
 	 */
 	public CompositeConfiguration addFileList(List<String> fileNames) throws ConfigurationException

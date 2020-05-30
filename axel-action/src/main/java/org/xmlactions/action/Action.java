@@ -67,7 +67,7 @@ public class Action
 
 	/**
 	 * 
-	 * @param nameSpace the nameSpace preceeding the action, e.g <pager:code...> where pager is the nameSpace
+	 * @param nameSpace the nameSpace preceeding the action, e.g &lt;pager:code...&gt; where pager is the nameSpace
 	 */
 	public Action(String nameSpace)
 	{
@@ -85,7 +85,7 @@ public class Action
 	 * @param pageName
 	 *            the name of the page to load, may include path elements
 	 * @param nameSpace
-	 *            the nameSpace preceeding the action, e.g <pager:code...> where
+	 *            the nameSpace preceeding the action, e.g &lt;pager:code...&gt; where
 	 *            pager is the nameSpace
 	 */
 	public Action(String rootPath, String pageName, String nameSpace)
@@ -102,8 +102,8 @@ public class Action
 	 *            the root path of the site
 	 * @param pageName
 	 *            the name of the page to load, may include path elements
-	 * @param nameSpace
-	 *            the nameSpace preceeding the action, e.g <pager:code...> where
+	 * @param nameSpaces
+	 *            the nameSpace preceeding the action, e.g &lt;pager:code...&gt; where
 	 *            pager is the nameSpace
 	 */
 	public Action(String rootPath, String pageName, char [][] nameSpaces)
@@ -286,14 +286,8 @@ public class Action
 	 * @param actionMapName
 	 * @return a list of ReplaceMarkers for each node found that uses the
 	 *         nameSpace
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 * @throws ClassNotFoundException
-	 * @throws NestedActionException
-	 * @throws BadXMLException
-	 * @throws DocumentException
+	 * @throws ClassNotFoundException InstantiationException IllegalAccessException InvocationTargetException
+	 * 			NoSuchMethodException NestedActionException BadXMLException
 	 */
 	public List<ReplacementMarker> findMarkers(String page, char[][] nameSpaces, IExecContext execContext, String actionMapName)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,
@@ -316,14 +310,8 @@ public class Action
 	 *            the web page
 	 * @return a list of ReplaceMarkers for each node found that uses the
 	 *         nameSpace
-	 * @throws NoSuchMethodException
-	 * @throws InvocationTargetException
-	 * @throws IllegalAccessException
-	 * @throws InstantiationException
-	 * @throws ClassNotFoundException
-	 * @throws NestedActionException
-	 * @throws BadXMLException
-	 * @throws DocumentException
+	 * @throws ClassNotFoundException InstantiationException IllegalAccessException InvocationTargetException
+	 * 			NoSuchMethodException NestedActionException BadXMLException
 	 */
 	public List<ReplacementMarker> findMarkers(String page, IExecContext execContext, String actionMapName)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException, InvocationTargetException,
@@ -499,7 +487,7 @@ public class Action
 	 * Add this namespace to the static list of namespaces [] []
 	 * 
 	 * If this namespace already exists in the list then it wont be added.
-	 * @param namespace - the namespace to add
+	 * @param nameSpace - the namespace to add
 	 */
 	public void addNameSpace(String nameSpace) {
 		addNameSpace(nameSpace.toCharArray());

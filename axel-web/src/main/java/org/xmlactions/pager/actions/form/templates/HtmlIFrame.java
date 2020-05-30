@@ -12,13 +12,13 @@ public class HtmlIFrame extends HtmlEvents
 	}
 	/**
 	 * Specifies the alignment of an iframe according to surrounding elements
-	 * @deprecated. Use styles instead.
+	 * @deprecated Use styles instead.
 	 * <p>
-	 * left</br>
-	 * right</br>
-	 * top</br>
-	 * middle</br>
-	 * bottom</br>
+	 * left<br>
+	 * right<br>
+	 * top<br>
+	 * middle<br>
+	 * bottom<br>
 	 * </p>
 	 */
 	private String align;

@@ -133,13 +133,13 @@ public class FileViewerAction extends CommonFormFields implements FormDrawing, I
 		for (String row : rows) {
 			if (isShow_line_nos() == true) {
 				lineNosSb.append("" + lineNo++);
-				lineNosSb.append("<br/>");
+				lineNosSb.append("<br>");
 			}
 			contentSb.append(row);
 			int lnIndex = row.indexOf("\n");
 			int crIndex = row.indexOf("\r");
 			if (crIndex < 0 ) {
-				contentSb.append("<br/>");
+				contentSb.append("<br>");
 			}
 		}
 		if (isShow_line_nos() == true) {

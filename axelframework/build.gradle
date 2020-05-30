@@ -1,21 +1,38 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.3"
+    }
+}
 plugins {
     id("maven-publish")
 }
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'io.codearte.nexus-staging'
 
 publishing {
     repositories {
+
+		//<scm>
+		//		<connection>scm:git:git@github.com:mwjmurphy/Axel-Framework</connection>
+		//		<developerConnection>scm:git:git@github.com:mwjmurphy/Axel-Framework</developerConnection>
+	  	//		<url>git@github.com:mwjmurphy/Axel-Framework</url>
+		//</scm>
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core")
+            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/")
+			//url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
             credentials {
                 username = System.getenv("github_user")
                 password = System.getenv("github_axel_token")
             }
         }
 		maven {
-			name = "OSSRH"
+			name = "ossrh"
 			url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
 			credentials {
 				username = System.getenv("ssr_user")
@@ -36,7 +53,7 @@ targetCompatibility = 1.8
 
 
 repositories {
-    mavenLocal()
+    // mavenLocal()
     mavenCentral()
 }
 
@@ -47,6 +64,7 @@ compileJava {
 archivesBaseName = 'axelframework'
 version="$axelVersion"
 group='org.xmlactions'
+
 
 jar {
 
@@ -125,3 +143,80 @@ dependencies {
 
 }
 
+//
+// publish to central through sonatype
+//
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier = 'javadoc'
+	from tasks.javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+	from sourceSets.main.allSource
+	classifier = 'sources'
+}
+artifacts {
+	archives jar
+	archives javadocJar
+	archives sourcesJar
+}
+
+signing {
+	if (System.env.signingKey) {
+		println("Using signingKey");
+	    useInMemoryPgpKeys(System.env.signingKeyId, System.env.signingKey, System.env.signingPassword)
+		sign configurations.archives
+	} else {
+		println("NOT using signingKey");
+		sign configurations.archives
+	}
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+			repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+				authentication(userName: System.env.sonatypeUsername, password: System.env.sonatypePassword)
+			}
+
+			pom.project {
+				name 'AxelFrameWork'
+				packaging 'jar'
+				description 'A Java Web Framework for building web sites'
+				// url 'https://github.com/mwjmurphy/Axel-Framework'
+				url 'https://github.com/AxelFrameWork/axel-core'
+
+				scm {
+					//url 'scm:git@github.com:mwjmurphy/Axel-Framework'
+					//connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					//developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					url 'scm:git@github.com:AxelFrameWork/axel-core'
+					connection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
+					developerConnection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
+				}
+
+				licenses {
+					license {
+						name 'The Apache Software License, Version 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+						distribution 'repo'
+					}
+				}
+
+				developers {
+					developer {
+						id 'mwjmurphy'
+						name 'Mike Murphy'
+						email 'mwjmurphy@gmail.com'
+					}
+				}
+			}
+		}
+	}
+}
+nexusStaging {
+    username = System.getenv("ssr_user")
+    password = System.getenv("ssr_password")
+}

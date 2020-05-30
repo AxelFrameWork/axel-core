@@ -73,8 +73,8 @@ public class PagerConstants
 
 	/**
 	 * An Ajax call will return this value followed by a list of fields that failed validation. The fields should be
-	 * seperated by an amp. Each field should show the field name and the illegal value.<br/>
-	 * The illegal fields will then be highlighted on the page. i.e. "tb_user.username=bad&tb_user.password="
+	 * seperated by an amp. Each field should show the field name and the illegal value.<br>
+	 * The illegal fields will then be highlighted on the page. i.e. "tb_user.username=bad&amp;tb_user.password="
 	 */
 	public static String JAVASCRIPT_ERROR_STARTSWITH = "ER:";
 

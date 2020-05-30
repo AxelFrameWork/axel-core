@@ -21,8 +21,8 @@ public class ParserCode {
 	 * Basic rules
 	 * <p>
 	 * Code starts with a method call or a variable name
-	 * 	<li>a method call is followed by a (
-	 * 	<li>a variable name is followed by a = operator
+	 * 	- a method call is followed by a (
+	 * 	- a variable name is followed by a = operator
 	 * </p>
 	 * 
 	 * <p>
@@ -35,12 +35,12 @@ public class ParserCode {
 	 * 
 	 * <p>
 	 * Examples:
-	 *  <li>x = get('av12');
-	 *  <li>x = get(string:'av12');
+	 *  x = get('av12');
+	 *  x = get(string:'av12');
 	 * </p>
-	 *  
+	 *
+	 * @param execContext
 	 * @param code
-	 * @throws Exception 
 	 */
 	public ParserCode(final IExecContext execContext, final String code) {
 		this.execContext = execContext;
