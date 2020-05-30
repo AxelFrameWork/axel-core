@@ -30,4 +30,6 @@ jobs:
           github_user: ${{ secrets.username }}
           github_axel_token: ${{ secrets.axel_token }}
           github_token: ${{ secrets.github_token }}
-
+          signingKey: ${{ secrets.signingkey }} 
+          signingKeyid: ${{ secrets.signingkeyid }} 
+          signingPassword: ${{ secrets.signingpassword }} 
