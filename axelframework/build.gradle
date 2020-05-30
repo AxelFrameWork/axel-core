@@ -1,10 +1,20 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.3"
+    }
+}
 plugins {
     id("maven-publish")
 }
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'io.codearte.nexus-staging'
 
+/*
 publishing {
     repositories {
 
@@ -37,6 +47,7 @@ publishing {
         }
     }
 }
+*/
 
 
 sourceCompatibility = 1.8
@@ -44,7 +55,7 @@ targetCompatibility = 1.8
 
 
 repositories {
-    mavenLocal()
+    // mavenLocal()
     mavenCentral()
 }
 
@@ -153,10 +164,8 @@ artifacts {
 }
 
 signing {
-	println(System.env.signingKeyId + ":" + System.env.signingKey + ":" + System.env.signingPassword);
 	if (System.env.signingKey) {
 		println("Using signingKey");
-	    println(System.env.signingKeyId + ":"+ System.env.signingKey + ":" + System.env.signingPassword)
 	    useInMemoryPgpKeys(System.env.signingKeyId, System.env.signingKey, System.env.signingPassword)
 		sign configurations.archives
 	} else {
@@ -178,13 +187,16 @@ uploadArchives {
 				name 'AxelFrameWork'
 				packaging 'jar'
 				description 'A Java Web Framework for building web sites'
-				//url 'http://axelframework.com/'
-				url 'https://github.com/mwjmurphy/Axel-Framework'
+				// url 'https://github.com/mwjmurphy/Axel-Framework'
+				url 'https://github.com/AxelFrameWork/axel-core'
 
 				scm {
-					url 'scm:git@github.com:mwjmurphy/Axel-Framework'
-					connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
-					developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					//url 'scm:git@github.com:mwjmurphy/Axel-Framework'
+					//connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					//developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					url 'scm:git@github.com:AxelFrameWork/axel-core'
+					connection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
+					developerConnection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
 				}
 
 				licenses {
@@ -205,4 +217,8 @@ uploadArchives {
 			}
 		}
 	}
+}
+nexusStaging {
+    username = System.getenv("ssr_user")
+    password = System.getenv("ssr_password")
 }
