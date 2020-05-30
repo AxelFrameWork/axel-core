@@ -186,16 +186,16 @@ uploadArchives {
 				name 'AxelFrameWork'
 				packaging 'jar'
 				description 'A Java Web Framework for building web sites'
-				url 'https://github.com/mwjmurphy/Axel-Framework'
-				//url 'https://github.com/AxelFrameWork/axel-core'
+				// url 'https://github.com/mwjmurphy/Axel-Framework'
+				url 'https://github.com/AxelFrameWork/axel-core'
 
 				scm {
-					url 'scm:git@github.com:mwjmurphy/Axel-Framework'
-					connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
-					developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
-					//url 'scm:git@github.com:AxelFrameWork/axel-core'
-					//connection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
-					//developerConnection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
+					//url 'scm:git@github.com:mwjmurphy/Axel-Framework'
+					//connection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					//developerConnection 'scm:git:git@github.com:mwjmurphy/Axel-Framework.git'
+					url 'scm:git@github.com:AxelFrameWork/axel-core'
+					connection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
+					developerConnection 'scm:git:git@github.com:AxelFrameWork/axel-core.git'
 				}
 
 				licenses {
