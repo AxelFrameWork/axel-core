@@ -34,7 +34,7 @@ public class JSONGetAction extends BaseAction
 	
 	public String execute(IExecContext execContext) throws Exception
 	{
-		String result  = "";
+		Object result  = "";
 		this.execContext = execContext;
 		Gson gson = new Gson();
 		try {
@@ -43,9 +43,13 @@ public class JSONGetAction extends BaseAction
 				execContext.getNamedMaps().remove(getRow_map_name());
 			}
 			JsonElement jsonElement = null;
-			String data = getJson_data();
+			Object data = getJson_data();
 			try {
-				jsonElement = gson.fromJson(data, JsonElement.class);
+				if (data instanceof String) {
+					jsonElement = gson.fromJson((String)data, JsonElement.class);
+				} else {
+					jsonElement = (JsonElement)data;
+				}
 			} catch (Exception ex) {
 				log.error("Unable to process Gson:[" + data + "]:" + ex.getMessage());
 				//throw new IllegalArgumentException("Unable to process Gson:[" + data + "]", ex);
@@ -72,6 +76,8 @@ public class JSONGetAction extends BaseAction
 				if (StringUtils.isEmpty(getRow_map_name())) {
 					if(map.containsKey("row") && map.size() == 1) {
 						result = "" + map.get("row");
+					} else if (StringUtils.isNotEmpty(getKey())) {
+						result = o;
 					} else {
 						result = gson.toJson(map);
 					}
@@ -94,7 +100,7 @@ public class JSONGetAction extends BaseAction
 			execContext.put(getKey(), result);
 			return "";
 		}
-		return result;
+		return "" + result;
 	}
 	
 //	public String execute(IExecContext execContext) throws Exception
