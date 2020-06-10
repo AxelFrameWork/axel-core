@@ -121,4 +121,21 @@ public class TestJSONGetAction {
 		
 	}
 
+	@Test
+	public void testGetKey() throws Exception {
+		String jsonString = ResourceUtils.loadFile("/org/xmlactions/pager/actions/mapping/hotel.json");
+		JSONGetAction jsonGetAction = new JSONGetAction();
+		jsonGetAction.setJson_data(jsonString);
+		jsonGetAction.setJson_path("location/coordinates");
+		jsonGetAction.setIndex(0);
+		String output = jsonGetAction.execute(execContext);
+		assertEquals("13.894", output);
+		jsonGetAction.setKey("ppp");
+		output = jsonGetAction.execute(execContext);
+		assertEquals("", output);
+		output = (String) execContext.get("ppp");
+		assertEquals("13.894", output);
+		
+	}
+
 }

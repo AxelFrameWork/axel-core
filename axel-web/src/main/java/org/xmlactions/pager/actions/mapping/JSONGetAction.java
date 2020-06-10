@@ -59,6 +59,10 @@ public class JSONGetAction extends BaseAction
 				// exceeded limit or no data
 			} else if ( o instanceof String) {
 				if (StringUtils.isEmpty(getRow_map_name())) {
+					if (this.getKey() != null) {
+						execContext.put(getKey(), o);
+						return "";
+					}
 					return (String)o;
 				} else {
 					execContext.put(getRow_map_name(), o);
