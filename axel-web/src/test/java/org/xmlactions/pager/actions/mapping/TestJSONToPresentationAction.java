@@ -4,6 +4,7 @@ package org.xmlactions.pager.actions.mapping;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -50,6 +51,9 @@ public class TestJSONToPresentationAction extends TestCase {
     	jsonToPresentationAction.setJson_filename("/org/xmlactions/pager/actions/mapping/data.json");
     	jsonToPresentationAction.setPresentation_form("/org/xmlactions/pager/actions/mapping/json_presentation.html");
     	String output = jsonToPresentationAction.execute(execContext);
+    	Map<String, Object> row = (Map)execContext.get("row");
+    	Object j = row.get("_json_");
+    	logger.debug("j:" + j);
     	logger.debug(output);
 
     }

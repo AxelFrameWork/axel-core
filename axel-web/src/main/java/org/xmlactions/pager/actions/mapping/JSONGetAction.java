@@ -27,6 +27,7 @@ public class JSONGetAction extends BaseAction
 	private String json_path;
 	private int index;
     private String row_map_name;
+	private String key;
 
 	
 	private IExecContext execContext;
@@ -84,6 +85,10 @@ public class JSONGetAction extends BaseAction
 					+ " index:" + getIndex()
 					+ " data:" + getJson_data(),
 					ex);
+		}
+		if (this.getKey() != null) {
+			execContext.put(getKey(), result);
+			return "";
 		}
 		return result;
 	}
@@ -152,5 +157,11 @@ public class JSONGetAction extends BaseAction
 		this.row_map_name = row_map_name;
 	}
 
+	public String getKey() {
+		return this.key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
 
 }
