@@ -26,8 +26,6 @@ public class GsonUtils {
 	
 	private static final Logger logger = LoggerFactory.getLogger(GsonUtils.class);
 	
-	private static final String jsonElementMapName="_json_";
-
 	/**
 	 * 
 	 * @param je - This is the JsonElement we want to map
@@ -46,7 +44,6 @@ public class GsonUtils {
 
 		if (path == null || path.length() == 0)  {
 			toMap(jsonElement, "value",  map);
-			map.put(jsonElementMapName, jsonElement);
 			return map;
 		}
 		
@@ -92,7 +89,6 @@ public class GsonUtils {
 						return jsonElement.getAsString();
 					} else if (jsonElement.isJsonObject()) {
 						map = toMap(jsonElement.getAsJsonObject());
-						map.put(jsonElementMapName, jsonElement);
 						return map;
 					} else if (jsonElement.isJsonArray()) {
 						JsonArray ja = jsonElement.getAsJsonArray();
@@ -104,7 +100,6 @@ public class GsonUtils {
 				}
 			}
 		} else if (jsonElement.isJsonObject()) {
-			map.put(jsonElementMapName, jsonElement);
 			toMap(jsonElement.getAsJsonObject(), map);
 		} else if (jsonElement.isJsonPrimitive() ) {
 			return jsonElement.getAsJsonPrimitive().getAsString();
