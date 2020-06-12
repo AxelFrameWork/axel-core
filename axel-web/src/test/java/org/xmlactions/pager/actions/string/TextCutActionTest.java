@@ -2,6 +2,7 @@ package org.xmlactions.pager.actions.string;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xmlactions.action.ActionConst;
@@ -11,6 +12,7 @@ public class TextCutActionTest {
 
 	private static IExecContext execContext;
 
+	@Before
 	public void setUp()
 	{
 

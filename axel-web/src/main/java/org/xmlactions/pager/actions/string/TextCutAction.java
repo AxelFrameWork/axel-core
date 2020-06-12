@@ -18,12 +18,13 @@ public class TextCutAction extends BaseAction {
 	private Integer to;		// default = end of text
 	private String key;
 
+	private String _text;
 
 	public String execute(IExecContext execContext)
 	{
 		String cut = "";
-		validate();
-		if (getFrom() != null && getFrom() >= getText().length()) {
+		validate(execContext);
+		if (getFrom() != null && getFrom() >= _text.length()) {
 			return "";
 		}
 		if (getFrom() != null && getTo() != null && getFrom() >= getTo()) {
@@ -31,12 +32,12 @@ public class TextCutAction extends BaseAction {
 		}
 		if (getFrom() != null) {
 			if (getTo() != null) {
-				cut = getText().substring(getFrom(), getTo());
+				cut = _text.substring(getFrom(), getTo());
 			} else {
-				cut = getText().substring(getFrom());
+				cut = _text.substring(getFrom());
 			}
 		} else if (getTo() != null) {
-			cut = getText().substring(0, getTo());
+			cut = _text.substring(0, getTo());
 		}
 		
 		if (StringUtils.isNotBlank(getKey())) {
@@ -46,11 +47,12 @@ public class TextCutAction extends BaseAction {
 		return cut;
 	}
 	
-	private void validate() {
+	private void validate(IExecContext execContext) {
 		if (StringUtils.isBlank(getText())) {
 			throw new IllegalArgumentException("Missing text attribute for text_cut");
 		}
-		
+		_text = getText(execContext);
+
 		if (getFrom() == null && getTo() == null) {
 			throw new IllegalArgumentException("Must set either from or the to attribure for text_cut");
 		}
@@ -59,8 +61,8 @@ public class TextCutAction extends BaseAction {
 			setFrom(0);
 		}
 		
-		if (getTo() != null && getTo() > getText().length()) {
-			setTo(getText().length());
+		if (getTo() != null && getTo() > _text.length()) {
+			setTo(_text.length());
 		}
 		if (getTo() != null && getTo() < 0) {
 			setTo(0);
@@ -70,6 +72,10 @@ public class TextCutAction extends BaseAction {
 	public String toString()
 	{
 		return ("text_cut(" + getText() + "," + getFrom() + "," + getTo() + ")");
+	}
+
+	public String getText(IExecContext execContext) {
+		return execContext.replace(getText());
 	}
 
 	public String getText() {
