@@ -26,3 +26,4 @@
 **/*.tmp
 
 /.gradle/
+/axel-action.log.1
