@@ -20,6 +20,7 @@ import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.lang.ClassUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.commons.lang.text.StrSubstitutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,11 @@ import org.xmlactions.action.ActionConsts;
 import org.xmlactions.action.actions.BaseAction;
 import org.xmlactions.common.locale.LocaleUtils;
 import org.xmlactions.common.theme.Theme;
+import org.xmlactions.common.xml.XMLObject;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
 
 
 @SuppressWarnings("serial")
@@ -212,32 +218,9 @@ public abstract class ExecContext implements IExecContext, Serializable {
 	}
 
 	/**
-	 * get a value for key.
-	 * <p>
-	 * if key has : as in xxx:key then find the value in a map assigned to the xxx in maps.<br>
-	 * e.g. <code>get("session:id")</code> returns the value of <code>maps.get("session").get("id");</code>
-	 * </p>
-	 * <p>
-	 * if the key has "lang:key:resouces:language:country:variant"
-	 * <br>or "lang:key" uses the default resource file and the default locale
-	 * <br>or "lang:key:resource" uses the resource file and the default locale
-	 * <br>or "lang:key::language" uses the default resource file and the language locale
-	 * <br>...
-	 * </p>
-	 * <p>
-	 * if the key has "replace:value:regex:replacement" perform a String.replaceAll
-	 * <p>
-	 * The replacementPattern format is "replace:value:regex:replacement"
-	 * <br>"replace" replacement instruction
-	 * <br>"value" the string to perform the replacement on
-	 * <br>"regex" the expression for the replacement
-	 * <br>"replacement" the replacement value
-	 * </p>
-	 *
-	 * @return the value for key or null if not found.
-	 * 
+	 * @deprecated - use new version
 	 */
-	public Object get(Object key)
+	public Object _get(Object key)
 	{
 
 		int index;
@@ -333,6 +316,232 @@ public abstract class ExecContext implements IExecContext, Serializable {
 		}
 	}
 
+	public Object get(Object key) {
+		return get(key, 0);
+	}
+	/**
+	 * get a value for key.
+	 * <p>
+	 * if key has : as in xxx:key then find the value in a map assigned to the xxx in maps.<br>
+	 * e.g. <code>get("session:id")</code> returns the value of <code>maps.get("session").get("id");</code>
+	 * </p>
+	 * <p>
+	 * if the key has "lang:key:resouces:language:country:variant"
+	 * <br>or "lang:key" uses the default resource file and the default locale
+	 * <br>or "lang:key:resource" uses the resource file and the default locale
+	 * <br>or "lang:key::language" uses the default resource file and the language locale
+	 * <br>...
+	 * </p>
+	 * <p>
+	 * if the key has "replace:value:regex:replacement" perform a String.replaceAll
+	 * <p>
+	 * The replacementPattern format is "replace:value:regex:replacement"
+	 * <br>"replace" replacement instruction
+	 * <br>"value" the string to perform the replacement on
+	 * <br>"regex" the expression for the replacement
+	 * <br>"replacement" the replacement value
+	 * </p>
+	 *
+	 * @return the value for key or null if not found.
+	 * 
+	 */
+	public Object get(Object key, int clientIndex) {
+		int index;
+		String orDefault = null;
+		String k = (String) key;
+		if ((index = k.indexOf(DEFAULT_ID)) > 0) {
+			orDefault = k.substring(index+DEFAULT_ID.length());
+			k = k.substring(0,index);
+			key = k;
+		}
+		Validate.notEmpty(k, "Empty key passed as parameter for call to get(key)");
+		Object object = null;
+		String [] keys = null;
+
+		if ((index = k.indexOf(':')) > 0 && index < k.length() - 1) {
+			if (index == LANG_REF.length() && k.startsWith(LANG_REF)) {
+				return new LanguageLocale().getLang(this,k);
+			} else if (index == REPLACE_REF.length() && k.startsWith(REPLACE_REF)) {
+				return org.xmlactions.action.utils.StringUtils.replace(this, replace(k));
+			} else if (index == THEME_REF.length() && k.startsWith(THEME_REF)) {
+				return getThemeValueQuietly(k.substring(index + 1));
+			} else if (index == APPLICATIONCONTEXT_REF.length() && k.startsWith(APPLICATIONCONTEXT_REF)) {
+				return getApplicationContext().getBean(k.substring(index + 1));
+			} else if (index == CODE_REF.length() && k.startsWith(CODE_REF)) {
+				CodeParser codeParser = new CodeParser();
+				return codeParser.parseCode(this, k.substring(index + 1));
+			} else {
+				String mapKey = k.substring(0, index);
+				object = getMap(mapKey);
+				if (object == null) {
+					object = getList(mapKey);
+				}
+				if (object == null) {
+					if (applicationContext != null && applicationContext.containsBean(mapKey)) {
+						object = applicationContext.getBean(mapKey);
+					}
+				}
+				if (object == null) {
+					object = get(mapKey);
+				}
+				if (object == null) {
+					return orDefault;
+				}
+				keys = k.substring(index + 1).split("/");
+			}
+		}
+		if (keys == null) {
+			keys = k.split("/");
+		}
+		if (object == null) {
+			object = rootMap;
+		}
+		for (int keyIndex = 0 ; keyIndex < keys.length; keyIndex++ ) {
+			k = keys[keyIndex];
+			object = convertToMap(object);	// need this if we have a string that should be converted to a json or xml object
+			object = getFromObject(object, k, clientIndex);
+			if (object == null) {
+				if (keyIndex == 0) {
+					if (applicationContext != null && applicationContext.containsBean((String)k)) {
+						object = applicationContext.getBean((String)k);
+					}
+				}
+				if (object == null) {
+					break;
+				}
+			}
+		}
+		if (object == null) {
+			object = orDefault;
+		} else if (object instanceof String) {
+			object = replace((String)object);
+		}
+		return object;
+	}
+
+	private Object getFromObject(Object object, String key, int index) {
+		Object nextObj = null;
+		if (object instanceof Map) {
+			nextObj = processMap((Map)object, key);
+		} else if (object instanceof JsonElement) {
+			nextObj = processJson((JsonElement)object, key, index);
+		} else if (object instanceof XMLObject) {
+			nextObj = processXml((XMLObject)object, key);
+		} else if (object instanceof List) {
+			nextObj = processList((List)object, index);
+			if (nextObj != null) {
+				nextObj = getFromObject(nextObj, key, index);
+			}
+		} else {
+			// nothing found
+		}
+		return nextObj;
+	}
+		
+	private Object processXml(XMLObject xo, String key) {
+		if (xo != null) {
+			Object obj = xo.findChildNode(key);
+			if (obj == null) {
+				obj = xo.getAttributeValueAsString(key);
+			}
+			return obj;
+		}
+		return null;
+	}
+	
+	private Object processJson(JsonElement jsonElement, String key, int index) {
+		Object obj = null;
+		if (jsonElement != null) {
+			if (jsonElement.isJsonArray()) {
+				JsonElement je = jsonElement.getAsJsonArray().get(index).getAsJsonObject().get(key);
+				if (je.isJsonPrimitive()) {
+					obj = getPrimativeValue(je.getAsJsonPrimitive());
+				} else {
+					obj = je;
+				}
+			} else if (jsonElement.isJsonPrimitive()) {
+				obj = getPrimativeValue(jsonElement.getAsJsonPrimitive());
+			} else if (jsonElement.isJsonObject()) {
+				JsonElement je = jsonElement.getAsJsonObject().get(key);
+				if (je.isJsonPrimitive()) {
+					obj = getPrimativeValue(je.getAsJsonPrimitive());
+				} else {
+					obj = je;
+				}
+			}
+		}
+		return obj;
+	}
+	
+	private Object getPrimativeValue(JsonPrimitive jp) {
+		Object value = jp;
+		if (jp.isString()) {
+			value = jp.getAsString();
+		} else if (jp.isNumber()) {
+			value = toNumber(jp);
+		} else if (jp.isBoolean()) {
+			value = jp.getAsBoolean();
+		}
+		return value;
+	}
+	
+	private Object toNumber(JsonPrimitive jp) {
+		String s = jp.getAsString();
+		if (NumberUtils.isDigits(s)) {
+			Integer i = Integer.parseInt(s);
+			return i;
+		} else {
+			Double d = Double.parseDouble(s);
+			return (d);
+		}
+	}
+	
+	private Object processMap(Map<String, Object> map, String key) {
+		if (map != null && map.containsKey(key)) {
+			Object obj = map.get(key);
+			return obj;
+		}
+		return null;
+	}
+	
+	private Object processList(List<Object> list, int index) {
+		if (list != null && list.size() > index) {
+			return list.get(index);
+		}
+		return null;
+	}
+	
+	private Object convertToMap(Object obj) {
+		Object object = obj; 
+		if (obj instanceof String) {
+			String data = (String) obj;
+			object = convertJson(data);
+			if (object == null) {
+				object = convertXml(data);
+			}
+		}
+		return object;
+	}
+	
+	private Object convertJson(String data) {
+		try {
+			Gson gson = new Gson();
+			JsonElement jsonElement = gson.fromJson(data, JsonElement.class);
+			return jsonElement;
+		} catch (Exception ex) {
+			// no matter
+		}
+		return null;
+	}
+	private Object convertXml(String data) {
+		try {
+			XMLObject xo = new XMLObject().mapXMLCharToXMLObject(data);
+			return xo;
+		} catch (Exception ex) {
+			// no matter
+		}
+		return null;
+	}
 
 	/**
 	 * Looks for a named map in 2 places. 1) the applicationContext and 2) the namedMaps
@@ -355,6 +564,32 @@ public abstract class ExecContext implements IExecContext, Serializable {
 			}
 		}
 		return map;
+	}
+
+	/**
+	 * Looks for a named list in 2 places. 1) the applicationContext and 2) the namedMaps
+	 * @param key - used to find the map
+	 * @return the found map or null
+	 */
+	private List<Object> getList(String key) {
+		List<Object> list = null;
+
+		if (applicationContext != null && applicationContext.containsBean(key)) {
+			list = (List<Object>)applicationContext.getBean(key);
+		}
+		if (list == null && namedMaps.containsKey(key)) {
+			Object obj = namedMaps.get(key);
+			if (obj instanceof List) {
+				list = (List<Object>)obj;
+			}
+		}
+		if (list == null && this.containsKey(key)) {
+			Object obj = this.get(key);
+			if (obj instanceof List) {
+				list = (List<Object>)obj;
+			}
+		}
+		return list;
 	}
 
 	public String replace(String content) {

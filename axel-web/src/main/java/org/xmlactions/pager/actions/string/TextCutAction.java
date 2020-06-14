@@ -7,7 +7,7 @@ import org.xmlactions.action.actions.BaseAction;
 import org.xmlactions.action.config.IExecContext;
 
 /*
- * <axel:text_cut text="asdasd" from="0" to="10" key="akey"/>
+ * &lt;axel:text_cut text="asdasd" from="0" to="10" key="akey"/&gt;
  */
 public class TextCutAction extends BaseAction {
 

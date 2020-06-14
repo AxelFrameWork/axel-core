@@ -2,6 +2,9 @@ package org.xmlactions.pager.actions.mapping;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xmlactions.action.ActionConst;
+import org.xmlactions.action.config.ExecContext;
 import org.xmlactions.action.config.IExecContext;
 import org.xmlactions.common.io.ResourceUtils;
 import org.xmlactions.web.RequestExecContext;
@@ -22,6 +26,30 @@ public class TestJSONGetAction {
 	private static final String[] configFiles = { ActionConst.SPRING_STARTUP_CONFIG,
 			"/config/spring/test-spring-pager-web-startup.xml" };
 
+	private String json =
+			"{\r\n" + 
+			"	\"rates\": [{\n" + 
+			"			\"type\": \"FIT\",\n" + 
+			"			\"packageType\": \"FIT\",\n" + 
+			"			\"price\": {\n" + 
+			"				\"currency\": \"GBP\",\n" + 
+			"				\"amount\": 42900\n" + 
+			"			},\n" + 
+			"			\"pkgPrice\": {\n" + 
+			"				\"currency\": \"GBP\",\n" + 
+			"				\"amount\": 85800\n" + 
+			"			},\n" + 
+			"			\"adultPrice\": {\n" + 
+			"				\"currency\": \"GBP\",\n" + 
+			"				\"amount\": 42900\n" + 
+			"			},\n" + 
+			"			\"childPrice\": {\n" + 
+			"				\"currency\": \"GBP\",\n" + 
+			"				\"amount\": 0\n" + 
+			"			}\n" +
+			"      }]\n" +
+			"}";
+	
 	@Before
 	public void setUp() {
 
@@ -135,6 +163,26 @@ public class TestJSONGetAction {
 		assertEquals("", output);
 		output = (String) execContext.get("ppp");
 		assertEquals("13.894", output);
+		
+	}
+
+	@Test
+	public void testJsonObject() throws Exception {
+		Map<String, Object> map = new HashMap();
+		map.put("dara", json);
+		execContext.addNamedMap("data", map);
+		Object obj = execContext.get("data:dara/rates/type");
+		assertEquals("FIT", obj);
+
+		JSONGetAction jsonGetAction = new JSONGetAction();
+		jsonGetAction.setJson_data("${data}");
+		jsonGetAction.setJson_path("dara/rates/pkgPrice/currency");
+		jsonGetAction.setIndex(0);
+		String output = jsonGetAction.execute(execContext);
+		assertEquals("GBP", output);
+		jsonGetAction.setJson_path("dara/rates/pkgPrice/amount");
+		Object amount = jsonGetAction.execute(execContext);
+		assertEquals("85800", amount);
 		
 	}
 

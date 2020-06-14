@@ -8,10 +8,10 @@ import org.xmlactions.action.actions.BaseAction;
 import org.xmlactions.action.config.IExecContext;
 
 /**
- * <axel:text_formatter text="123.22" format="%.20"/>
+ * &lt;axel:text_formatter text="123.22" format="%.20"/&gt;
  * @author mike.murphy
  * 
- * TODO - enhance this action to use multiple inputs using List<Param> params
+ * TODO - enhance this action to use multiple inputs using List&lt;Param&gt; params
  *
  */
 public class TextFormatterAction extends BaseAction {

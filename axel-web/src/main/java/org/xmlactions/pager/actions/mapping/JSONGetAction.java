@@ -23,7 +23,7 @@ public class JSONGetAction extends BaseAction
 
 	private static Logger log = LoggerFactory.getLogger(JSONGetAction.class);
 
-	private String json_data;
+	private Object json_data;
 	private String json_path;
 	private int index;
     private String row_map_name;
@@ -132,14 +132,17 @@ public class JSONGetAction extends BaseAction
 		return "json_get [" + getJson_data() + "] [" + getJson_path() + "] [" + getIndex( )+ "]";
 	}
 
-	public String getJson_data() {
+	public Object getJson_data() {
 		if (execContext == null) { 
 			execContext = RequestExecContext.get();
 		}
-		return execContext.replace(json_data);
+		if (json_data instanceof String) {
+			return execContext.replace((String)json_data);
+		}
+		return json_data;
 	}
 
-	public void setJson_data(String json_data) {
+	public void setJson_data(Object json_data) {
 		this.json_data = json_data;
 	}
 

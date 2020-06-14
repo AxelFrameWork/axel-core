@@ -37,7 +37,12 @@ package org.xmlactions.pager.actions;
 */
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.text.StrSubstitutor;
 import org.xmlactions.action.actions.BaseAction;
 import org.xmlactions.action.config.IExecContext;
@@ -86,6 +91,9 @@ public class Param extends BaseAction
 
 	public String getValue()
 	{
+		if (StringUtils.isEmpty(value)) {
+			return(getContent());
+		}
 		return value;
 	}
 
@@ -155,6 +163,24 @@ public class Param extends BaseAction
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	/**
+	 * 
+	 * @param params
+	 * @return a map with all the parameters. The key will either be the param.name or ("param" + index) - index starting from 1
+	 */
+	public static Map<String, Object> toMap(List<Param> params) {
+		Map<String, Object> map = new HashMap<>();
+		for (int index = 0 ; index < params.size(); index++ ) {
+			Param param = params.get(index);
+			String name = "param" + (index + 1);
+			if (StringUtils.isNotEmpty(param.getName())) {
+				name = param.getName();
+			}
+			map.put(name, param.getValue());
+		}
+		return map;
 	}
 
 }
