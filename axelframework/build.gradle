@@ -24,8 +24,8 @@ publishing {
 		//</scm>
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/")
-			//url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
+            //url = uri("https://maven.pkg.github.com/AxelFrameWork/axel-core/")
+			url = uri("https://maven.pkg.github.com/mwjmurphy/Axel-Framework/")
             credentials {
                 username = System.getenv("github_user")
                 password = System.getenv("github_axel_token")
@@ -172,6 +172,9 @@ signing {
 	}
 }
 
+// ===
+// When uploadArchives is complete see https://oss.sonatype.org/index.html#stagingProfiles to release to centrel
+// ===
 uploadArchives {
 	repositories {
 		mavenDeployer {
