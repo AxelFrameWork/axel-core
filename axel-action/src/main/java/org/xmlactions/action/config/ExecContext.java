@@ -453,6 +453,9 @@ public abstract class ExecContext implements IExecContext, Serializable {
 		Object obj = null;
 		if (jsonElement != null) {
 			if (jsonElement.isJsonArray()) {
+				if(jsonElement.getAsJsonArray() == null || jsonElement.getAsJsonArray().size() == 0 ) {
+					return null;
+				}
 				JsonElement je = jsonElement.getAsJsonArray().get(index).getAsJsonObject().get(key);
 				if (je.isJsonPrimitive()) {
 					obj = getPrimativeValue(je.getAsJsonPrimitive());
