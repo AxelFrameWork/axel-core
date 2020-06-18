@@ -85,7 +85,9 @@
          <xsd:attribute name="key" type="xsd:string" use="required">
             <xsd:annotation>
                <xsd:documentation>
-                  The key / name for the variable.
+					If this is set than the output will be placed
+	                into the execContext with this key.  Can be retrieved from the 
+	                execContext using the same key.
 				</xsd:documentation>
             </xsd:annotation>
          </xsd:attribute>
@@ -466,6 +468,12 @@
 				</xsd:documentation>
             </xsd:annotation>
          </xsd:attribute>
+		 <xsd:attribute name="value" type="xsd:string" use="optional">
+			<xsd:annotation><xsd:documentation><![CDATA[
+                 The value you want to put.  If the content is empty the put request will use this value. 
+			]]></xsd:documentation>
+			</xsd:annotation>
+		 </xsd:attribute>
       </xsd:complexType>
    </xsd:element>
 
@@ -551,6 +559,15 @@
                <xsd:documentation>
                    This is the path into the json data that is iterated to produce the data for each row.
                </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="key" type="xsd:string" use="optional">
+            <xsd:annotation>
+               <xsd:documentation>
+					If this is set than the json output will be placed
+	                into the execContext with this key.  Can be retrieved from the 
+	                execContext using the same key.
+				</xsd:documentation>
             </xsd:annotation>
          </xsd:attribute>
          <xsd:attribute name="index" type="xsd:integer" use="required">
@@ -1224,6 +1241,95 @@
 				   
 				   attribute = null
 				   
+            </xsd:documentation></xsd:annotation>
+         </xsd:attribute>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element name="text_format">
+      <xsd:annotation>
+         <xsd:documentation>
+				Apply formatting to a text string.
+				
+				&lt;axel:text_format text="123.22" format="%.20"/&gt;
+				
+				Applies java String.format rules.
+				
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:complexType>
+         <xsd:attribute name="text" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+		            This is the text to apply the formatting to.  The text can include replacement markers.
+           	   </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="format" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+                    This is the format to apply to the text.
+                    
+                    See https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="key" type="xsd:string" use="optional">
+            <xsd:annotation><xsd:documentation>
+				If this is set than the json output will be placed
+                into the execContext with this key.  Can be retrieved from the 
+                execContext using the same key.
+            </xsd:documentation></xsd:annotation>
+         </xsd:attribute>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element name="text_cut">
+      <xsd:annotation>
+         <xsd:documentation>
+				Cut content from a string.  As Java substring.  The cut content is returned or stored in execContext if the key is set.
+				
+				&lt;axel:text_cut text="asdasdasdasdasd" from="0" to="10" key="akey"/&gt;
+				
+				Will cut out a section from the input text.
+				
+				The from is where it will start the cut.  If this is empty then it will cut from the start.
+				
+				The end is where it will end the cut.  If this is empty then it will cut from the end.
+				
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:complexType>
+         <xsd:attribute name="text" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+		            This is the text to apply the cut to.  The text can include replacement markers.
+           	   </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="from" type="xsd:string" use="optional">
+            <xsd:annotation>
+               <xsd:documentation>
+                    Start the cut from here.
+                    
+                    If empty then cut from the beginning.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="to" type="xsd:string" use="optional">
+            <xsd:annotation>
+               <xsd:documentation>
+                    Cut to here.
+                    
+                    If empty then cut to the end.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="key" type="xsd:string" use="optional">
+            <xsd:annotation><xsd:documentation>
+				If this is set than the output will be placed
+                into the execContext with this key.  Can be retrieved from the 
+                execContext using the same key.
             </xsd:documentation></xsd:annotation>
          </xsd:attribute>
       </xsd:complexType>
