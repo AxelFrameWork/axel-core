@@ -177,7 +177,7 @@ public class HttpAction extends BaseAction
 		} else {
 			throw new IllegalArgumentException("Unsupported Method [" + getMethod() + "]");
 		}
-		if (response.getStatusCodeValue() != 200) {
+		if (response != null && response.getStatusCodeValue() != 200) {
 			throw new IllegalArgumentException("Http Request [" + getHref() + "] faied with error code [" + response.getStatusCodeValue() + ":" + response.getStatusCode());
 		}
 		if (error.length() > 0) {

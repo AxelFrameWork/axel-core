@@ -95,7 +95,7 @@
                 },
                 {
                     "use": "required",
-                    "documentation": "\r\n                  The key / name for the variable.\r\n\t\t\t\t",
+                    "documentation": "\r\n\t\t\t\t\tIf this is set than the output will be placed\r\n\t                into the execContext with this key.  Can be retrieved from the \r\n\t                execContext using the same key.\r\n\t\t\t\t",
                     "name": "key",
                     "type": "xsd:string"
                 }
@@ -263,12 +263,20 @@
         {
             "documentation": "\r\n            ",
             "name": "put",
-            "params": [{
-                "use": "required",
-                "documentation": "\r\n                  The key / name for the variable.\r\n\t\t\t\t",
-                "name": "key",
-                "type": "xsd:string"
-            }]
+            "params": [
+                {
+                    "use": "required",
+                    "documentation": "\r\n                  The key / name for the variable.\r\n\t\t\t\t",
+                    "name": "key",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n                 The value you want to put.  If the content is empty the put request will use this value. \r\n\t\t\t",
+                    "name": "value",
+                    "type": "xsd:string"
+                }
+            ]
         },
         {
             "documentation": "\r\n            ",
@@ -304,6 +312,12 @@
                     "use": "required",
                     "documentation": "\r\n                   This is the path into the json data that is iterated to produce the data for each row.\r\n               ",
                     "name": "json_path",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n\t\t\t\t\tIf this is set than the json output will be placed\r\n\t                into the execContext with this key.  Can be retrieved from the \r\n\t                execContext using the same key.\r\n\t\t\t\t",
+                    "name": "key",
                     "type": "xsd:string"
                 },
                 {
@@ -696,6 +710,60 @@
                     "use": "optional",
                     "documentation": "\r\n            \tThe xml_path is used to select an element or attribute value.\r\n            \t\r\n            \tThe syntax used for xpath is similar to an xpath parser including path and or attribute.\r\n            \t\r\n\t\t\t\tExample 1\r\n\t\t\t\t\r\n\t\t\t\t   xml = &lt;root&gt;&lt;row index=&quot;1&quot; data=&quot;This is the data&quot;/&gt;&lt;/root&gt;\r\n\t\t\t\t   \r\n\t\t\t\t   xpath = root/row[@data]\r\n\t\t\t\t   \r\n\t\t\t\t   path = root/row\r\n\t\t\t\t   \r\n\t\t\t\t   attribute = data\r\n\t\t\t\t   \r\n\t\t\t\tExample 2\r\n\t\t\t\t\r\n\t\t\t\t   xml = &lt;root&gt;&lt;row index=&quot;1&quot; data=&quot;This is the data&quot;/&gt;&lt;/root&gt;\r\n\t\t\t\t   \r\n\t\t\t\t   xpath = root/row\r\n\t\t\t\t   \r\n\t\t\t\t   path = root/row\r\n\t\t\t\t   \r\n\t\t\t\t   attribute = null\r\n\t\t\t\t   \r\n            ",
                     "name": "xml_path",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "documentation": "\r\n\t\t\t\tApply formatting to a text string.\r\n\t\t\t\t\r\n\t\t\t\t&lt;axel:text_format text=&quot;123.22&quot; format=&quot;%.20&quot;/&gt;\r\n\t\t\t\t\r\n\t\t\t\tApplies java String.format rules.\r\n\t\t\t\t\r\n         ",
+            "name": "text_format",
+            "params": [
+                {
+                    "use": "required",
+                    "documentation": "\r\n\t\t            This is the text to apply the formatting to.  The text can include replacement markers.\r\n           \t   ",
+                    "name": "text",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "required",
+                    "documentation": "\r\n                    This is the format to apply to the text.\r\n                    \r\n                    See https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html\r\n               ",
+                    "name": "format",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n\t\t\t\tIf this is set than the json output will be placed\r\n                into the execContext with this key.  Can be retrieved from the \r\n                execContext using the same key.\r\n            ",
+                    "name": "key",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "documentation": "\r\n\t\t\t\tCut content from a string.  As Java substring.  The cut content is returned or stored in execContext if the key is set.\r\n\t\t\t\t\r\n\t\t\t\t&lt;axel:text_cut text=&quot;asdasdasdasdasd&quot; from=&quot;0&quot; to=&quot;10&quot; key=&quot;akey&quot;/&gt;\r\n\t\t\t\t\r\n\t\t\t\tWill cut out a section from the input text.\r\n\t\t\t\t\r\n\t\t\t\tThe from is where it will start the cut.  If this is empty then it will cut from the start.\r\n\t\t\t\t\r\n\t\t\t\tThe end is where it will end the cut.  If this is empty then it will cut from the end.\r\n\t\t\t\t\r\n         ",
+            "name": "text_cut",
+            "params": [
+                {
+                    "use": "required",
+                    "documentation": "\r\n\t\t            This is the text to apply the cut to.  The text can include replacement markers.\r\n           \t   ",
+                    "name": "text",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n                    Start the cut from here.\r\n                    \r\n                    If empty then cut from the beginning.\r\n               ",
+                    "name": "from",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n                    Cut to here.\r\n                    \r\n                    If empty then cut to the end.\r\n               ",
+                    "name": "to",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n\t\t\t\tIf this is set than the output will be placed\r\n                into the execContext with this key.  Can be retrieved from the \r\n                execContext using the same key.\r\n            ",
+                    "name": "key",
                     "type": "xsd:string"
                 }
             ]

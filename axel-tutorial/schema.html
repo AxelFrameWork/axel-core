@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +93,7 @@
       </li>
     -->
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select a theme from the drop-down list">
         Select Bootstrap Theme
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -118,7 +119,7 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="List of common actions with tutorials.">
         Axel Actions
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -143,7 +144,7 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="List of all available core actions">
         Axel Schema
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -201,6 +202,10 @@
           <a class="dropdown-item" href="/schema.html#action_map_json_to_presentation">map_json_to_presentation</a>
         
           <a class="dropdown-item" href="/schema.html#action_map_xml_to_json">map_xml_to_json</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_text_format">text_format</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_text_cut">text_cut</a>
         
           <a class="dropdown-item" href="/schema.html#action_content_type">content_type</a>
         
@@ -376,6 +381,14 @@ function myFunction() {
                 </li>
             
                 <li class="nav-item">
+                    <a class="nav-link" href="#action_text_format">text_format</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="#action_text_cut">text_cut</a>
+                </li>
+            
+                <li class="nav-item">
                     <a class="nav-link" href="#action_content_type">content_type</a>
                 </li>
             
@@ -484,7 +497,9 @@ function myFunction() {
 
                         <td>
                             <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
-                  The key / name for the variable.
+					If this is set than the output will be placed
+	                into the execContext with this key.  Can be retrieved from the 
+	                execContext using the same key.
 				"></img>
                             
                                 key
@@ -1048,6 +1063,22 @@ function myFunction() {
                         <td>1</td>
                     </tr>
                     
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+                 The value you want to put.  If the content is empty the put request will use this value. 
+			"></img>
+                            
+                                value
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
             </table>
         </div>
     
@@ -1150,6 +1181,24 @@ function myFunction() {
                         </td>
                         <td>xsd:string</td>
                         <td>required</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+					If this is set than the json output will be placed
+	                into the execContext with this key.  Can be retrieved from the 
+	                execContext using the same key.
+				"></img>
+                            
+                                key
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
                         <td></td>
                         <td>1</td>
                     </tr>
@@ -2358,10 +2407,176 @@ function myFunction() {
             </table>
         </div>
     
+        <div id="action_text_format" style="padding-top: 80px;"></div>
+        <div class="panel panel-warning text-left">
+            <div class="panel-heading  panel-warning ">
+                <h4><span class="badge badge-info">28</span> text_format action
+                    <img src="img/popup_icon.png" width="32px" data-toggle="popover" data-content="
+				Apply formatting to a text string.
+				
+				&lt;axel:text_format text=&quot;123.22&quot; format=&quot;%.20&quot;/&gt;
+				
+				Applies java String.format rules.
+				
+         "></img>
+                </h4>
+            </div>
+            <table class="table table-sm">
+                <tr><th>attribute</th><th>type</th><th>use</th><th>default</th><th>minoccurs</th></tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+		            This is the text to apply the formatting to.  The text can include replacement markers.
+           	   "></img>
+                            
+                                text
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>required</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+                    This is the format to apply to the text.
+                    
+                    See https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html
+               "></img>
+                            
+                                format
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>required</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+				If this is set than the json output will be placed
+                into the execContext with this key.  Can be retrieved from the 
+                execContext using the same key.
+            "></img>
+                            
+                                key
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+            </table>
+        </div>
+    
+        <div id="action_text_cut" style="padding-top: 80px;"></div>
+        <div class="panel panel-warning text-left">
+            <div class="panel-heading  panel-warning ">
+                <h4><span class="badge badge-info">29</span> text_cut action
+                    <img src="img/popup_icon.png" width="32px" data-toggle="popover" data-content="
+				Cut content from a string.  As Java substring.  The cut content is returned or stored in execContext if the key is set.
+				
+				&lt;axel:text_cut text=&quot;asdasdasdasdasd&quot; from=&quot;0&quot; to=&quot;10&quot; key=&quot;akey&quot;/&gt;
+				
+				Will cut out a section from the input text.
+				
+				The from is where it will start the cut.  If this is empty then it will cut from the start.
+				
+				The end is where it will end the cut.  If this is empty then it will cut from the end.
+				
+         "></img>
+                </h4>
+            </div>
+            <table class="table table-sm">
+                <tr><th>attribute</th><th>type</th><th>use</th><th>default</th><th>minoccurs</th></tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+		            This is the text to apply the cut to.  The text can include replacement markers.
+           	   "></img>
+                            
+                                text
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>required</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+                    Start the cut from here.
+                    
+                    If empty then cut from the beginning.
+               "></img>
+                            
+                                from
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+                    Cut to here.
+                    
+                    If empty then cut to the end.
+               "></img>
+                            
+                                to
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+				If this is set than the output will be placed
+                into the execContext with this key.  Can be retrieved from the 
+                execContext using the same key.
+            "></img>
+                            
+                                key
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+            </table>
+        </div>
+    
         <div id="action_content_type" style="padding-top: 80px;"></div>
         <div class="panel panel-warning text-left">
             <div class="panel-heading  panel-warning ">
-                <h4><span class="badge badge-info">28</span> content_type action
+                <h4><span class="badge badge-info">30</span> content_type action
                     <img src="img/popup_icon.png" width="32px" data-toggle="popover" data-content="
 			This actions allows the page to change the http request content type.
 			
@@ -2544,7 +2759,7 @@ function myFunction() {
     </div>
     <footer class="container-fluid text-center axel">
     <h3> axel framework - tutorial 
-        &nbsp;&nbsp;<a href="https://github.com/mwjmurphy/Axel-Framework" title="join our team on github" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
+        &nbsp;&nbsp;<a href="https://github.com/AxelFrameWork/" title="join our team on github" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
         &nbsp;&nbsp;<a href="https://www.facebook.com/AxelFramework/" title="read about axel on facebook" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
     </h3>
 </footer>

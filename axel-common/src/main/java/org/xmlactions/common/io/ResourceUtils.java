@@ -638,6 +638,8 @@ public class ResourceUtils
 	 * Get a URL for a giver resource. The resource must exist or an exception
 	 * is caused.
 	 * 
+	 * 2020-06-16 - if getResource fails try again with / in front of name - this fixes loading from a war or jar file.  Will not retru if resourceName contains ':' 
+	 * 
 	 * @param resourceName
 	 * @return the URL of the resource.
 	 */
@@ -645,10 +647,22 @@ public class ResourceUtils
 	{
 		URL resource = ResourceUtils.class.getResource(resourceName);
 		if (resource == null) {
-			try {
-				resource = new URL(resourceName);
-			} catch (MalformedURLException e) {
-				// pass on. resource == null will be caught later.
+			// retry with / in front of name - provided there is no : in the name
+			if (resourceName.indexOf(':') < 0) {
+				resource = ResourceUtils.class.getResource("/" + resourceName);
+				if (resource == null) {
+					try {
+						resource = new URL(resourceName);
+					} catch (MalformedURLException e) {
+						// pass on. resource == null will be caught later.
+					}
+				}
+			} else {
+				try {
+					resource = new URL(resourceName);
+				} catch (MalformedURLException e) {
+					// pass on. resource == null will be caught later.
+				}
 			}
 		}
 		Validate.notNull(resource, " URL [" + resourceName + "] not found.");

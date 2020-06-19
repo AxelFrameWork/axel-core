@@ -17,17 +17,27 @@ public class PutAction extends BaseAction implements ReplacementHandlerAction
 
 	private String key;
 
+	private String value;
+
 	public String execute(IExecContext execContext) throws Exception
 	{
+		validate();
 		Action action = new Action();
 		String page = action.processPage(execContext, getContent());
 		this.clearActions();
-		execContext.put(getKey(), page);
+		// execContext.put(getKey(), 
+		getReplacementData(execContext, page);
 		// execContext.put(getKey(), StrSubstitutor.replace(getContent(), execContext));
 		// return 
 		return "";
 		// setReplacementContent("");
 		// return null;
+	}
+	
+	private void validate() {
+		if (StringUtils.isEmpty(getKey())) {
+			throw new IllegalArgumentException("Missing key for put action.");
+		}
 	}
 
 	public String toString()
@@ -48,12 +58,24 @@ public class PutAction extends BaseAction implements ReplacementHandlerAction
 		return key;
 	}
 
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
 	public Object getReplacementData(IExecContext execContext, Object innerContent) {
-		if (StringUtils.isEmpty((String)innerContent)) {
-			execContext.put(getKey(), execContext.replace(getContent()));
-		} else {
+		if (StringUtils.isNotEmpty((String)innerContent)) {
 			execContext.put(getKey(), innerContent);
+		} else  if (StringUtils.isNotEmpty(getValue())) {
+			execContext.put(getKey(),  execContext.replace(getValue()));
+		} else {
+			execContext.put(getKey(), execContext.replace(getContent()));
 		}
 		return null;
 	}
+
+
 }
