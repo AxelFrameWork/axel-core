@@ -1,5 +1,7 @@
 include 'axel-common',
 		'axel-action',
+		'axel-core-actions',
+		'axel-code',
 		'axel-email',
 		'axel-mapping',
 		'axel-web',

@@ -46,10 +46,11 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.text.StrSubstitutor;
 import org.xmlactions.action.actions.BaseAction;
 import org.xmlactions.action.config.IExecContext;
+import org.xmlactions.action.utils.Convert;
 
 public class Param extends BaseAction
 {
-	private enum TypeOption {
+	public enum TypeOption {
         _boolean("boolean", Boolean.class),
         _byte("byte", Byte.class),
         _short("short", Short.class),
@@ -58,6 +59,7 @@ public class Param extends BaseAction
         _float("float", Float.class),
         _double("double", Double.class),
         _char("char", Character.class),
+        _string("string", String.class),
         _String("String", String.class),
         _object("object", Object.class);
         
@@ -135,10 +137,8 @@ public class Param extends BaseAction
 		return null;
 	}
 
-	public String toString()
-	{
-
-		return value;
+	public String toString() {
+		return "" + getType() + ":" + getValue();
 	}
 
     public void setKey(String key) {
@@ -182,5 +182,42 @@ public class Param extends BaseAction
 		}
 		return map;
 	}
-
+	
+	/**
+	 * This attempts to match the object to type.  As double, integer, boolean or string
+	 * @param o object to convert
+	 * @return the nearest matching type
+	 */
+	public static String toNearestType(String o) {
+		Object x = Convert.toInteger(o);
+		if (x == null) {
+			x = Convert.toDouble(o);
+			if (x == null) {
+				x = Convert.toBoolean(o);
+				if (x == null) {
+					return Param.TypeOption._string.type;
+				} else {
+					return Param.TypeOption._boolean.type;
+				}
+			} else {
+				return Param.TypeOption._double.type;
+			}
+		} else {
+			return Param.TypeOption._int.type;
+		}
+	}
+	
+	public Object convert(Object o) {
+		if (getType().equalsIgnoreCase(TypeOption._string.type)) {
+			return Convert.toString(o);
+		} else if (getType().equals(TypeOption._int.type)) {
+			return Convert.toInteger(o);
+		} else if (getType().equals(TypeOption._double.type)) {
+			return Convert.toDouble(o);
+		} else if (getType().equals(TypeOption._long.type)) {
+			return Convert.toLong(o);
+		}
+		return o;
+	}
+	
 }

@@ -14,6 +14,7 @@ dependencies {
 	compile(
 		project(':axel-common'),
 		project(':axel-action'),
+		project(':axel-core-actions'),
 		project(':axel-email'),
 		project(':axel-mapping'),
 		project(':axel-web'),

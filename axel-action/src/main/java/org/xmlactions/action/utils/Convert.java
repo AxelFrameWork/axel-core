@@ -26,7 +26,11 @@ public class Convert {
 		}
 		
 		Boolean b = Boolean.parseBoolean("" + o);
-		
+		if (b == false) {
+			if (! ("false".equals(o) || "0".equals(o))) {
+				b = null; 
+			}
+		}
 		return b;
 	}
 	

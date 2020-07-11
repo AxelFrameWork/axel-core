@@ -13,6 +13,7 @@ repositories {
 dependencies {
 	compile(project(':axel-common'))
 	compile(project(':axel-action'))
+	compile(project(':axel-core-actions'))
 	compile(project(':axel-email'))
 	compile(project(':axel-mapping'))
 
