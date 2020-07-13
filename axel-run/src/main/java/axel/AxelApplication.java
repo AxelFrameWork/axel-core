@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -31,8 +29,6 @@ import org.xmlactions.web.conceal.HttpPager;
 @Controller
 public class AxelApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(AxelApplication.class);
-    
 	private static ApplicationContext applicationContext;
 	
 	public static void main(String[] args) {
@@ -49,8 +45,7 @@ public class AxelApplication {
 		return applicationContext;
 	}
 	
-	
-	@Bean	
+	@Bean
 	public ServletRegistrationBean<HttpServlet> axelServlet() {
 		ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
 		HttpPager httpPager = new HttpPager();
