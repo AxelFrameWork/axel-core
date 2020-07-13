@@ -6,13 +6,12 @@
     xmlns:aop="http://www.springframework.org/schema/aop"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-                        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
                         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
     <!-- M.M. All execution contexts are derived from this. -->
     <bean id="pager.execContext" name="pager.execContext" class="org.xmlactions.pager.context.SessionExecContext" scope="session">
-        <qualifier value="pager.execContext" />
+        <qualifier value="pager.execContext"/>
         <constructor-arg>
             <!-- "actionMaps" -->
             <list>
@@ -21,25 +20,14 @@
             </list>
         </constructor-arg>
 
+        <!-- "localMaps" additional configuration properties may be added here -->
+        <!-- 
         <constructor-arg>
-            <!-- "localMaps" -->
             <list>
                 <util:properties location="classpath:config/project/web.properties" />
             </list>
         </constructor-arg>
-
-        <constructor-arg>
-            <!-- "themes" -->
-            <util:list>
-                <ref bean="jqueryTheme" />
-            </util:list>
-        </constructor-arg>
+         -->
     </bean>
-
-    <bean id="jqueryTheme" class="org.xmlactions.common.theme.Theme">
-        <constructor-arg>
-            <util:properties location="classpath:themes/jquery.properties" />
-        </constructor-arg>
-    </bean>
-   
+  
 </beans>

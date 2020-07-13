@@ -1,0 +1,36 @@
+<div id="setup-springboot" style="padding-top: 80px;"></div>
+<div class="text-left axel"> 
+    <h3>How to setup Axel with Springboot</h3>
+    <p class="text-justify">
+        These instructions show how to configure Axel to run with Springboot.  The steps include
+
+        <div class="pl-5">
+	        <li>How to setup a gradle build script</li>
+	        <li>Dependent libraries required to run Axel and Springboot</li>
+	        <li>Building a runnable war file</li>
+	        <li>Running Springboot and accessing Axel using localhost</li>
+        </div>
+    </p>
+    <p class="text-justify">
+        The resultant war file will also run inside a docker container. Instructions for running a war inside a docker container
+        are not included with this setup, there are many sites that provide these instructions.
+    </p>
+    <p class="text-justify">
+        The following diagram shows Web Browsers communicating with a Web Server running Springboot inside a docker container.  Springboot is configured
+        to pass http requests to Axel through the Tomcat engine included with the build.
+    </p>
+    <p class="text-justify">
+        <img class="card-img-top" src="img/axel-docker-springboot.png" alt="Action Schema">
+    </p>
+    <p class="text-justify">
+        The result of this action will replace the action content with the content of the page named <i>title.html</i>.
+    </p>
+    <p class="text-justify">
+        Now we have html components - on any page where you want to show the title you simply add this action.  The inserted page
+        may also have axel actions which will be processed before the page is inserted.
+    </p>
+    <p class="test-justify">
+        There are many actions that perform different tasks, the insert action is a simple instruction yet introduces the powerfull
+        concept of html components in their native form.  The examples on this page show how to use the other actions and their benifits.
+    </p>
+</div>

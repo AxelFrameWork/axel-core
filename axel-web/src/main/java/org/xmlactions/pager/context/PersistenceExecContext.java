@@ -28,6 +28,10 @@ public class PersistenceExecContext extends ExecContext
 		super(actionMaps, localMaps, null);
 	}
 
+	public PersistenceExecContext(List<Object> actionMaps) {
+		super(actionMaps, null, null);
+	}
+
 	public void setSession(HttpSession session)
 	{
 

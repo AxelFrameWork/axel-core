@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    cerulean
+    cyborg
+    darkly
+    flatly
+    journal
+    lumen
+    lux
+    materia
+    minty
+    pulse
+    sandstone
+    simplex
+    sketchy
+    slate
+    solar
+    spacelab
+    superhero
+    united
+    yeti
+-->
+
+
+
+
+
+
+
+
+   
+<meta charset="utf-8">
+<title>Axel Framework Tutorial 2020</title>
+<link rel="shortcut icon" type="image/png" href="img/axel.ico"/>
+<meta name="description" content="A framework designed for building web pages on the server side, combining html with axel instructions bringing together your databases, external and local services.">
+<link rel="canonical" href="https://axelframewwork.org/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/bootstrap/cerulean//bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script-->
+<script src="https://kit.fontawesome.com/2ff5ff2a49.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/axel.css">
+<script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+</script>
+    
+    
+</head>
+<body>
+    <div class="container-fluid text-center">    
+        <style>
+#navbar {
+  _overflow: hidden;
+  _background-color: #333;
+  z-index: 900;
+  width: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 0px;
+}
+</style>
+<header id="navbar" class="container-fluid text-center axel">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-center">
+  <img src="/img/axel.png" alt="Axel Framework Logo" width="64"/>&nbsp;&nbsp;
+  <a class="navbar-brand" href="index.html"> Axel Framework</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!--
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select a theme from the drop-down list">
+        Select Bootstrap Theme
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="?selected_theme=cerulean">cerulean</a>
+        <a class="dropdown-item" href="?selected_theme=cyborg">cyborg</a>
+        <a class="dropdown-item" href="?selected_theme=darkly">darkly</a>
+        <a class="dropdown-item" href="?selected_theme=flatly">flatly</a>
+        <a class="dropdown-item" href="?selected_theme=journal">journal</a>
+        <a class="dropdown-item" href="?selected_theme=lumen">lumen</a>
+        <a class="dropdown-item" href="?selected_theme=lux">lux</a>
+        <a class="dropdown-item" href="?selected_theme=materia">materia</a>
+        <a class="dropdown-item" href="?selected_theme=minty">minty</a>
+        <a class="dropdown-item" href="?selected_theme=pulse">pulse</a>
+        <a class="dropdown-item" href="?selected_theme=sandstone">sandstone</a>
+        <a class="dropdown-item" href="?selected_theme=simplex">simplex</a>
+        <a class="dropdown-item" href="?selected_theme=sketchy">sketchy</a>
+        <a class="dropdown-item" href="?selected_theme=slate">slate</a>
+        <a class="dropdown-item" href="?selected_theme=solar">solar</a>
+        <a class="dropdown-item" href="?selected_theme=spacelab">spacelab</a>
+        <a class="dropdown-item" href="?selected_theme=superhero">superhero</a>
+        <a class="dropdown-item" href="?selected_theme=united">united</a>
+        <a class="dropdown-item" href="?selected_theme=yeti">yeti</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="List of common actions with tutorials.">
+        Axel Actions
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/actions.html#introduction">Introduction</a>
+        <a class="dropdown-item" href="/actions.html#how_it_works">How It Works</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/actions.html#hello_world">Hello World!!!</a>
+        <a class="dropdown-item" href="/actions.html#insert_component_page">Insert Component Page</a>
+        <a class="dropdown-item" href="/actions.html#capture_browser_parameters">Capture Browser Parameters</a>
+        <a class="dropdown-item" href="/actions.html#http_call_json" title="How to load data from an external site">Http Call Json</a>
+        <a class="dropdown-item" href="/actions.html#json_presentation" title="Presentation of the loaded data">Json Presentation</a>
+        <a class="dropdown-item" href="/actions.html#http_call_xml" title="How to load data from an external site">Http Call Xml</a>
+        <a class="dropdown-item" href="/actions.html#xml_presentation" title="Presentation of the loaded data">Xml Presentation</a>
+        <a class="dropdown-item" href="/actions.html#json_get" title="Get an object/s from a json document">Json Get</a>
+        <a class="dropdown-item" href="/actions.html#code" title="Executes a java bean method">Code</a>
+        <a class="dropdown-item" href="/actions.html#put_get_remove" title="Put, Get and Remove content from execContext">Put and Get and Remove</a>
+        <a class="dropdown-item" href="/actions.html#if_else_elseif" title="Conditional coding using if, else and elseif">If, Else and Elseif</a>
+        <a class="dropdown-item" href="/actions.html#range" title="Numeric indexing">Range</a>
+        <a class="dropdown-item" href="/actions.html#escaping" title="Escaping content for different formats">Escaping and Unescaping</a>
+        <a class="dropdown-item" href="/actions.html#evaluate" title="Javascript evaluation">Evaluating</a>
+        <a class="dropdown-item" href="/actions.html#date_formatting" title="Formatting dates">Date Formatting</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="List of all available core actions">
+        Axel Schema
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+          <a class="dropdown-item" href="/schema.html#action_code">code</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_http">http</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_param">param</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_insert">insert</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_insert_into">insert_into</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_echo">echo</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_if">if</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_elseif">elseif</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_else">else</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_put">put</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_remove">remove</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_get">get</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_json_get">json_get</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_eval">eval</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_date_formatter">date_formatter</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_transform">transform</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_escape">escape</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_unescape">unescape</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_debug">debug</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_log">log</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_range">range</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_map_xml_to_bean">map_xml_to_bean</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_map_bean_to_xml">map_bean_to_xml</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_script">script</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_map_xml_to_presentation">map_xml_to_presentation</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_map_json_to_presentation">map_json_to_presentation</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_map_xml_to_json">map_xml_to_json</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_text_format">text_format</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_text_cut">text_cut</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_content_type">content_type</a>
+        
+      </div>
+    </li>
+  <!--
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      -->
+    </ul>
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+  </div>    
+</nav>
+<script type="module" src="/js/axel/pick_scheme/pick_scheme.js"></script>
+</header>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+        <div style="padding-top: 50px">
+        </div>
+        <div id="title" class="jumbotron axel">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <img src="img/languages.png" width="250">
+        </div>
+        <div class="col-sm-6 ssidenav">
+            <h1 class="display-3">axel framework</h1>
+            <p class="lead">The framework builds web pages using instructions, commonly known as actions, placed inside each page.</p>
+            <hr class="my-4">
+            <p>
+                Details on how to use each action are shown in the tutorials. You'll also learn how to build and deploy web applications.
+                How to connect to backend and external resources such as databases and json feeds.  
+            </p>
+            <p>
+                To get started you need some knowledge on command line such as windows cmd, using a browser and a basic understanding of html.
+            </p>
+            <hr/>
+	        
+<div id="demo" class="carousel slide" style="height:120px" data-ride="carousel">
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/axel.png" height="60px" alt="Axel Framework">Axel Framework</img>
+    </div>
+    <div class="carousel-item">
+      <img src="img/learn.png" height="80px" alt="Easy to Learn">Easy to Learn <small>HTML / XML</small></img>
+    </div>
+    <div class="carousel-item">
+      <img src="img/use.png" height="80px" alt="Easy to Use">Easy to Use</img>
+    </div>
+    <div class="carousel-item">
+      <img src="img/deploy.png" height="80px" alt="Easy to Deploy">Easy to Deploy</img>
+    </div>
+    <div class="carousel-item">
+      <img src="img/maintain.png" height="80px" alt="Easy to Maintain">Easy to Maintain</img>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
+  </ul>
+
+</div>
+
+        </div>
+        <div class="col-sm-3 ssidenav">
+            <img src="img/servers.png" width="250">
+        </div>
+    </div>
+</div>
+
+        <div class="row content">
+            <div class="col-sm-1 sidenav">
+            </div>
+            <div class="col-sm-10" style="">
+                <h1>card links</h1>
+
+<div class="row">
+	
+	<div class="col-sm-4">
+		<!-- Card Wider -->
+		<div class="card card-cascade" onclick="window.location.href='actions.html'">
+		
+		  <!-- Card image -->
+		  <div class="view view-cascade overlay">
+		    <img class="card-img-top" src="img/tutorial.png" alt="Tutorials">
+		    <a href="#!">
+		      <div class="mask rgba-white-slight"></div>
+		    </a>
+		  </div>
+		
+		  <!-- Card content -->
+		  <div class="card-body card-body-cascade text-center pb-0">
+		
+		    <!-- Title -->
+		    <h4 class="card-title"><strong>Axel Actions</strong></h4>
+		    <!-- Subtitle -->
+		    <h5 class="blue-text pb-2"><strong>Tutorial Examples</strong></h5>
+		    <!-- Text -->
+		    <p class="card-text">
+		    	Some easy learning tutorials with examples using core axel framework actions.  
+			</p>
+		
+		    <!-- Card footer -->
+		    <div class="card-footer text-muted text-center mt-4">
+		      <a href="actions.html">Axel Actions Tutorial</a>
+		    </div>
+		
+		  </div>
+		
+		</div>
+		<!-- Card Wider -->
+	</div>		
+
+	<div class="col-sm-4">
+		<!-- Card Wider -->
+		<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
+		
+		  <!-- Card image -->
+		  <div class="view view-cascade overlay">
+		    <img class="card-img-top" src="img/coding.png" alt="Action Schema">
+		    <a href="#!">
+		      <div class="mask rgba-white-slight"></div>
+		    </a>
+		  </div>
+		
+		  <!-- Card content -->
+		  <div class="card-body card-body-cascade text-center pb-0">
+		
+		    <!-- Title -->
+		    <h4 class="card-title"><strong>Axel Schema</strong></h4>
+		    <!-- Subtitle -->
+		    <h5 class="blue-text pb-2"><strong>Action Documentation from Schema</strong></h5>
+		    <!-- Text -->
+		    <p class="card-text">
+		    	Detail list of core actions with parameter detail.  Derived from the axal schema.   
+			</p>
+		
+		    <!-- Card footer -->
+		    <div class="card-footer text-muted text-center mt-4">
+		      <a href="schema.html">Axel Actions Schema</a>
+		    </div>
+		
+		  </div>
+		
+		</div>
+		<!-- Card Wider -->
+	</div>		
+
+	<div class="col-sm-4">
+		<!-- Card Wider -->
+		<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
+		
+		  <!-- Card image -->
+		  <div class="view view-cascade overlay">
+		    <img class="card-img-top" src="img/setup.png" alt="Setup">
+		    <a href="#!">
+		      <div class="mask rgba-white-slight"></div>
+		    </a>
+		  </div>
+		
+		  <!-- Card content -->
+		  <div class="card-body card-body-cascade text-center pb-0">
+		
+		    <!-- Title -->
+		    <h4 class="card-title"><strong>Axel Setup</strong></h4>
+		    <!-- Subtitle -->
+		    <h5 class="blue-text pb-2"><strong>Configuring Axel</strong></h5>
+		    <!-- Text -->
+		    <p class="card-text">
+		    	How to setup axel to work in different environments.  
+			</p>
+		
+		    <!-- Card footer -->
+		    <div class="card-footer text-muted text-center mt-4">
+		      <a href="actions.html">Axel Framework Setup</a>
+		    </div>
+		
+		  </div>
+		
+		</div>
+		<!-- Card Wider -->
+	</div>		
+
+</div>
+
+            </div>
+            <div class="col-sm-1 sidenav">
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid text-center axel">
+    <h3> axel framework - tutorial 
+        &nbsp;&nbsp;<a href="https://github.com/AxelFrameWork/" title="join our team on github" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
+        &nbsp;&nbsp;<a href="https://www.facebook.com/AxelFramework/" title="read about axel on facebook" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+    </h3>
+</footer>
+</body>
+</html>

@@ -27,6 +27,10 @@ public class SessionExecContext extends ExecContext
 		super(actionMaps, localMaps, null);
 	}
 
+	public SessionExecContext(List<Object> actionMaps) {
+		super(actionMaps, null, null);
+	}
+
 	public void setSession(HttpSession session)
 	{
 
