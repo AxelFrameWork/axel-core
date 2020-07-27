@@ -12,7 +12,7 @@ include 'axel-common',
 		'axel-test',
 		'axel-war',
 		'axelframework',
-//		'axel-jar',
+		'axel-jar',
 		'axel-run',
 		'axel-springboot'
 

@@ -1,9 +1,10 @@
 # Axel-Framework
 
-The AXEL Framework is a comprehensive suite of tools for building web-sites. Using the framework
-reduces and may even remove the need for server side code.
-
-The framework uses actions to perform tasks inside a web html page. Tasks vary in functionality
-and can be a simple page insert to a complex json presentation.
+The AXEL Framework comprises a set of actions that perform tasks on a web page.  The actions are designed to do the most commons tasks
+for building a web site.  They provide a presentation layer for local and back-end data and use shared html components as a means to
+object orientation of web pages.
 
 See Tutorials and Schemas <a href="http://axelframework.org">Axel Framework/a>
+
+## axel-run
+This is the main build and publish project and produces the axel-framework
