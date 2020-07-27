@@ -15,6 +15,6 @@ public class InterpreterTest {
 		
 		String code = "echo(\"Hello World!!!\":string):string";
 		Interpreter interpreter = new Interpreter(code);
-		interpreter.process();
+		// interpreter.process();
 	}
 }

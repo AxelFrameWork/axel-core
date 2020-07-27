@@ -1,36 +1,109 @@
-<div id="setup-springboot" style="padding-top: 80px;"></div>
-<div class="text-left axel"> 
-    <h3>How to setup Axel with Springboot</h3>
-    <p class="text-justify">
-        These instructions show how to configure Axel to run with Springboot.  The steps include
+<div class="container">
+    <div id="setup-springboot" class="row" style="padding-top: 80px;"></div>
+    <div class="text-left axel"> 
+        <h3>How to setup and build an application with Axel and Springboot</h3>
 
-        <div class="pl-5">
-	        <li>How to setup a gradle build script</li>
-	        <li>Dependent libraries required to run Axel and Springboot</li>
-	        <li>Building a runnable war file</li>
-	        <li>Running Springboot and accessing Axel using localhost</li>
+        <!-- skill set -->
+        <p class="text-justify">
+            You need some familiarity with
+            <div class="pl-5">
+                <li>Command Line</li>
+                <li>Java</li>
+                <li>Springboot</li>
+                <li>Gradle</li>
+            </div>
+            <br/>
+        </p>
+
+        <!-- how to -->
+        <p class="text-justify">
+            These instructions show how to configure Axel to run with Springboot.  The steps include
+            <div class="pl-5">
+                <li>How to setup a gradle build script</li>
+                <li>Dependent libraries required to run Axel and Springboot</li>
+                <li>Building a runable jar file</li>
+                <li>Running Springboot and accessing Axel using localhost</li>
+            </div>
+            <br/>
+        </p>
+
+        <!-- diagram -->
+        <p class="text-justify">
+            This diagram shows Web Browsers communicating with a Web Server running Springboot.  Springboot is configured
+            to pass http requests to Axel through the Tomcat engine included with the build.
+        </p>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <p class="text-justify">
+                    <img class="card-img-top" src="img/axel-springboot.png" alt="Action Schema">
+                </p>
+            </div>
         </div>
-    </p>
-    <p class="text-justify">
-        The resultant war file will also run inside a docker container. Instructions for running a war inside a docker container
-        are not included with this setup, there are many sites that provide these instructions.
-    </p>
-    <p class="text-justify">
-        The following diagram shows Web Browsers communicating with a Web Server running Springboot inside a docker container.  Springboot is configured
-        to pass http requests to Axel through the Tomcat engine included with the build.
-    </p>
-    <p class="text-justify">
-        <img class="card-img-top" src="img/axel-docker-springboot.png" alt="Action Schema">
-    </p>
-    <p class="text-justify">
-        The result of this action will replace the action content with the content of the page named <i>title.html</i>.
-    </p>
-    <p class="text-justify">
-        Now we have html components - on any page where you want to show the title you simply add this action.  The inserted page
-        may also have axel actions which will be processed before the page is inserted.
-    </p>
-    <p class="test-justify">
-        There are many actions that perform different tasks, the insert action is a simple instruction yet introduces the powerfull
-        concept of html components in their native form.  The examples on this page show how to use the other actions and their benifits.
-    </p>
+
+        <br/>
+
+        <!-- folder layout -->
+        <p class="text-justify">
+            <b>These are the files that we use to build the application</b>
+            <pre>
+    axel-springboot -> <b><i>build.gradle</i></b>
+                    -> src -> main -> java -> axel -> <b><i>AxelApplication.java</i></b>
+                    -> src -> main -> resources -> <b><i>application.yml</i></b>
+                                                -> <b><i>log4j.properties</i></b>
+                                                -> <b><i>spring-axel.xml</i></b>
+            </pre>
+        </p>
+
+        <!-- instruction steps -->
+        <h5>Instellation Steps</h5>
+
+        <p class="text-left">1. Download this zip file and extract to your local disk drive in a folder of your choice
+            <a href="/data/axel-springboot.zip" download>axel-springboot.zip</a>
+        </p>
+
+        <p class="text-left">2. Install Java 8 or highter if not already installed
+            <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" download>Java Download Page</a>
+        </p>
+
+        <p class="text-left">3. Install Gradle if not already installed
+            <a href="https://gradle.org/install/" target="_blank" download>Gradle Download Page</a>
+        </p>
+
+        <!-- all installed and ready to go -->
+
+        <h5>Build Steps</h5>
+        <p class="text-left">1. Open a command / terminal window and cd to the axel-springboot folder</p>
+        <p class="text-left">2. Type <i>gradle clean build</i> to build the project - 
+            <small>When the build is complete the axel-springboot.jar is located in the <i>build/libs</i> folder</small>
+        </p>
+        <p class="text-left">3. Type <i>java -jar build\libs\axel-springboot.jar</i> to run the springboot application</p>
+        <p class="text-left">4. Open your browser and type <i>localhost</i> in the address bar -
+            <small>You should see an error in the browser with a message "file not found <i>index.html</i>"</small>
+        </p>
+        <p class="text-left">5. Create a file named <i>index.html</i> and add "Hello World !!! from axel"</p>
+        <p class="text-left">6. Refresh your browser -
+            <small>You should see "Hello World !!! from axel" in your browser window</small>
+        </p>
+
+        <h5>Next Steps - Hints</h5>
+        <p class="text-justify">
+            Axel is now working with Springboot.  You can add axel actions to your pages and see the results by
+            refreshing your browser.
+        </p>
+        <p class="text-justify">
+            If you create a batch / script file you can add this to your path and then run axel-springboot from any
+            location.  Makes if easy to build multiple web projects.<br/>
+            <i>java -jar c:\your\folder\axel-springboot.jar</i>
+        </p>
+        <p class="text-justify">
+            You can change the default port of 80 to any port number by adding -Dserver.port=port.number to your batch/script file.<br/>
+            <i>java -jar -Dserver.port=8080 c:\your\folder\axel-springboot.jar</i>
+        </p>
+.
+        </p>
+
+
+    </div>
+
 </div>

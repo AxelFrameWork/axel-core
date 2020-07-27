@@ -12,7 +12,7 @@ public class ParserTest {
 	private static final Logger logger = LoggerFactory.getLogger(ParserTest.class);
 
 
-	@Test
+	// @Test
 	public void testParserCode() {
 		String code = "  func /*asd/*asd*/asd*/( /* asd */ );";
 		Parser parser = new Parser(code);
@@ -27,7 +27,7 @@ public class ParserTest {
 		
 	}
 	
-	@Test
+	// @Test
 	public void testParserCodeWithParams() {
 		String code = "  func /*asd/*asd*/asd*/( /* asd */ \"Hello World!!!\");";
 		Parser parser = new Parser(code);

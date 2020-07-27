@@ -19,6 +19,9 @@ axel {
 .axel a {
     font-size: 14px;
 }
+.axel li {
+    font-size: 14px;
+}
 .axel .title {
     font-weight: 600;
     font-size: 18px;

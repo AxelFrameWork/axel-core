@@ -82,6 +82,7 @@ sourceSets {
         java {
 			srcDir project(':axel-common').file('src/main/java')
 			srcDir project(':axel-action').file('src/main/java')
+			srcDir project(':axel-core-actions').file('src/main/java')
 			srcDir project(':axel-email').file('src/main/java')
 			srcDir project(':axel-mapping').file('src/main/java')
 			srcDir project(':axel-web').file('src/main/java')
@@ -91,6 +92,7 @@ sourceSets {
         resources {
 			srcDir project(':axel-common').file('src/main/resources')
 			srcDir project(':axel-action').file('src/main/resources')
+			srcDir project(':axel-core-actions').file('src/main/resources')
 			srcDir project(':axel-email').file('src/main/resources')
 			srcDir project(':axel-mapping').file('src/main/resources')
 			srcDir project(':axel-web').file('src/main/resources')
