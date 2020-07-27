@@ -8,3 +8,6 @@ See Tutorials and Schemas <a href="http://axelframework.org">Axel Framework/a>
 
 ## axel-run
 This is the main build and publish project and produces the axel-framework
+
+# sonatype nexus
+After master build the version can be release to mvn central from https://oss.sonatype.org/index.html#stagingProfiles
