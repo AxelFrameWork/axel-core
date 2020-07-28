@@ -1,7 +1,7 @@
 <div class="container">
     <div id="setup-springboot" class="row" style="padding-top: 80px;"></div>
     <div class="text-left axel"> 
-        <h3>How to setup and build an application with Axel and Springboot</h3>
+        <h3>How to build an application with Axel and Springboot</h3>
 
         <!-- skill set -->
         <p class="text-justify">
@@ -56,7 +56,7 @@
         </p>
 
         <!-- instruction steps -->
-        <h5>Instellation Steps</h5>
+        <h5>Installation Steps</h5>
 
         <p class="text-left">1. Download this zip file and extract to your local disk drive in a folder of your choice
             <a href="/data/axel-springboot.zip" download>axel-springboot.zip</a>
@@ -100,10 +100,53 @@
             You can change the default port of 80 to any port number by adding -Dserver.port=port.number to your batch/script file.<br/>
             <i>java -jar -Dserver.port=8080 c:\your\folder\axel-springboot.jar</i>
         </p>
-.
-        </p>
-
-
+        <hr/>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>build.gradle</h4>
+                <p style="padding-left:40px">
+                    The build.gradle used to buold the axel-bootstrap.jar
+                </p>
+            </div>
+            <div class="card-body">
+                <pre><code class="java"><axel:insert page="code/build.gradle"/></code></pre>
+            </div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>AxelApplication.java</h4>
+                <p style="padding-left:40px">
+                    How we start spring boot and add listeners for servicing requests.
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="java"><axel:insert page="code/AxelApplication.java"/></code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>application.yml</h4>
+                <p style="padding-left:40px">
+                    The yaml definition used for deployment - note the logging config is contained in the log4j.properties
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="json"><axel:insert page="code/application.yml"/></code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>log4j.properties</h4>
+                <p style="padding-left:40px">
+                    Used to set the logging level and output file
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="properties"><axel:insert page="code/log4j.properties"/></code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>spring-axel.xml</h4>
+                <p style="padding-left:40px">
+                    The spring xml configuration file
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="xml"><axel:insert page="code/spring-axel.xml"/></code></pre></div>
+        </div>
     </div>
-
 </div>

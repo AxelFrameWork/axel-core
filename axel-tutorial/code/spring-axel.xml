@@ -1,0 +1,29 @@
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"&gt;
+    &lt;!-- M.M. All execution contexts are derived from this. --&gt;
+    &lt;bean id="pager.execContext" name="pager.execContext" class="org.xmlactions.pager.context.SessionExecContext" scope="session"&gt;
+        &lt;qualifier value="pager.execContext"/&gt;
+        &lt;constructor-arg&gt;
+            &lt;!-- "actionMaps" --&gt;
+            &lt;list&gt;
+                &lt;!-- These are included with the axelframwork.jar --&gt;
+                &lt;util:properties location="classpath:config/pager/actions.properties" /&gt;
+            &lt;/list&gt;
+        &lt;/constructor-arg&gt;
+        &lt;!-- "localMaps" additional configuration properties may be added here --&gt;
+        &lt;!-- 
+        &lt;constructor-arg&gt;
+            &lt;list&gt;
+                &lt;util:properties location="classpath:config/project/web.properties" /&gt;
+            &lt;/list&gt;
+        &lt;/constructor-arg&gt;
+         --&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;

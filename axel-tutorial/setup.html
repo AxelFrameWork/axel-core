@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +31,7 @@
 
 
 
+
    
 <meta charset="utf-8">
 <title>Axel Framework Tutorial 2020</title>
@@ -49,7 +51,11 @@
       $('[data-toggle="popover"]').popover()
     })
 </script>
-    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/school-book.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<!-- script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script -->
+<script>hljs.initHighlightingOnLoad();</script>
     
 </head>
 <body>
@@ -211,6 +217,14 @@
         
       </div>
     </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Configure Axel for different environments.">
+        Axel Environments
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/setup.html#setup-springboot">Springboot</a>
+      </div>
+	</li>
   <!--
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -266,19 +280,19 @@ function myFunction() {
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/axel.png" height="60px" alt="Axel Framework">Axel Framework</img>
+      <img src="img/axel.png" height="60px" alt="Axel Framework"> Axel Framework</img>
     </div>
     <div class="carousel-item">
-      <img src="img/learn.png" height="80px" alt="Easy to Learn">Easy to Learn <small>HTML / XML</small></img>
+      <img src="img/learn.png" height="80px" alt="Easy to Learn"> Easy to Learn <small>HTML / XML</small></img>
     </div>
     <div class="carousel-item">
-      <img src="img/use.png" height="80px" alt="Easy to Use">Easy to Use</img>
+      <img src="img/use.png" height="80px" alt="Easy to Use"> Easy to Use</img>
     </div>
     <div class="carousel-item">
-      <img src="img/deploy.png" height="80px" alt="Easy to Deploy">Easy to Deploy</img>
+      <img src="img/deploy.png" height="80px" alt="Easy to Deploy"> Easy to Deploy</img>
     </div>
     <div class="carousel-item">
-      <img src="img/maintain.png" height="80px" alt="Easy to Maintain">Easy to Maintain</img>
+      <img src="img/maintain.png" height="80px" alt="Easy to Maintain"> Easy to Maintain</img>
     </div>
   </div>
 
@@ -311,118 +325,479 @@ function myFunction() {
         <div class="row content">
             <div class="col-sm-1 sidenav">
             </div>
-            <div class="col-sm-10" style="">
-                <h1>card links</h1>
+            <div class="col-sm-10">
+            	<div class="row">
+	                <div class="container">
+	<div class="row">
+		
+		<!--
+		<div class="col-sm-4">
+			<div class="card card-cascade" onclick="window.location.href='#setup-springboot'">
+			
+			<div class="view view-cascade overlay">
+				<img class="card-img-top" src="img/axel-springboot.png" alt="Tutorials">
+				<a href="#!">
+				<div class="mask rgba-white-slight"></div>
+				</a>
+			</div>
+			
+			<div class="card-body card-body-cascade text-center pb-0">
+			
+				<h4 class="card-title"><strong>Axel - Springboot</strong></h4>
+				<h5 class="blue-text pb-2"><strong>Deploy Axel with Springboot</strong></h5>
+				<p class="card-text">
+					How to deploy Axel with Springboot.  
+				</p>
+			
+				<div class="card-footer text-muted text-center mt-4">
+				<a href="#setup-springboot">Axel Springboot</a>
+				</div>
+			
+			</div>
+			
+			</div>
+		</div>		
+		-->
 
-<div class="row">
-	
-	<div class="col-sm-4">
-		<!-- Card Wider -->
-		<div class="card card-cascade" onclick="window.location.href='actions.html'">
-		
-		  <!-- Card image -->
-		  <div class="view view-cascade overlay">
-		    <img class="card-img-top" src="img/tutorial.png" alt="Tutorials">
-		    <a href="#!">
-		      <div class="mask rgba-white-slight"></div>
-		    </a>
-		  </div>
-		
-		  <!-- Card content -->
-		  <div class="card-body card-body-cascade text-center pb-0">
-		
-		    <!-- Title -->
-		    <h4 class="card-title"><strong>Axel Actions</strong></h4>
-		    <!-- Subtitle -->
-		    <h5 class="blue-text pb-2"><strong>Tutorial Examples</strong></h5>
-		    <!-- Text -->
-		    <p class="card-text">
-		    	Some easy learning tutorials with examples using core axel framework actions.  
-			</p>
-		
-		    <!-- Card footer -->
-		    <div class="card-footer text-muted text-center mt-4">
-		      <a href="actions.html">Axel Actions Tutorial</a>
-		    </div>
-		
-		  </div>
-		
-		</div>
-		<!-- Card Wider -->
-	</div>		
+		<!--
+		<div class="col-sm-4">
+			<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
+			<div class="view view-cascade overlay">
+				<img class="card-img-top" src="img/coding.png" alt="Action Schema">
+				<a href="#!">
+				<div class="mask rgba-white-slight"></div>
+				</a>
+			</div>
+			
+			<div class="card-body card-body-cascade text-center pb-0">
+			
+				<h4 class="card-title"><strong>Axel Schema</strong></h4>
+				<h5 class="blue-text pb-2"><strong>Documentation from Schema</strong></h5>
+				<p class="card-text">
+					Detail list of core actions with parameter detail.  Derived from the axal schema.   
+				</p>
+			
+				<div class="card-footer text-muted text-center mt-4">
+				<a href="schema.html">Axel Actions Schema</a>
+				</div>
+			
+			</div>
+			</div>
+		</div>		
 
-	<div class="col-sm-4">
-		<!-- Card Wider -->
-		<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
-		
-		  <!-- Card image -->
-		  <div class="view view-cascade overlay">
-		    <img class="card-img-top" src="img/coding.png" alt="Action Schema">
-		    <a href="#!">
-		      <div class="mask rgba-white-slight"></div>
-		    </a>
-		  </div>
-		
-		  <!-- Card content -->
-		  <div class="card-body card-body-cascade text-center pb-0">
-		
-		    <!-- Title -->
-		    <h4 class="card-title"><strong>Axel Schema</strong></h4>
-		    <!-- Subtitle -->
-		    <h5 class="blue-text pb-2"><strong>Action Documentation from Schema</strong></h5>
-		    <!-- Text -->
-		    <p class="card-text">
-		    	Detail list of core actions with parameter detail.  Derived from the axal schema.   
-			</p>
-		
-		    <!-- Card footer -->
-		    <div class="card-footer text-muted text-center mt-4">
-		      <a href="schema.html">Axel Actions Schema</a>
-		    </div>
-		
-		  </div>
-		
-		</div>
-		<!-- Card Wider -->
-	</div>		
+		<div class="col-sm-4">
+			<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
+			
+			<div class="view view-cascade overlay">
+				<img class="card-img-top" src="img/setup.png" alt="Setup">
+				<a href="#!">
+				<div class="mask rgba-white-slight"></div>
+				</a>
+			</div>
+			
+			<div class="card-body card-body-cascade text-center pb-0">
+			
+				<h4 class="card-title"><strong>Axel Setup</strong></h4>
+				<h5 class="blue-text pb-2"><strong>Configuring Axel</strong></h5>
+				<p class="card-text">
+					How to setup axel to work in different environments.  
+				</p>
+			
+				<div class="card-footer text-muted text-center mt-4">
+				<a href="actions.html">Axel Framework Setup</a>
+				</div>
+			
+			</div>
+			
+			</div>
+	</div>
+	-->
 
-	<div class="col-sm-4">
-		<!-- Card Wider -->
-		<div class="card card-cascade wider" onclick="window.location.href='schema.html'">
-		
-		  <!-- Card image -->
-		  <div class="view view-cascade overlay">
-		    <img class="card-img-top" src="img/setup.png" alt="Setup">
-		    <a href="#!">
-		      <div class="mask rgba-white-slight"></div>
-		    </a>
-		  </div>
-		
-		  <!-- Card content -->
-		  <div class="card-body card-body-cascade text-center pb-0">
-		
-		    <!-- Title -->
-		    <h4 class="card-title"><strong>Axel Setup</strong></h4>
-		    <!-- Subtitle -->
-		    <h5 class="blue-text pb-2"><strong>Configuring Axel</strong></h5>
-		    <!-- Text -->
-		    <p class="card-text">
-		    	How to setup axel to work in different environments.  
-			</p>
-		
-		    <!-- Card footer -->
-		    <div class="card-footer text-muted text-center mt-4">
-		      <a href="actions.html">Axel Framework Setup</a>
-		    </div>
-		
-		  </div>
-		
-		</div>
-		<!-- Card Wider -->
-	</div>		
-
+	</div>
 </div>
+            	</div>
+	           	<div class="row">
+					<div class="container">
+    <div id="setup-springboot" class="row" style="padding-top: 80px;"></div>
+    <div class="text-left axel"> 
+        <h3>How to build an application with Axel and Springboot</h3>
 
+        <!-- skill set -->
+        <p class="text-justify">
+            You need some familiarity with
+            <div class="pl-5">
+                <li>Command Line</li>
+                <li>Java</li>
+                <li>Springboot</li>
+                <li>Gradle</li>
+            </div>
+            <br/>
+        </p>
+
+        <!-- how to -->
+        <p class="text-justify">
+            These instructions show how to configure Axel to run with Springboot.  The steps include
+            <div class="pl-5">
+                <li>How to setup a gradle build script</li>
+                <li>Dependent libraries required to run Axel and Springboot</li>
+                <li>Building a runable jar file</li>
+                <li>Running Springboot and accessing Axel using localhost</li>
+            </div>
+            <br/>
+        </p>
+
+        <!-- diagram -->
+        <p class="text-justify">
+            This diagram shows Web Browsers communicating with a Web Server running Springboot.  Springboot is configured
+            to pass http requests to Axel through the Tomcat engine included with the build.
+        </p>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <p class="text-justify">
+                    <img class="card-img-top" src="img/axel-springboot.png" alt="Action Schema">
+                </p>
+            </div>
+        </div>
+
+        <br/>
+
+        <!-- folder layout -->
+        <p class="text-justify">
+            <b>These are the files that we use to build the application</b>
+            <pre>
+    axel-springboot -> <b><i>build.gradle</i></b>
+                    -> src -> main -> java -> axel -> <b><i>AxelApplication.java</i></b>
+                    -> src -> main -> resources -> <b><i>application.yml</i></b>
+                                                -> <b><i>log4j.properties</i></b>
+                                                -> <b><i>spring-axel.xml</i></b>
+            </pre>
+        </p>
+
+        <!-- instruction steps -->
+        <h5>Installation Steps</h5>
+
+        <p class="text-left">1. Download this zip file and extract to your local disk drive in a folder of your choice
+            <a href="/data/axel-springboot.zip" download>axel-springboot.zip</a>
+        </p>
+
+        <p class="text-left">2. Install Java 8 or highter if not already installed
+            <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" download>Java Download Page</a>
+        </p>
+
+        <p class="text-left">3. Install Gradle if not already installed
+            <a href="https://gradle.org/install/" target="_blank" download>Gradle Download Page</a>
+        </p>
+
+        <!-- all installed and ready to go -->
+
+        <h5>Build Steps</h5>
+        <p class="text-left">1. Open a command / terminal window and cd to the axel-springboot folder</p>
+        <p class="text-left">2. Type <i>gradle clean build</i> to build the project - 
+            <small>When the build is complete the axel-springboot.jar is located in the <i>build/libs</i> folder</small>
+        </p>
+        <p class="text-left">3. Type <i>java -jar build\libs\axel-springboot.jar</i> to run the springboot application</p>
+        <p class="text-left">4. Open your browser and type <i>localhost</i> in the address bar -
+            <small>You should see an error in the browser with a message "file not found <i>index.html</i>"</small>
+        </p>
+        <p class="text-left">5. Create a file named <i>index.html</i> and add "Hello World !!! from axel"</p>
+        <p class="text-left">6. Refresh your browser -
+            <small>You should see "Hello World !!! from axel" in your browser window</small>
+        </p>
+
+        <h5>Next Steps - Hints</h5>
+        <p class="text-justify">
+            Axel is now working with Springboot.  You can add axel actions to your pages and see the results by
+            refreshing your browser.
+        </p>
+        <p class="text-justify">
+            If you create a batch / script file you can add this to your path and then run axel-springboot from any
+            location.  Makes if easy to build multiple web projects.<br/>
+            <i>java -jar c:\your\folder\axel-springboot.jar</i>
+        </p>
+        <p class="text-justify">
+            You can change the default port of 80 to any port number by adding -Dserver.port=port.number to your batch/script file.<br/>
+            <i>java -jar -Dserver.port=8080 c:\your\folder\axel-springboot.jar</i>
+        </p>
+        <hr/>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>build.gradle</h4>
+                <p style="padding-left:40px">
+                    The build.gradle used to buold the axel-bootstrap.jar
+                </p>
+            </div>
+            <div class="card-body">
+                <pre><code class="java">buildscript {
+    repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.9.RELEASE")
+	}
+}
+
+plugins {
+	id "org.springframework.boot" version "2.2.9.RELEASE"
+	id 'java'
+}
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+jar {
+	from sourceSets.main.allSource
+	manifest {
+		attributes 'Main-Class': 'axel.AxelApplication'
+	}
+}
+
+task customFatJar(type: Jar) {
+	manifest {
+		attributes 'Main-Class': 'axel.AxelApplication'
+	}
+	baseName = 'axel-run'
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
+}
+
+configurations.all {
+	exclude group:'org.springframework.boot', module:'spring-boot-starter-logging'
+	exclude group:'org.apache.tomcat', module:'servlet-api'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+	compile 'org.xmlactions:axelframework:3.1.9'
+	compile 'com.google.code.gson:gson:2.8.6'
+	compile 'org.json:json:20140107'
+	compile 'commons-lang:commons-lang:2.6'
+	compile 'commons-beanutils:commons-beanutils:1.8.3'
+	compile 'commons-configuration:commons-configuration:1.9'
+	compile 'commons-io:commons-io:1.4'
+	compile 'commons-fileupload:commons-fileupload:1.3.3'
+	compile 'commons-digester:commons-digester:2.1'
+	compile 'rhino:js:1.7R2'
+	compile 'dom4j:dom4j:1.6.1'
+	compile 'bsf:bsf:2.4.0'
+	compile 'javax.mail:mail:1.4.7'	
+	compile 'jasperreports:jasperreports:3.5.3'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+}</code></pre>
+            </div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>AxelApplication.java</h4>
+                <p style="padding-left:40px">
+                    How we start spring boot and add listeners for servicing requests.
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="java">package axel;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.HandlerMapping;
+import org.xmlactions.web.PagerServlet;
+import org.xmlactions.web.conceal.HttpPager;
+
+@SpringBootApplication
+@Configuration
+@ImportResource({"classpath:spring-axel.xml"})
+@Controller
+public class AxelApplication {
+
+	private static ApplicationContext applicationContext;
+	
+	public static void main(String[] args) {
+		applicationContext  = SpringApplication.run(AxelApplication.class, args);
+		
+		if(args.length > 0) {
+			HttpPager.setRealPath(args[0]);
+		} else {
+			HttpPager.setRealPath(".");
+		}
+	}
+	
+	public static ApplicationContext getApplicationContext() {
+		return applicationContext;
+	}
+	
+	/**
+	 * This services all browser page requests that match the Url Mapping "*.html","*.json", "*.csv", "*.js", "*.css".  Add
+	 * or remove these mappings as you need.
+	 *
+	 * It also tells the bean to process all axel action requests that are defined with "axel", as an example
+	 * &lt;axel:echo&gt;Hello World!!!&lt;/axel:echo&gt;
+	 * 
+	 * @return A ServletRegistrationBean
+	 */
+	@Bean
+	public ServletRegistrationBean<HttpServlet> axelServlet() {
+		ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
+		HttpPager httpPager = new HttpPager();
+		servRegBean.setServlet(new PagerServlet(httpPager));
+		servRegBean.addInitParameter("pager.namespace", "axel");
+		servRegBean.addUrlMappings("*.html","*.json", "*.csv", "*.js", "*.css"); //  "*.png", "*.jpg");
+		servRegBean.setLoadOnStartup(1);
+		return servRegBean;
+	}
+	
+	/**
+	 * This services all browser page requests that do not match the axelServlet detailed above.
+	 *
+	 * It basically loads and returns the content of file by inserting the content into the HttpResponse 
+	 */
+	@RequestMapping("**")
+	public void processAllOthers(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String pf = (String) request.getAttribute(HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
+		if (StringUtils.isNotEmpty(pf) && (pf.startsWith("/"))) {
+			pf = pf.substring(1);
+		}
+		if (StringUtils.isEmpty(pf)) {
+			pf = "index.html";	// set default to "index.html"
+		}
+		InputStream in = new FileInputStream(pf);
+		IOUtils.copy(in, response.getOutputStream());
+	}
+	
+	
+	
+}</code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>application.yml</h4>
+                <p style="padding-left:40px">
+                    The yaml definition used for deployment - note the logging config is contained in the log4j.properties
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="json">spring:
+  application:
+    name: axel-springboot
+  profiles:
+    active: dev
+server:
+  port: 80
+  servlet:
+    context-path: /
+  contextPath: /
+logging:
+  pattern:
+    console: "[${serverName}:${spring.application.name}] %date{HH:mm:ss} %-6level %-10([%thread]) %logger{1}.%method:%line %message%n"
+    file:    "[${serverName}:${spring.application.name}] %date{HH:mm:ss} %-6level %-10([%thread]) %logger{1}.%method:%line %message%n"
+  file: /var/log/ts/api-${spring.application.name}.log
+  level:
+    org.apache: WARN
+    org.springframework: WARN
+    org.hibernate: WARN
+
+</code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>log4j.properties</h4>
+                <p style="padding-left:40px">
+                    Used to set the logging level and output file
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="properties">log4j.rootLogger=DEBUG, stdout, R
+
+# Exclusion Classes
+log4j.logger.org.springframework=WARN
+log4j.logger.org.apache.commons=WARN
+log4j.logger.org.hibernate=WARN
+log4j.logger.org.xmlactions=WARN
+log4j.logger.org.xmlactions.mapping=WARN
+
+#log4j.logger.org.xmlactions.action.actions.BaseAction=INFO
+#log4j.logger.org.xmlactions.action.actions.SetupBeanFromXML=INFO
+log4j.logger.org.srg.spriongframework.boot=WARN
+
+# Standard output logging
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{MMM:dd:HH:mm:ss,SSS}:[%t]:(%C{1}.%M:%L):%-5p:%c{1}:%m%n
+#log4j.appender.stdout.layout.ConversionPattern=%d{MMM:dd:HH:mm:ss,SSS}:[%t]:%-5p:%c{1}:%m%n
+
+# Rolling file logging
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.R.File=axel-run.log
+log4j.appender.R.MaxFileSize=5MB
+log4j.appender.R.MaxBackupIndex=3
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%d{MMM:dd:HH:mm:ss,SSS}:[%t]:(%C{1}.%M:%L):%-5p:%c{1}:%m%n
+#log4j.appender.R.layout.ConversionPattern=%d{MMM:dd:HH:mm:ss,SSS}:[%t]:%-5p:%c{1}:%m%n
+
+</code></pre></div>
+        </div>
+        <div class="card mb-3" style="width: 100%">
+            <div class="card-header">
+                <h4>spring-axel.xml</h4>
+                <p style="padding-left:40px">
+                    The spring xml configuration file
+                </p>
+            </div>
+            <div class="card-body"><pre><code class="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"&gt;
+    &lt;!-- M.M. All execution contexts are derived from this. --&gt;
+    &lt;bean id="pager.execContext" name="pager.execContext" class="org.xmlactions.pager.context.SessionExecContext" scope="session"&gt;
+        &lt;qualifier value="pager.execContext"/&gt;
+        &lt;constructor-arg&gt;
+            &lt;!-- "actionMaps" --&gt;
+            &lt;list&gt;
+                &lt;!-- These are included with the axelframwork.jar --&gt;
+                &lt;util:properties location="classpath:config/pager/actions.properties" /&gt;
+            &lt;/list&gt;
+        &lt;/constructor-arg&gt;
+        &lt;!-- "localMaps" additional configuration properties may be added here --&gt;
+        &lt;!-- 
+        &lt;constructor-arg&gt;
+            &lt;list&gt;
+                &lt;util:properties location="classpath:config/project/web.properties" /&gt;
+            &lt;/list&gt;
+        &lt;/constructor-arg&gt;
+         --&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;</code></pre></div>
+        </div>
+    </div>
+</div>
+				</div>
             </div>
             <div class="col-sm-1 sidenav">
             </div>

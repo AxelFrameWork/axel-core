@@ -51,7 +51,11 @@
       $('[data-toggle="popover"]').popover()
     })
 </script>
-    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/school-book.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<!-- script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script -->
+<script>hljs.initHighlightingOnLoad();</script>
     
 </head>
 <body>
@@ -214,13 +218,12 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="List of common actions with tutorials.">
-        Axel Setup
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Configure Axel for different environments.">
+        Axel Environments
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/setup.html#setup-springboot">Springboot</a>
-        <div class="dropdown-divider"></div>
-       </div>
+      </div>
 	</li>
   <!--
       <li class="nav-item">
