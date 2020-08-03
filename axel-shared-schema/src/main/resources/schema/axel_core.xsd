@@ -1340,7 +1340,7 @@
          <xsd:documentation>
                 Replace a pattern in a text string with another value.
 				
-				&lt;axel:text_replace] text="this is a string" pattern="a" replace="another" key="akey"/&gt;
+				&lt;axel:text_replace text="this is a string" pattern="a" replace="another" key="akey"/&gt;
 				
 				Will change "this is a string" to "this is another string".
 				

@@ -768,7 +768,7 @@
             ]
         },
         {
-            "documentation": "\r\n                Replace a pattern in a text string with another value.\r\n\t\t\t\t\r\n\t\t\t\t&lt;axel:text_replace] text=&quot;this is a string&quot; pattern=&quot;a&quot; replace=&quot;another&quot; key=&quot;akey&quot;/&gt;\r\n\t\t\t\t\r\n\t\t\t\tWill change &quot;this is a string&quot; to &quot;this is another string&quot;.\r\n\t\t\t\t\r\n\t\t\t\tIf there are multiple instances of the pattern then all will be replaced with the replace value.\r\n\t\t\t\t\r\n         ",
+            "documentation": "\r\n                Replace a pattern in a text string with another value.\r\n\t\t\t\t\r\n\t\t\t\t&lt;axel:text_replace text=&quot;this is a string&quot; pattern=&quot;a&quot; replace=&quot;another&quot; key=&quot;akey&quot;/&gt;\r\n\t\t\t\t\r\n\t\t\t\tWill change &quot;this is a string&quot; to &quot;this is another string&quot;.\r\n\t\t\t\t\r\n\t\t\t\tIf there are multiple instances of the pattern then all will be replaced with the replace value.\r\n\t\t\t\t\r\n         ",
             "name": "text_replace",
             "params": [
                 {
