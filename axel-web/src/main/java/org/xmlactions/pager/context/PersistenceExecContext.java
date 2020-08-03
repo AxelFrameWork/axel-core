@@ -16,7 +16,7 @@ import org.xmlactions.action.config.ExecContext;
 public class PersistenceExecContext extends ExecContext
 {
 
-	private static final Logger log = LoggerFactory.getLogger(PersistenceExecContext.class);
+	private static final Logger log = LoggerFactory.getLogger(NoPersistExecContext.class);
 
 	HttpSession session;
 

@@ -19,7 +19,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.slf4j.Logger; import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.xmlactions.action.config.IExecContext;
-import org.xmlactions.pager.context.PersistenceExecContext;
+import org.xmlactions.pager.context.NoPersistExecContext;
 import org.xmlactions.web.conceal.HttpPager;
 
 
@@ -108,7 +108,7 @@ public class PagerServlet extends HttpServlet
     /**
      * @deprecated Use RequestExecContext.get();
      */
-    public static PersistenceExecContext setupExecContext() throws IOException, FileUploadException {
+    public static NoPersistExecContext setupExecContext() throws IOException, FileUploadException {
     	throw new IllegalArgumentException("@deprecated. Use RequestExecContext.get();");
     	//return httpPager.setupExecContext();
     }
