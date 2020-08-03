@@ -112,7 +112,7 @@
 		      	]]></xsd:documentation></xsd:annotation>
             </xsd:element>
          </xsd:sequence>
-         <xsd:attribute name="method" type="method_options" use="required" default="get">
+         <xsd:attribute name="method" type="method_options" default="get">
             <xsd:annotation><xsd:documentation><![CDATA[
 				The method determines the http method such as get or post
             ]]></xsd:documentation></xsd:annotation>
@@ -1330,6 +1330,54 @@
 				If this is set than the output will be placed
                 into the execContext with this key.  Can be retrieved from the 
                 execContext using the same key.
+            </xsd:documentation></xsd:annotation>
+         </xsd:attribute>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:element name="text_replace">
+      <xsd:annotation>
+         <xsd:documentation>
+                Replace a pattern in a text string with another value.
+				
+				&lt;axel:text_replace] text="this is a string" pattern="a" replace="another" key="akey"/&gt;
+				
+				Will change "this is a string" to "this is another string".
+				
+				If there are multiple instances of the pattern then all will be replaced with the replace value.
+				
+         </xsd:documentation>
+      </xsd:annotation>
+      <xsd:complexType>
+         <xsd:attribute name="text" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+		            This is the text to apply the replace to.  The text can include replacement markers.
+           	   </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="pattern" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+                    This is the pattern that is replaced.
+                    
+                    If more than one instance of the pattern is in the text then all will be replaced.
+                    
+                    The pattern is a regex and the regex replacement rules are applied.  As in java.lang.String.replaceAll 
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="replace" type="xsd:string" use="required">
+            <xsd:annotation>
+               <xsd:documentation>
+                    The pattern will be replaced with this value.
+               </xsd:documentation>
+            </xsd:annotation>
+         </xsd:attribute>
+         <xsd:attribute name="key" type="xsd:string" use="optional">
+            <xsd:annotation><xsd:documentation>
+				If this is set than the output will be placed into the execContext with this key.
+				Can be retrieved from the execContext using the same key.
             </xsd:documentation></xsd:annotation>
          </xsd:attribute>
       </xsd:complexType>

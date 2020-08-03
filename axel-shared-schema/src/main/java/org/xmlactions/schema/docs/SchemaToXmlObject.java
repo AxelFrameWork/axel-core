@@ -1,12 +1,8 @@
 package org.xmlactions.schema.docs;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlactions.common.xml.XMLObject;
 
 public class SchemaToXmlObject {
-	
-	private static final Logger logger = LoggerFactory.getLogger(SchemaToXmlObject.class);
 	
 	protected static XMLObject convertSchemaToXmlObject(String schema) {
 		try {

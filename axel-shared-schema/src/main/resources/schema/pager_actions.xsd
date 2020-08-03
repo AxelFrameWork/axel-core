@@ -147,7 +147,7 @@
 		      	]]></xsd:documentation></xsd:annotation>
             </xsd:element>
          </xsd:sequence>
-         <xsd:attribute name="method" type="method_options" use="required" default="get">
+         <xsd:attribute name="method" type="method_options" default="get">
             <xsd:annotation><xsd:documentation><![CDATA[
 				The method determines the http method such as get or post
             ]]></xsd:documentation></xsd:annotation>

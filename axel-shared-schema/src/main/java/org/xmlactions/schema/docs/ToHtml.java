@@ -1,8 +1,6 @@
 package org.xmlactions.schema.docs;
 
 import org.apache.commons.lang.StringEscapeUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlactions.common.text.XmlCData;
 import org.xmlactions.common.xml.XMLAttribute;
 import org.xmlactions.common.xml.XMLObject;
@@ -11,7 +9,6 @@ import org.xmlactions.pager.actions.form.templates.HtmlDiv;
 
 public class ToHtml {
 	
-	private static final Logger logger = LoggerFactory.getLogger(ToHtml.class);
 	private static final String
 		HEADER_BIG="h3",
 		HEADER_MEDIUM="h4",

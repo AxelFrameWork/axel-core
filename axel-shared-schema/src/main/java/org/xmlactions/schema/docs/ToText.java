@@ -1,14 +1,10 @@
 package org.xmlactions.schema.docs;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlactions.common.text.XmlCData;
 import org.xmlactions.common.xml.XMLAttribute;
 import org.xmlactions.common.xml.XMLObject;
 
 public class ToText {
-	
-	private static final Logger logger = LoggerFactory.getLogger(ToText.class);
 	
 	private int indent, indentLevel;
 	

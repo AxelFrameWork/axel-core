@@ -3,14 +3,12 @@ package org.xmlactions.schema.docs;
 import java.io.IOException;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.xmlactions.common.io.ResourceUtils;
 import org.xmlactions.common.xml.XMLObject;
 
 public class ToHtmlTest {
 	
-	private static final Logger logger = LoggerFactory.getLogger(ToHtmlTest.class);
+//	private static final Logger logger = LoggerFactory.getLogger(ToHtmlTest.class);
 	
 	@Test
 	public void testLoadSchema() throws IOException {

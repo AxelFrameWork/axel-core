@@ -112,7 +112,6 @@
                 },
                 {
                     "default": "get",
-                    "use": "required",
                     "documentation": "\r\n\t\t\t\tThe method determines the http method such as get or post\r\n            ",
                     "name": "method",
                     "type": "method_options"
@@ -763,6 +762,36 @@
                 {
                     "use": "optional",
                     "documentation": "\r\n\t\t\t\tIf this is set than the output will be placed\r\n                into the execContext with this key.  Can be retrieved from the \r\n                execContext using the same key.\r\n            ",
+                    "name": "key",
+                    "type": "xsd:string"
+                }
+            ]
+        },
+        {
+            "documentation": "\r\n                Replace a pattern in a text string with another value.\r\n\t\t\t\t\r\n\t\t\t\t&lt;axel:text_replace] text=&quot;this is a string&quot; pattern=&quot;a&quot; replace=&quot;another&quot; key=&quot;akey&quot;/&gt;\r\n\t\t\t\t\r\n\t\t\t\tWill change &quot;this is a string&quot; to &quot;this is another string&quot;.\r\n\t\t\t\t\r\n\t\t\t\tIf there are multiple instances of the pattern then all will be replaced with the replace value.\r\n\t\t\t\t\r\n         ",
+            "name": "text_replace",
+            "params": [
+                {
+                    "use": "required",
+                    "documentation": "\r\n\t\t            This is the text to apply the replace to.  The text can include replacement markers.\r\n           \t   ",
+                    "name": "text",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "required",
+                    "documentation": "\r\n                    This is the pattern that is replaced.\r\n                    \r\n                    If more than one instance of the pattern is in the text then all will be replaced.\r\n                    \r\n                    The pattern is a regex and the regex replacement rules are applied.  As in java.lang.String.replaceAll \r\n               ",
+                    "name": "pattern",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "required",
+                    "documentation": "\r\n                    The pattern will be replaced with this value.\r\n               ",
+                    "name": "replace",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "\r\n\t\t\t\tIf this is set than the output will be placed into the execContext with this key.\r\n\t\t\t\tCan be retrieved from the execContext using the same key.\r\n            ",
                     "name": "key",
                     "type": "xsd:string"
                 }
