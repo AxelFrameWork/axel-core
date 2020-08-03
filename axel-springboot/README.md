@@ -10,3 +10,5 @@ The files contained in the zip are
  - src/main/resources/log4j.properties
  - src/main/resources/spring-axel.xml
  
+ To build change to axe-springboot folder and then "gradle clean build"
+ 

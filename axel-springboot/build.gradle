@@ -23,19 +23,36 @@ targetCompatibility = 1.8
 
 
 jar {
+	println("axelVersion:$axelVersion")
 	from sourceSets.main.allSource
 	manifest {
-		attributes 'Main-Class': 'axel.AxelApplication'
+		println("manifest:axelVersion:$axelVersion")
+		attributes (
+			"Main-Class": "axel.AxelApplication",
+			"Axel-Version": "$axelVersion"
+		)
 	}
 }
 
 task customFatJar(type: Jar) {
+	println("customFatJar:axelVersion:$axelVersion")
 	manifest {
-		attributes 'Main-Class': 'axel.AxelApplication'
+		println("customFatJar:manifest:axelVersion:$axelVersion")
+		attributes (
+			"Main-Class": "axel.AxelApplication",
+			"Axel-Version": "$axelVersion"
+		)
 	}
 	baseName = 'axel-run'
 	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 	with jar
+	manifest {
+		println("customFatJar2:manifest:axelVersion:$axelVersion")
+		attributes (
+			"Main-Class": "axel.AxelApplication",
+			"Axel-Version": "$axelVersion"
+		)
+	}
 }
 
 configurations.all {
