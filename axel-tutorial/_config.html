@@ -4,21 +4,19 @@
     <axel:insert page="core/includes.html"/>
 </head>
 <body>
-    <div class="container-fluid text-center">    
+    <div class="container-fluid text-center">
+        
         <axel:insert page="core/header.html"/>
         <div style="padding-top: 50px">
         </div>
         <axel:insert page="core/title.html"/>
         <div class="row content">
-            <div class="col-sm-3 sidenav">
-                <axel:insert page="schema/action_navs.html"/>
+            <div class="col-sm-1 sidenav">
             </div>
-            <div class="col-sm-6">
-                <axel:insert page="schema/intro.html"/>
-                <axel:insert page="schema/schema.html"/>
+            <div class="col-sm-10">
+                <h6>here</h6><axel:text_replace text="This is a string" pattern="a" replace="another"/><axel:echo>Hello World!!!</axel:echo>
             </div>
-            <div class="col-sm-3 sidenav">
-                <axel:insert page="schema/type_navs.html"/>
+            <div class="col-sm-1 sidenav">
             </div>
         </div>
     </div>
