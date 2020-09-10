@@ -1,8 +1,6 @@
 spring:
   application:
     name: axel-springboot
-  profiles:
-    active: dev
 server:
   port: 80
   servlet:
