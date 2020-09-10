@@ -111,7 +111,7 @@ public class HttpActionTest
 		assertNotNull(response);
 	}
 
-	@Test
+	// @Test
 	public void testHttpGetLocal() throws Exception {
 		
 		HttpAction httpAction = new HttpAction();

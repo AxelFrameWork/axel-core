@@ -161,6 +161,9 @@ public class HttpAction extends BaseAction
 		if (getMethod().equalsIgnoreCase("get")) {
 			String url = execContext.replace(getHref()) + buildParamsForGet(execContext);
 			try {
+				if (log.isInfoEnabled()) {
+					log.info("get:{}", url);
+				}
 				response = restTemplate.getForEntity(url, String.class);
 			} catch (Exception ex) {
 				error = buildError(ex, url);
@@ -179,6 +182,11 @@ public class HttpAction extends BaseAction
 		}
 		if (response != null && response.getStatusCodeValue() != 200) {
 			throw new IllegalArgumentException("Http Request [" + getHref() + "] faied with error code [" + response.getStatusCodeValue() + ":" + response.getStatusCode());
+		}
+		if (response.getStatusCodeValue() < 300) {
+			if(log.isInfoEnabled()) {
+				log.info("response:{}", response.getBody());
+			}
 		}
 		if (error.length() > 0) {
 			return error;
