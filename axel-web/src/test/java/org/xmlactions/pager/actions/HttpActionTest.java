@@ -111,4 +111,14 @@ public class HttpActionTest
 		assertNotNull(response);
 	}
 
+	// @Test
+	public void testHttpGetLocal() throws Exception {
+		
+		HttpAction httpAction = new HttpAction();
+		httpAction.setHref("http://localhost/ts-hotel/v1/hotel/mongodb/get?id=793c1a417df08862f15b84b881c79884");
+		httpAction.setMethod("get");
+		String response = httpAction.execute(execContext);
+		assertNotNull(response);
+	}
+
 }

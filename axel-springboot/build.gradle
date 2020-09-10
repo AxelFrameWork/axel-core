@@ -58,6 +58,9 @@ task customFatJar(type: Jar) {
 configurations.all {
 	exclude group:'org.springframework.boot', module:'spring-boot-starter-logging'
 	exclude group:'org.apache.tomcat', module:'servlet-api'
+	all*.exclude module: 'slf4j-log4j12'
+    all*.exclude module: 'slf4j-log4j14'
+	
 }
 
 test {
@@ -80,4 +83,12 @@ dependencies {
 	compile 'javax.mail:mail:1.4.7'	
 	compile 'jasperreports:jasperreports:3.5.3'
 	compile 'org.springframework.boot:spring-boot-starter-web'
+	
+	compile (
+		// 'org.slf4j:slf4j-api:1.7.30',
+		// 'org.slf4j:slf4j-log4j12:1.7.30',
+		// 'org.slf4j:log4j-over-slf4j:1.7.30'
+		'ch.qos.logback:logback-classic:1.2.3'
+	)
+	
 }

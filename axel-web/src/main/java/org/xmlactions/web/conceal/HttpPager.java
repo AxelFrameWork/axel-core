@@ -38,6 +38,7 @@ import org.xmlactions.action.ActionConst;
 import org.xmlactions.action.NestedActionException;
 import org.xmlactions.action.config.IExecContext;
 import org.xmlactions.common.xml.BadXMLException;
+import org.xmlactions.pager.actions.props.PropsAction;
 import org.xmlactions.pager.context.SessionExecContext;
 import org.xmlactions.web.HttpParam;
 import org.xmlactions.web.PagerWebConst;
@@ -98,6 +99,8 @@ public class HttpPager {
 	private static String prePage;
 	private static String postPage;
 
+	private static String axelProps;	// if this is set we load props from this file into the execContext
+	
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -300,6 +303,12 @@ public class HttpPager {
 		for (String beanName : applicationContext.getBeanDefinitionNames()) {
 			log.debug("bean:" + beanName);
 			execContext.put(beanName, applicationContext.getBean(beanName));
+		}
+		
+		if (axelProps != null) {
+			PropsAction pa = new PropsAction();
+			pa.setFile(axelProps);
+			pa.execute(execContext);
 		}
 
 		log.info("ExecContext size:" + execContext.size());
@@ -641,6 +650,16 @@ public class HttpPager {
 	}
 	public static void setRealPath(String _realPath) {
 		realPath = _realPath;
+	}
+	
+	/**
+	 * If we set this then the execContext will load properties from this file.
+	 * 
+	 * The loaded uses apache configuration so can use include to load other property files.
+	 * @param fileName
+	 */
+	public static void setAxelProps(String fileName) {
+		axelProps = fileName;
 	}
 
 }
