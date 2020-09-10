@@ -6,25 +6,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-import java.util.Map;
-
-import junit.framework.TestCase;
-
-import org.slf4j.Logger; import org.slf4j.LoggerFactory;
-import org.dom4j.DocumentException;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xmlactions.action.Action;
 import org.xmlactions.action.ActionConst;
-import org.xmlactions.action.NestedActionException;
-import org.xmlactions.action.ReplacementMarker;
 import org.xmlactions.action.config.IExecContext;
-import org.xmlactions.common.xml.BadXMLException;
-import org.xmlactions.pager.PagerTest;
 
 
 /**
@@ -101,7 +90,7 @@ public class HttpActionTest
 	public void testProcessPage() throws Exception
 	{
 
-		Action action = new Action("src/test/resources", "pages/http.xhtml", PagerTest.NAMESPACE);
+		Action action = new Action("src/test/resources", "pages/http.xhtml", "pager");
 
 		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(ActionConst.SPRING_STARTUP_CONFIG);
 		IExecContext execContext = (IExecContext) applicationContext.getBean(ActionConst.EXEC_CONTEXT_BEAN_REF);
@@ -112,5 +101,14 @@ public class HttpActionTest
 		
 	}
 
+	@Test
+	public void testHttpGetAxe() throws Exception {
+		
+		HttpAction httpAction = new HttpAction();
+		httpAction.setHref("http://axelframework.org/data/people.json");
+		httpAction.setMethod("get");
+		String response = httpAction.execute(execContext);
+		assertNotNull(response);
+	}
 
 }
