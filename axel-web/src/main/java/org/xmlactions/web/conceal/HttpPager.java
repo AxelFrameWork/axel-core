@@ -266,7 +266,16 @@ public class HttpPager {
 		
 		execContext.addNamedMap(PagerWebConst.REQUEST_HEADERS, HttpSessionInfo.getRequestHeaders(request));
 
-		log.info("ExecContext size:" + execContext.size());
+		if (axelProps != null) {
+			PropsAction pa = new PropsAction();
+			pa.setFile(execContext.replace(axelProps));
+			pa.execute(execContext);
+		}
+
+		if (log.isInfoEnabled()) {
+			log.info("axelProps:" + axelProps);
+			log.info("ExecContext size:" + execContext.size());
+		}
 
 		return execContext;
 	}
@@ -307,11 +316,14 @@ public class HttpPager {
 		
 		if (axelProps != null) {
 			PropsAction pa = new PropsAction();
-			pa.setFile(axelProps);
+			pa.setFile(execContext.replace(axelProps));
 			pa.execute(execContext);
 		}
 
-		log.info("ExecContext size:" + execContext.size());
+		if (log.isInfoEnabled()) {
+			log.info("axelProps:" + axelProps);
+			log.info("ExecContext size:" + execContext.size());
+		}
 
 		return execContext;
 	}

@@ -3,17 +3,15 @@ package axel;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.configuration.CompositeConfiguration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +34,8 @@ import org.xmlactions.web.conceal.HttpPager;
 @Controller
 public class AxelApplication {
 
+	private static final Logger log = LoggerFactory.getLogger(AxelApplication.class);
+
 	private static ApplicationContext applicationContext;
 	
 	private static final String propsname = "axel.props";
@@ -46,8 +46,26 @@ public class AxelApplication {
 	
 	public static void main(String[] args) {
 		applicationContext  = SpringApplication.run(AxelApplication.class, args);
-		HttpPager.setRealPath(".");
-		// HttpPager.setAxelProps(System.getProperty(propsname));
+		
+		String realPath;
+		if (args.length > 0) {
+			realPath = args[0];
+		} else {
+			realPath = ".";
+		}
+		HttpPager.setRealPath(realPath);
+		// *** Handy mechanism for passing properties from start ***
+		String axelProps = null;
+		if (System.getProperty(propsname) != null) {
+			axelProps = System.getProperty(propsname);
+		} else if (System.getenv(propsname) != null) {
+			axelProps = System.getenv(propsname);
+		}
+		if (log.isInfoEnabled()) {
+			log.info("realPath:" + realPath);
+			log.info(propsname + ":" + axelProps);
+		}
+		HttpPager.setAxelProps(axelProps);
 	}
 	
 	public static ApplicationContext getApplicationContext() {
