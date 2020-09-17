@@ -68,7 +68,8 @@ test {
 }
 
 dependencies {
-	compile 'org.xmlactions:axelframework:3.1.10'
+	// compile 'org.xmlactions:axelframework:3.1.10'
+	compile (project(':axelframework'))
 	compile 'com.google.code.gson:gson:2.8.6'
 	compile 'org.json:json:20140107'
 	compile 'commons-lang:commons-lang:2.6'

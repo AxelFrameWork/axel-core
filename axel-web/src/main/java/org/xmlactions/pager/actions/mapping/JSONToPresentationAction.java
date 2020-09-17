@@ -23,6 +23,7 @@ import org.xmlactions.pager.actions.form.CommonFormFields;
 import org.xmlactions.pager.actions.form.PresentationFormAction;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 
 public class JSONToPresentationAction extends CommonFormFields {
@@ -105,8 +106,23 @@ public class JSONToPresentationAction extends CommonFormFields {
 		        data = ResourceUtils.loadFile(fileName);
 		        jsonElement = gson.fromJson(data, JsonElement.class);
 	        } else {
-	        	data = execContext.replace(getJson_data(execContext));
-		        jsonElement = gson.fromJson(data, JsonElement.class);
+	        	Object obj = execContext.get(getJson_data());
+	        	if (obj != null) {
+	        		if (obj instanceof JsonElement) {
+	        			jsonElement = (JsonElement) obj;
+	        		} else if (obj instanceof Map){
+	        			GsonBuilder gsonMapBuilder = new GsonBuilder();
+	        			Gson gsonObject = gsonMapBuilder.create();
+	        			String jo = gsonObject.toJson(obj);
+	        			jsonElement = gson.fromJson(jo, JsonElement.class);
+	        		} else { 
+	        			data = execContext.replace(getJson_data(execContext));
+	        			jsonElement = gson.fromJson(data, JsonElement.class);
+	        		}
+	        	} else {
+        			data = execContext.replace(getJson_data(execContext));
+        			jsonElement = gson.fromJson(data, JsonElement.class);
+	        	}
 	        }
     	} catch (Exception ex) {
 			throw new IllegalArgumentException("Unable to get data  for " + getJson_filename() + " or " + getJson_data() + " for json[" + data + "]", ex);

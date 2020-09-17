@@ -1,6 +1,8 @@
 
 package org.xmlactions.common.scripting;
 
+import javax.script.ScriptEngine;
+
 import org.apache.bsf.BSFException;
 import org.apache.bsf.BSFManager;
 
@@ -11,7 +13,9 @@ import org.apache.bsf.BSFManager;
 public class Scripting {
 
     private static Scripting scripting = null;
-    private BSFManager bsfManager;
+    // private BSFManager bsfManager;
+	private ScriptEngine scriptEngine = NashornJS.getScriptEngine();
+
 
     public static Scripting getInstance() {
 
@@ -23,7 +27,8 @@ public class Scripting {
     }
     
     private Scripting () {
-        bsfManager = new BSFManager();
+    	scriptEngine = NashornJS.getScriptEngine();
+        // bsfManager = new BSFManager();
     }
 
     /**
@@ -39,7 +44,8 @@ public class Scripting {
 
     public Object evaluate(String code) throws BSFException {
     	try {
-    		return bsfManager.eval("javascript", "debug infos", 0, 0, code);
+    		// return bsfManager.eval("javascript", "debug infos", 0, 0, code);
+    		return this.scriptEngine.eval(code);
     	} catch (Exception ex) {
     		throw new IllegalArgumentException("Error eval [" + code + "]", ex);
     	}
@@ -47,7 +53,8 @@ public class Scripting {
 
     public void execute(String code) throws BSFException {
     	try {
-	        bsfManager.exec("javascript", "debug infos", 0, 0, code);
+    		// bsfManager.exec("javascript", "debug infos", 0, 0, code);
+    		this.scriptEngine.eval(code);
 		} catch (Exception ex) {
 			throw new IllegalArgumentException("Error exec [" + code + "]", ex);
 		}

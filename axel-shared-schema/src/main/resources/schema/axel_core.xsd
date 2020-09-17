@@ -1009,11 +1009,15 @@
          <xsd:documentation><![CDATA[
 			The "script" action will execute a javascript.
 			
-			The javascript is written in the content of the "script" element and may be wrapped with a
-			CDATA element.
+			Scripts can be added to the content or loaded from a file.  If you add a script to the
+			content and also set the fileName attribute only the fileName will be executed.
 			
-			Replacement Markers may be added to the script.  These will be injected before execution of the
-			script.
+			If you load a javascript file using the fileName attribute you can pass parameters to
+			the javascript by adding these to the param list.
+			
+			If you add the javascript to the content of the "script" element it can be wrapped with a
+			CDATA element.  You can also add Replacement Markers the script. These will be injected
+			before execution of the script.
 			
 			The "key" attribute may be set with a value that will be used to store the result of the executed
 			javascript back into the execContext.  You can get at this using the ${key} syntax.
@@ -1031,6 +1035,27 @@
 			]]></xsd:documentation>
       </xsd:annotation>
       <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element ref="param" minOccurs="0">
+				<xsd:annotation><xsd:documentation><![CDATA[
+					The param element may be used to pass one or more parameters to the 
+					JavaScript file if the fileName attribute is used.
+					
+		            @see <a href="#param">param</a> definiton. 
+		      	]]></xsd:documentation></xsd:annotation>
+            </xsd:element>
+         </xsd:sequence>
+         <xsd:attribute name="fileName" type="xsd:string" use="optional">
+			<xsd:annotation><xsd:documentation><![CDATA[]
+				Instead of inserting the JavaScript code into the content you can load it from
+				a javascript file.
+				
+				Set the fileName with the path and name of the JavaScript file.
+				
+				You can pass binding parameters to the JavaScript by adding the key/value
+				pairs to the Param list.
+			]]></xsd:documentation></xsd:annotation>
+         </xsd:attribute>
          <xsd:attribute name="key" type="xsd:string" use="optional">
 			<xsd:annotation><xsd:documentation><![CDATA[]
 				This attribute is used if you want to store the results of the script back into

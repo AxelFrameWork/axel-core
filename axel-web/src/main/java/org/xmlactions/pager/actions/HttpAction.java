@@ -185,7 +185,7 @@ public class HttpAction extends BaseAction
 		}
 		if (response.getStatusCodeValue() < 300) {
 			if(log.isInfoEnabled()) {
-				log.info("response:{}", response.getBody());
+				log.info("response:{}", limitSize(response.getBody(), 200));
 			}
 		}
 		if (error.length() > 0) {
@@ -197,6 +197,13 @@ public class HttpAction extends BaseAction
 		} else {
 			return response.getBody();
 		}
+	}
+	
+	private String limitSize(String s, int len) {
+		if (s.length() > len) {
+			return s.substring(0, len) + "...";
+		}
+		return s;
 	}
 	
 	private String buildError(Exception ex, String uri) {

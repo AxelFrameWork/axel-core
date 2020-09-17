@@ -53,7 +53,7 @@ public class SetupBeanFromXML
 			Object obj = BeanUtils.getProperty(action, name);
 			if (obj != null && !value.toString().equals(obj.toString())) {
 				throw new IllegalArgumentException("Unable to get matching value for [" + name
-						+ "] which has just been set in [" + action.getClass().getName() + "], instead got [" + obj
+						+ "] which has just been set in [" + action.getClass().getName() + "], instead got [" + limitSize(obj, 200)
 						+ "] when expected [" + value + "]");
 			}
 			if (value instanceof BaseAction && !name.equals(BaseAction.CHILD)) {
@@ -68,6 +68,14 @@ public class SetupBeanFromXML
 						+ "] with value of [" + value + "] error:" + ex.getMessage());	// , ex);
 			}
 		}
+	}
+	
+	private static String limitSize(Object o, int len) {
+		String s = "" + o;
+		if (s.length() > len) {
+			return s.substring(0, len) + "...";
+		}
+		return s;
 	}
 
 	private Object getProperty(BaseAction action, String name)
