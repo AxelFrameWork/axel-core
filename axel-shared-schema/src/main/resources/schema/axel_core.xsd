@@ -1061,7 +1061,8 @@
 				This attribute is used if you want to store the results of the script back into
 				the execContext.
 				
-				If you don't use the key attribute the results of the script are returned.
+				If you don't use the key attribute the results of the script are returned and inserted
+				in place of this action.
 			]]></xsd:documentation></xsd:annotation>
          </xsd:attribute>
       </xsd:complexType>
@@ -1430,6 +1431,14 @@
 			</xsd:attribute>
 		</xsd:complexType>
 	</xsd:element>
+
+   <xsd:element name="form">
+      <xsd:annotation>
+         <xsd:documentation><![CDATA[
+            This is a container element for pure html that will be used to build a form presentation used by the list, add or edit actions.
+         ]]></xsd:documentation>
+      </xsd:annotation>
+   </xsd:element>
 
    <xsd:group name="actions">
       <xsd:annotation>

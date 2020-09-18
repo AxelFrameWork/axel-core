@@ -577,14 +577,27 @@
             ]
         },
         {
-            "documentation": "\r\n\t\t\tThe &quot;script&quot; action will execute a javascript.\r\n\t\t\t\r\n\t\t\tThe javascript is written in the content of the &quot;script&quot; element and may be wrapped with a\r\n\t\t\tCDATA element.\r\n\t\t\t\r\n\t\t\tReplacement Markers may be added to the script.  These will be injected before execution of the\r\n\t\t\tscript.\r\n\t\t\t\r\n\t\t\tThe &quot;key&quot; attribute may be set with a value that will be used to store the result of the executed\r\n\t\t\tjavascript back into the execContext.  You can get at this using the ${key} syntax.\r\n\t\t\t\r\n\t\t\tA scipt action example:\r\n\t\t\t\r\n<pre>\r\n&lt;axel:script key=&quot;MyScriptResult&quot;&gt;<br/>\r\n\tvar x = &quot;My Name is ${user.name}&quot;;<br/>\r\n\tvar y = &quot;My other name is not ${user.name}&quot;;<br/>\r\n\tvar p = x + y;<br/>\r\n\tp;<br/>\r\n&lt;/axel:script&gt;<br/>\r\n<\/pre> \r\n\t\t\t",
+            "documentation": "\r\n\t\t\tThe &quot;script&quot; action will execute a javascript.\r\n\t\t\t\r\n\t\t\tScripts can be added to the content or loaded from a file.  If you add a script to the\r\n\t\t\tcontent and also set the fileName attribute only the fileName will be executed.\r\n\t\t\t\r\n\t\t\tIf you load a javascript file using the fileName attribute you can pass parameters to\r\n\t\t\tthe javascript by adding these to the param list.\r\n\t\t\t\r\n\t\t\tIf you add the javascript to the content of the &quot;script&quot; element it can be wrapped with a\r\n\t\t\tCDATA element.  You can also add Replacement Markers the script. These will be injected\r\n\t\t\tbefore execution of the script.\r\n\t\t\t\r\n\t\t\tThe &quot;key&quot; attribute may be set with a value that will be used to store the result of the executed\r\n\t\t\tjavascript back into the execContext.  You can get at this using the ${key} syntax.\r\n\t\t\t\r\n\t\t\tA scipt action example:\r\n\t\t\t\r\n<pre>\r\n&lt;axel:script key=&quot;MyScriptResult&quot;&gt;<br/>\r\n\tvar x = &quot;My Name is ${user.name}&quot;;<br/>\r\n\tvar y = &quot;My other name is not ${user.name}&quot;;<br/>\r\n\tvar p = x + y;<br/>\r\n\tp;<br/>\r\n&lt;/axel:script&gt;<br/>\r\n<\/pre> \r\n\t\t\t",
             "name": "script",
-            "params": [{
-                "use": "optional",
-                "documentation": "]\r\n\t\t\t\tThis attribute is used if you want to store the results of the script back into\r\n\t\t\t\tthe execContext.\r\n\t\t\t\t\r\n\t\t\t\tIf you don't use the key attribute the results of the script are returned.\r\n\t\t\t",
-                "name": "key",
-                "type": "xsd:string"
-            }]
+            "params": [
+                {
+                    "minOccurs": "0",
+                    "documentation": "\r\n\t\t\t\t\tThe param element may be used to pass one or more parameters to the \r\n\t\t\t\t\tJavaScript file if the fileName attribute is used.\r\n\t\t\t\t\t\r\n\t\t            @see <a href=&quot;#param&quot;>param<\/a> definiton. \r\n\t\t      \t",
+                    "name": "param"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "]\r\n\t\t\t\tInstead of inserting the JavaScript code into the content you can load it from\r\n\t\t\t\ta javascript file.\r\n\t\t\t\t\r\n\t\t\t\tSet the fileName with the path and name of the JavaScript file.\r\n\t\t\t\t\r\n\t\t\t\tYou can pass binding parameters to the JavaScript by adding the key/value\r\n\t\t\t\tpairs to the Param list.\r\n\t\t\t",
+                    "name": "fileName",
+                    "type": "xsd:string"
+                },
+                {
+                    "use": "optional",
+                    "documentation": "]\r\n\t\t\t\tThis attribute is used if you want to store the results of the script back into\r\n\t\t\t\tthe execContext.\r\n\t\t\t\t\r\n\t\t\t\tIf you don't use the key attribute the results of the script are returned and inserted\r\n\t\t\t\tin place of this action.\r\n\t\t\t",
+                    "name": "key",
+                    "type": "xsd:string"
+                }
+            ]
         },
         {
             "documentation": "\r\n\t\t\tMap selected content of an XML to a presentation form.\r\n            \r\n            The ${...} replacement markers are used presenting the data in a form.\r\n         ",
@@ -806,6 +819,10 @@
                 "name": "value",
                 "type": "xsd:string"
             }]
+        },
+        {
+            "documentation": "\r\n            This is a container element for pure html that will be used to build a form presentation used by the list, add or edit actions.\r\n         ",
+            "name": "form"
         }
     ],
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"

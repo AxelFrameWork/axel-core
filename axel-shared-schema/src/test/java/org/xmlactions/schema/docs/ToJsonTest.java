@@ -33,7 +33,7 @@ public class ToJsonTest {
 		
 		ResourceUtils.saveFile("../axel-tutorial/schema/axel_core.json", result.toString(4));
 
-		logger.warn(result.toString(4));
+		// logger.warn(result.toString(4));
 	}
 
 
