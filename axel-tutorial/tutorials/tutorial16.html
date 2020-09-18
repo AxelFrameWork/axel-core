@@ -1,0 +1,109 @@
+<div id="javascripting" style="padding-top: 80px;"></div>
+<div class="card mb-3" style="width: 100%">
+    <div class="card-header">
+        <h4><span class="badge badge-info">${tutorial_page_index}</span> example - script call</h4>
+        <p style="padding-left:40px">
+            The script action will make a javascript call and return the result.
+        </p>
+    </div>
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">How to run simple javascript contained in the script content</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:script>
+	var message = 'Hello World!!!';
+	message;
+</axel:script>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript and returns the response 'Hello World!!!' which is displayed on screen.</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+    </div>    
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">How to run javascript from a file</div>
+        <div class="card-text instruction">${instruction-counter}. Create a new folder called <i>js</i>. We use this as a standard location for javascript files.</div>
+        <div class="card-text instruction">${instruction-counter}. Create a new file called <i>msg.js</i>. This is the javascript file we will call from the script action.</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>msg.js</i> file and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+var message = 'Hello World!!! from msg.js';
+message;
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:script fileName="js/msg.js"/>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript file <i>msg.js</i> and returns the response 'Hello World!!! from msg.js' which is displayed on screen.</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+    </div>    
+    <div class="card-body">
+        <axel:range name="instruction-counter" from="1" to="100"/>
+        <div class="card-title title">How to run javascript from a file and pass parameters</div>
+        <div class="card-text instruction">${instruction-counter}. Create a new folder called <i>js</i>. We use this a as a standard location for javascript files.</div>
+        <div class="card-text instruction">${instruction-counter}. Create a new file called <i>msgparam.js</i>. This is the javascript file we will call from the script action.</div>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>msgparam.js</i> file and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+var pname = name;	// name comes from the script action
+var message = 'Hello ' + pname + ' from msg.js';
+message;
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text instruction">${instruction-counter}. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    <axel:escape>
+<axel:script fileName="js/msgparam.js">
+	<axel:param key="name" value="Fred"/>
+</axel:script>
+                    </axel:escape>
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript file <i>msg.js</i> and returns the response 'Hello Fred from msgparam.js' which is displayed on screen.</div>
+        <div class="card-text instruction">${instruction-counter}. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+        <div class="card-title title">Axel uses nashorn javascript engine shipped with java8 +</div>
+        <div class="card-text instruction">Helpful links on nashorn
+        									<li><a href="https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html">Oracle Nashorn</a></li>
+        									<li><a href="https://www.baeldung.com/java-nashorn">Baeldung Quick Tutorial</a></li>
+        									<li><a href="https://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/">Winterbe Quick Tutorial</a></li>
+        <div class="card-title title">The current version of Nashorn is ES5 for those using Typescript</div>
+        </div>
+    </div>    
+</div>

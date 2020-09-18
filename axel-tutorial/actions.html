@@ -56,7 +56,6 @@
 <!-- and it's easy to individually load additional languages -->
 <!-- script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script -->
 <script>hljs.initHighlightingOnLoad();</script>
-    
 </head>
 <body>
     <div class="container-fluid text-center">    
@@ -132,21 +131,23 @@
         <a class="dropdown-item" href="/actions.html#introduction">Introduction</a>
         <a class="dropdown-item" href="/actions.html#how_it_works">How It Works</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/actions.html#hello_world">Hello World!!!</a>
-        <a class="dropdown-item" href="/actions.html#insert_component_page">Insert Component Page</a>
-        <a class="dropdown-item" href="/actions.html#capture_browser_parameters">Capture Browser Parameters</a>
-        <a class="dropdown-item" href="/actions.html#http_call_json" title="How to load data from an external site">Http Call Json</a>
-        <a class="dropdown-item" href="/actions.html#json_presentation" title="Presentation of the loaded data">Json Presentation</a>
-        <a class="dropdown-item" href="/actions.html#http_call_xml" title="How to load data from an external site">Http Call Xml</a>
-        <a class="dropdown-item" href="/actions.html#xml_presentation" title="Presentation of the loaded data">Xml Presentation</a>
-        <a class="dropdown-item" href="/actions.html#json_get" title="Get an object/s from a json document">Json Get</a>
-        <a class="dropdown-item" href="/actions.html#code" title="Executes a java bean method">Code</a>
-        <a class="dropdown-item" href="/actions.html#put_get_remove" title="Put, Get and Remove content from execContext">Put and Get and Remove</a>
-        <a class="dropdown-item" href="/actions.html#if_else_elseif" title="Conditional coding using if, else and elseif">If, Else and Elseif</a>
-        <a class="dropdown-item" href="/actions.html#range" title="Numeric indexing">Range</a>
-        <a class="dropdown-item" href="/actions.html#escaping" title="Escaping content for different formats">Escaping and Unescaping</a>
-        <a class="dropdown-item" href="/actions.html#evaluate" title="Javascript evaluation">Evaluating</a>
-        <a class="dropdown-item" href="/actions.html#date_formatting" title="Formatting dates">Date Formatting</a>
+        <div class="dropdown-item disabled">Examples</div>
+        <a class="dropdown-item" href="/actions.html#hello_world" title="How to download and run axel and show Hello World!!! in the browser">&nbsp;&nbsp;&nbsp;Hello World!!!</a>
+        <a class="dropdown-item" href="/actions.html#insert_component_page" title="How to build an axel component and insert it into a page.">&nbsp;&nbsp;&nbsp;Insert Component Page</a>
+        <a class="dropdown-item" href="/actions.html#capture_browser_parameters" title="How to capture parameters from the browser request.">&nbsp;&nbsp;&nbsp;Capture Browser Parameters</a>
+        <a class="dropdown-item" href="/actions.html#http_call_json" title="How to load data from an external site">&nbsp;&nbsp;&nbsp;Http Call Json</a>
+        <a class="dropdown-item" href="/actions.html#json_presentation" title="Presentation of the loaded data">&nbsp;&nbsp;&nbsp;Json Presentation</a>
+        <a class="dropdown-item" href="/actions.html#http_call_xml" title="How to load data from an external site">&nbsp;&nbsp;&nbsp;Http Call Xml</a>
+        <a class="dropdown-item" href="/actions.html#xml_presentation" title="Presentation of the loaded data">&nbsp;&nbsp;&nbsp;Xml Presentation</a>
+        <a class="dropdown-item" href="/actions.html#json_get" title="Get an object/s from a json document">&nbsp;&nbsp;&nbsp;Json Get</a>
+        <a class="dropdown-item" href="/actions.html#code" title="Executes a java bean method">&nbsp;&nbsp;&nbsp;Code</a>
+        <a class="dropdown-item" href="/actions.html#put_get_remove" title="Put, Get and Remove content from execContext">&nbsp;&nbsp;&nbsp;Put and Get and Remove</a>
+        <a class="dropdown-item" href="/actions.html#if_else_elseif" title="Conditional coding using if, else and elseif">&nbsp;&nbsp;&nbsp;If, Else and Elseif</a>
+        <a class="dropdown-item" href="/actions.html#range" title="Numeric indexing">&nbsp;&nbsp;&nbsp;Range</a>
+        <a class="dropdown-item" href="/actions.html#escaping" title="Escaping content for different formats">&nbsp;&nbsp;&nbsp;Escaping and Unescaping</a>
+        <a class="dropdown-item" href="/actions.html#evaluate" title="Javascript evaluation">&nbsp;&nbsp;&nbsp;Evaluating</a>
+        <a class="dropdown-item" href="/actions.html#date_formatting" title="Formatting dates">&nbsp;&nbsp;&nbsp;Date Formatting</a>
+        <a class="dropdown-item" href="/actions.html#javascripting" title="How to run JavaScript">&nbsp;&nbsp;&nbsp;javaScript</a>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -216,6 +217,8 @@
           <a class="dropdown-item" href="/schema.html#action_text_replace">text_replace</a>
         
           <a class="dropdown-item" href="/schema.html#action_content_type">content_type</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_form">form</a>
         
       </div>
     </li>
@@ -380,6 +383,9 @@ function myFunction() {
         <li class="nav-item">
             <a class="nav-link" href="/actions.html#date_formatting" title="Formatting dates">Date Formatting</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/actions.html#javascripting"  title="How to run JavaScript">JavaScript</a>
+        </li>
         
 
 <!--
@@ -497,7 +503,7 @@ Hello World!!! &dollar;{current.time}
         <div class="card-text code">
             <pre>
                 <code>
-Hello World!!! 22:09
+Hello World!!! 11:48
                 </code>
             </pre>
         </div>
@@ -511,7 +517,8 @@ Hello World!!! 22:09
     <div class="card-header">
         <h4><span class="badge badge-info">2</span> example - insert a component page</h4>
         <p style="padding-left:40px">
-            How to import components into a html page.
+            How to import components into a html page.<br/>
+            <b>T</b>hese instructions follow on from the previous example.
         </p>
     </div>
     <div class="card-body">
@@ -548,7 +555,7 @@ Hello World!!! 22:09
         <div class="card-text code">
             <pre>
                 <code>
-Hello World!!! 22:09<br/>
+Hello World!!! 11:48<br/>
 <h5>This is an Axel Framework Component Page</h5>
                 </code>
             </pre>
@@ -1423,6 +1430,116 @@ E, MMM dd yyyy hh:mm: Sat, Dec 25 2021 12:30
         <hr/>
         <div class="card-text whatitdoes">Some examples of how axel:date_formatter works.</div>
     </div>
+</div>
+
+    <div id="javascripting" style="padding-top: 80px;"></div>
+<div class="card mb-3" style="width: 100%">
+    <div class="card-header">
+        <h4><span class="badge badge-info">16</span> example - script call</h4>
+        <p style="padding-left:40px">
+            The script action will make a javascript call and return the result.
+        </p>
+    </div>
+    <div class="card-body">
+        
+        <div class="card-title title">How to run simple javascript contained in the script content</div>
+        <div class="card-text instruction">1. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    
+&lt;axel:script&gt;
+	var message = 'Hello World!!!';
+	message;
+&lt;/axel:script&gt;
+                    
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript and returns the response 'Hello World!!!' which is displayed on screen.</div>
+        <div class="card-text instruction">2. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+    </div>    
+    <div class="card-body">
+        
+        <div class="card-title title">How to run javascript from a file</div>
+        <div class="card-text instruction">3. Create a new folder called <i>js</i>. We use this as a standard location for javascript files.</div>
+        <div class="card-text instruction">4. Create a new file called <i>msg.js</i>. This is the javascript file we will call from the script action.</div>
+        <div class="card-text instruction">5. Edit the <i>msg.js</i> file and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    
+var message = 'Hello World!!! from msg.js';
+message;
+                    
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text instruction">6. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    
+&lt;axel:script fileName="js/msg.js"/&gt;
+                    
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript file <i>msg.js</i> and returns the response 'Hello World!!! from msg.js' which is displayed on screen.</div>
+        <div class="card-text instruction">7. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+    </div>    
+    <div class="card-body">
+        
+        <div class="card-title title">How to run javascript from a file and pass parameters</div>
+        <div class="card-text instruction">8. Create a new folder called <i>js</i>. We use this a as a standard location for javascript files.</div>
+        <div class="card-text instruction">9. Create a new file called <i>msgparam.js</i>. This is the javascript file we will call from the script action.</div>
+        <div class="card-text instruction">10. Edit the <i>msgparam.js</i> file and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    
+var pname = name;	// name comes from the script action
+var message = 'Hello ' + pname + ' from msg.js';
+message;
+                    
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text instruction">11. Edit the <i>index.html</i> page and add the following  content</div>
+        <hr/>
+        <div class="card-text code">
+            <pre>
+                <code>
+                    
+&lt;axel:script fileName="js/msgparam.js"&gt;
+	&lt;axel:param key="name" value="Fred"/&gt;
+&lt;/axel:script&gt;
+                    
+                </code>
+            </pre>
+        </div>
+        <hr/>
+        <div class="card-text whatitdoes">Runs the javascript file <i>msg.js</i> and returns the response 'Hello Fred from msgparam.js' which is displayed on screen.</div>
+        <div class="card-text instruction">12. Refresh the browser and now you see the new content from the script response.</div>
+        <hr/>
+        <div class="card-title title">Axel uses nashorn javascript engine shipped with java8 +</div>
+        <div class="card-text instruction">Helpful links on nashorn
+        									<li><a href="https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html">Oracle Nashorn</a></li>
+        									<li><a href="https://www.baeldung.com/java-nashorn">Baeldung Quick Tutorial</a></li>
+        									<li><a href="https://winterbe.com/posts/2014/04/05/java8-nashorn-tutorial/">Winterbe Quick Tutorial</a></li>
+        <div class="card-title title">The current version of Nashorn is ES5 for those using Typescript</div>
+        </div>
+    </div>    
 </div>
 
 </div>

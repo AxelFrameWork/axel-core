@@ -56,7 +56,6 @@
 <!-- and it's easy to individually load additional languages -->
 <!-- script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script -->
 <script>hljs.initHighlightingOnLoad();</script>
-    
 </head>
 <body>
     <div class="container-fluid text-center">    
@@ -132,21 +131,23 @@
         <a class="dropdown-item" href="/actions.html#introduction">Introduction</a>
         <a class="dropdown-item" href="/actions.html#how_it_works">How It Works</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="/actions.html#hello_world">Hello World!!!</a>
-        <a class="dropdown-item" href="/actions.html#insert_component_page">Insert Component Page</a>
-        <a class="dropdown-item" href="/actions.html#capture_browser_parameters">Capture Browser Parameters</a>
-        <a class="dropdown-item" href="/actions.html#http_call_json" title="How to load data from an external site">Http Call Json</a>
-        <a class="dropdown-item" href="/actions.html#json_presentation" title="Presentation of the loaded data">Json Presentation</a>
-        <a class="dropdown-item" href="/actions.html#http_call_xml" title="How to load data from an external site">Http Call Xml</a>
-        <a class="dropdown-item" href="/actions.html#xml_presentation" title="Presentation of the loaded data">Xml Presentation</a>
-        <a class="dropdown-item" href="/actions.html#json_get" title="Get an object/s from a json document">Json Get</a>
-        <a class="dropdown-item" href="/actions.html#code" title="Executes a java bean method">Code</a>
-        <a class="dropdown-item" href="/actions.html#put_get_remove" title="Put, Get and Remove content from execContext">Put and Get and Remove</a>
-        <a class="dropdown-item" href="/actions.html#if_else_elseif" title="Conditional coding using if, else and elseif">If, Else and Elseif</a>
-        <a class="dropdown-item" href="/actions.html#range" title="Numeric indexing">Range</a>
-        <a class="dropdown-item" href="/actions.html#escaping" title="Escaping content for different formats">Escaping and Unescaping</a>
-        <a class="dropdown-item" href="/actions.html#evaluate" title="Javascript evaluation">Evaluating</a>
-        <a class="dropdown-item" href="/actions.html#date_formatting" title="Formatting dates">Date Formatting</a>
+        <div class="dropdown-item disabled">Examples</div>
+        <a class="dropdown-item" href="/actions.html#hello_world" title="How to download and run axel and show Hello World!!! in the browser">&nbsp;&nbsp;&nbsp;Hello World!!!</a>
+        <a class="dropdown-item" href="/actions.html#insert_component_page" title="How to build an axel component and insert it into a page.">&nbsp;&nbsp;&nbsp;Insert Component Page</a>
+        <a class="dropdown-item" href="/actions.html#capture_browser_parameters" title="How to capture parameters from the browser request.">&nbsp;&nbsp;&nbsp;Capture Browser Parameters</a>
+        <a class="dropdown-item" href="/actions.html#http_call_json" title="How to load data from an external site">&nbsp;&nbsp;&nbsp;Http Call Json</a>
+        <a class="dropdown-item" href="/actions.html#json_presentation" title="Presentation of the loaded data">&nbsp;&nbsp;&nbsp;Json Presentation</a>
+        <a class="dropdown-item" href="/actions.html#http_call_xml" title="How to load data from an external site">&nbsp;&nbsp;&nbsp;Http Call Xml</a>
+        <a class="dropdown-item" href="/actions.html#xml_presentation" title="Presentation of the loaded data">&nbsp;&nbsp;&nbsp;Xml Presentation</a>
+        <a class="dropdown-item" href="/actions.html#json_get" title="Get an object/s from a json document">&nbsp;&nbsp;&nbsp;Json Get</a>
+        <a class="dropdown-item" href="/actions.html#code" title="Executes a java bean method">&nbsp;&nbsp;&nbsp;Code</a>
+        <a class="dropdown-item" href="/actions.html#put_get_remove" title="Put, Get and Remove content from execContext">&nbsp;&nbsp;&nbsp;Put and Get and Remove</a>
+        <a class="dropdown-item" href="/actions.html#if_else_elseif" title="Conditional coding using if, else and elseif">&nbsp;&nbsp;&nbsp;If, Else and Elseif</a>
+        <a class="dropdown-item" href="/actions.html#range" title="Numeric indexing">&nbsp;&nbsp;&nbsp;Range</a>
+        <a class="dropdown-item" href="/actions.html#escaping" title="Escaping content for different formats">&nbsp;&nbsp;&nbsp;Escaping and Unescaping</a>
+        <a class="dropdown-item" href="/actions.html#evaluate" title="Javascript evaluation">&nbsp;&nbsp;&nbsp;Evaluating</a>
+        <a class="dropdown-item" href="/actions.html#date_formatting" title="Formatting dates">&nbsp;&nbsp;&nbsp;Date Formatting</a>
+        <a class="dropdown-item" href="/actions.html#javascripting" title="How to run JavaScript">&nbsp;&nbsp;&nbsp;javaScript</a>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -216,6 +217,8 @@
           <a class="dropdown-item" href="/schema.html#action_text_replace">text_replace</a>
         
           <a class="dropdown-item" href="/schema.html#action_content_type">content_type</a>
+        
+          <a class="dropdown-item" href="/schema.html#action_form">form</a>
         
       </div>
     </li>
@@ -452,6 +455,10 @@ function myFunction() {
             
                 <li class="nav-item">
                     <a class="nav-link" href="#action_content_type">content_type</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="#action_form">form</a>
                 </li>
             
     </ul>
@@ -2031,11 +2038,15 @@ function myFunction() {
                     <img src="img/popup_icon.png" width="32px" data-toggle="popover" data-content="
 			The &quot;script&quot; action will execute a javascript.
 			
-			The javascript is written in the content of the &quot;script&quot; element and may be wrapped with a
-			CDATA element.
+			Scripts can be added to the content or loaded from a file.  If you add a script to the
+			content and also set the fileName attribute only the fileName will be executed.
 			
-			Replacement Markers may be added to the script.  These will be injected before execution of the
-			script.
+			If you load a javascript file using the fileName attribute you can pass parameters to
+			the javascript by adding these to the param list.
+			
+			If you add the javascript to the content of the &quot;script&quot; element it can be wrapped with a
+			CDATA element.  You can also add Replacement Markers the script. These will be injected
+			before execution of the script.
 			
 			The &quot;key&quot; attribute may be set with a value that will be used to store the result of the executed
 			javascript back into the execContext.  You can get at this using the ${key} syntax.
@@ -2059,11 +2070,53 @@ function myFunction() {
                     <tr>
 
                         <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="
+					The param element may be used to pass one or more parameters to the 
+					JavaScript file if the fileName attribute is used.
+					
+		            @see <a href=&quot;#param&quot;>param</a> definiton. 
+		      	"></img>
+                            
+                                param
+                            
+                        </td>
+                        <td></td>
+                        <td>required</td>
+                        <td></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
+                            <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="]
+				Instead of inserting the JavaScript code into the content you can load it from
+				a javascript file.
+				
+				Set the fileName with the path and name of the JavaScript file.
+				
+				You can pass binding parameters to the JavaScript by adding the key/value
+				pairs to the Param list.
+			"></img>
+                            
+                                fileName
+                            
+                        </td>
+                        <td>xsd:string</td>
+                        <td>optional</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+
+                        <td>
                             <img src="img/popup_icon.png" width="24px" data-toggle="popover" data-content="]
 				This attribute is used if you want to store the results of the script back into
 				the execContext.
 				
-				If you don't use the key attribute the results of the script are returned.
+				If you don't use the key attribute the results of the script are returned and inserted
+				in place of this action.
 			"></img>
                             
                                 key
@@ -2760,6 +2813,21 @@ function myFunction() {
                         <td></td>
                         <td>1</td>
                     </tr>
+                    
+            </table>
+        </div>
+    
+        <div id="action_form" style="padding-top: 80px;"></div>
+        <div class="panel panel-warning text-left">
+            <div class="panel-heading  panel-warning ">
+                <h4><span class="badge badge-info">32</span> form action
+                    <img src="img/popup_icon.png" width="32px" data-toggle="popover" data-content="
+            This is a container element for pure html that will be used to build a form presentation used by the list, add or edit actions.
+         "></img>
+                </h4>
+            </div>
+            <table class="table table-sm">
+                <tr><th>attribute</th><th>type</th><th>use</th><th>default</th><th>minoccurs</th></tr>
                     
             </table>
         </div>
