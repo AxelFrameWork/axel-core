@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.script.Bindings;
+import javax.script.Invocable;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
@@ -34,6 +35,8 @@ public class ScriptAction extends BaseAction {
 	private String key;					// if we want to put the result back into the execContext
 	
 	private String fileName;			// we can use the fileName in place of the script content.
+
+	private String function;			// if this is set we invoke this function
 	
 	private List<Param> params = new ArrayList<Param>();	// params are used to pass to the loaded script - these can not be used when using the content in place of a fileName.
 
@@ -51,7 +54,11 @@ public class ScriptAction extends BaseAction {
 				return "";
 			}
 		} else {
-			execContext.put(getKey(), result);
+			if (result == null) {
+				execContext.remove(getKey());
+			} else {
+				execContext.put(getKey(), result);
+			}
 			return "";
 		}
 	}
@@ -71,18 +78,41 @@ public class ScriptAction extends BaseAction {
 		
 		try {
 			ScriptEngine se = NashornJS.getScriptEngine();
-			if (getParams().size() > 0) {
-				Bindings bindings = se.createBindings();
-				for (Param param : getParams()) {
-					bindings.put(param.getKey(), param.getResolvedValue(execContext));
+			if (getFunction() != null) {
+				result = se.eval("load('" + this.getFileName() + "');");
+				Invocable invocable = (Invocable)se;
+				if (getParams().size() > 0) {
+					result = invocable.invokeFunction(getFunction(), paramsToArray(getParams(), execContext));
+				} else {
+					result = invocable.invokeFunction(getFunction());
 				}
-				se.setBindings(bindings, ScriptContext.GLOBAL_SCOPE);
+				
+				
+			} else {
+				if (getParams().size() > 0) {
+					Bindings bindings = se.createBindings();
+					for (Param param : getParams()) {
+						bindings.put(param.getKey(), param.getResolvedValue(execContext));
+					}
+					se.setBindings(bindings, ScriptContext.GLOBAL_SCOPE);
+				}
+				result = se.eval("load('" + this.getFileName() + "');");
 			}
-			result = se.eval("load('" + this.getFileName() + "');");
 			return result;
 		} catch (ScriptException ex) {
 			throw new IllegalArgumentException("Error processing script:[" + getFileName() + "]", ex);
+		} catch (NoSuchMethodException ex) {
+			throw new IllegalArgumentException("Error processing script:[" + getFileName() + "]", ex);
 		}
+	}
+	
+	private Object[] paramsToArray(List<Param> params, IExecContext execContext) {
+		Object [] objs = new Object[params.size()];
+		int index = 0;
+		for (Param param: params) {
+			objs[index] = param.getResolvedValue(execContext);
+		}
+		return objs;
 	}
 	
 	/**
@@ -117,6 +147,14 @@ public class ScriptAction extends BaseAction {
 	
 	public void setParam(Param param) {
 		params.add(param);
+	}
+
+	public String getFunction() {
+		return function;
+	}
+
+	public void setFunction(String function) {
+		this.function = function;
 	}
 
 	

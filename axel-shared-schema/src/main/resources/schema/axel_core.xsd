@@ -1045,6 +1045,18 @@
 		      	]]></xsd:documentation></xsd:annotation>
             </xsd:element>
          </xsd:sequence>
+         <xsd:attribute name="function" type="xsd:string" use="optional">
+			<xsd:annotation><xsd:documentation><![CDATA[]
+				The function attribute is used when you want to call a function in the 
+				javascript file.
+				
+				To pass parameters to a function you add them to the script as multiple
+				params actions.
+				
+				If you dont call a function on a script it is expected that it will
+				execute it's self.
+			]]></xsd:documentation></xsd:annotation>
+         </xsd:attribute>
          <xsd:attribute name="fileName" type="xsd:string" use="optional">
 			<xsd:annotation><xsd:documentation><![CDATA[]
 				Instead of inserting the JavaScript code into the content you can load it from

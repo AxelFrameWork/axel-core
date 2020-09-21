@@ -152,6 +152,9 @@ public class HttpAction extends BaseAction
 
 	public String execute(IExecContext execContext) throws Exception
 	{
+		if (getKey() != null) {
+			execContext.remove(getKey());
+		}
 		String error = "";
 		validate();
 		
@@ -183,7 +186,7 @@ public class HttpAction extends BaseAction
 		if (response != null && response.getStatusCodeValue() != 200) {
 			throw new IllegalArgumentException("Http Request [" + getHref() + "] faied with error code [" + response.getStatusCodeValue() + ":" + response.getStatusCode());
 		}
-		if (response.getStatusCodeValue() < 300) {
+		if (response != null && response.getStatusCodeValue() < 300) {
 			if(log.isInfoEnabled()) {
 				log.info("response:{}", limitSize(response.getBody(), 200));
 			}
